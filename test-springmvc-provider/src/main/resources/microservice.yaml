@@ -1,0 +1,50 @@
+service.name: springmvc
+APPLICATION_ID: springmvctest
+service_description:
+  name: ${service.name}
+  version: 0.0.2
+cse:
+  service:
+    registry:
+      address: http://127.0.0.1:30100
+      autodiscovery: true
+#  service:
+#    registry:
+#      address: https://100.125.1.238:30100
+#  config:
+#    client:
+#      serverUri: https://100.125.1.238:30103
+#      refreshMode: 0
+#      refresh_interval: 5000
+#  monitor:
+#    client:
+#      serverUri: https://100.125.1.238:30109
+  rest:
+    address: 0.0.0.0:8080
+  highway:
+    address: 0.0.0.0:7070
+
+#  tracing:
+#    apm:
+#      samplingRate: 1
+#      datasendmode: 1
+#      dataformat: json
+#  credentials:
+#    accessKey: 765J2TR8KW3GOKKKWITA
+#    secretKey: x6NYmbYOlm3METc0KUGscCGoJn9gjwZB3NhyI5FS
+#    project: default
+#    akskCustomCipher: default
+#########SSL options
+#ssl.protocols: TLSv1.2
+#ssl.authPeer: true
+#ssl.checkCN.host: true
+
+#########certificates config
+#ssl.trustStore: trust.jks
+#ssl.trustStoreType: JKS
+#ssl.trustStoreValue: Changeme_123
+#ssl.keyStore: server.p12
+#ssl.keyStoreType: PKCS12
+#ssl.keyStoreValue: Changeme_123
+#ssl.crl: revoke.crl
+#ssl.sslCustomClass: com.huawei.paas.cse.demo.springmvc.server.DemoSSLCustom
