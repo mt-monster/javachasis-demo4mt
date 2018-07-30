@@ -1,0 +1,695 @@
+"C:\Program Files\Java\jdk1.8.0_65\bin\java" "-javaagent:C:\Users\jwx477404\IntelliJ IDEA Community Edition 2017.1.4\lib\idea_rt.jar=53847:C:\Users\jwx477404\IntelliJ IDEA Community Edition 2017.1.4\bin" -Dfile.encoding=UTF-8 -classpath "C:\Program Files\Java\jdk1.8.0_65\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_65\jre\lib\deploy.jar;C:\Program Files\Java\jdk1.8.0_65\jre\lib\ext\access-bridge-64.jar;C:\Program Files\Java\jdk1.8.0_65\jre\lib\ext\cldrdata.jar;C:\Program Files\Java\jdk1.8.0_65\jre\lib\ext\dnsns.jar;C:\Program Files\Java\jdk1.8.0_65\jre\lib\ext\jaccess.jar;C:\Program Files\Java\jdk1.8.0_65\jre\lib\ext\jfxrt.jar;C:\Program Files\Java\jdk1.8.0_65\jre\lib\ext\localedata.jar;C:\Program Files\Java\jdk1.8.0_65\jre\lib\ext\nashorn.jar;C:\Program Files\Java\jdk1.8.0_65\jre\lib\ext\sunec.jar;C:\Program Files\Java\jdk1.8.0_65\jre\lib\ext\sunjce_provider.jar;C:\Program Files\Java\jdk1.8.0_65\jre\lib\ext\sunmscapi.jar;C:\Program Files\Java\jdk1.8.0_65\jre\lib\ext\sunpkcs11.jar;C:\Program Files\Java\jdk1.8.0_65\jre\lib\ext\zipfs.jar;C:\Program Files\Java\jdk1.8.0_65\jre\lib\javaws.jar;C:\Program Files\Java\jdk1.8.0_65\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_65\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_65\jre\lib\jfxswt.jar;C:\Program Files\Java\jdk1.8.0_65\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_65\jre\lib\management-agent.jar;C:\Program Files\Java\jdk1.8.0_65\jre\lib\plugin.jar;C:\Program Files\Java\jdk1.8.0_65\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_65\jre\lib\rt.jar;D:\FST_CSE\cse-test-piles(2017-12-18)\cse-test-piles\pojo-client\target\classes;C:\Users\jwx477404\.m2\repository\org\apache\servicecomb\foundation-config\1.0.0.B003.10\foundation-config-1.0.0.B003.10.jar;C:\Users\jwx477404\.m2\repository\org\apache\servicecomb\foundation-common\1.0.0.B003.10\foundation-common-1.0.0.B003.10.jar;C:\Users\jwx477404\.m2\repository\com\fasterxml\jackson\dataformat\jackson-dataformat-xml\2.9.4\jackson-dataformat-xml-2.9.4.jar;C:\Users\jwx477404\.m2\repository\com\fasterxml\jackson\module\jackson-module-jaxb-annotations\2.8.7\jackson-module-jaxb-annotations-2.8.7.jar;C:\Users\jwx477404\.m2\repository\org\codehaus\woodstox\stax2-api\3.1.4\stax2-api-3.1.4.jar;C:\Users\jwx477404\.m2\repository\com\fasterxml\woodstox\woodstox-core\5.0.3\woodstox-core-5.0.3.jar;C:\Users\jwx477404\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.9.4\jackson-databind-2.9.4.jar;C:\Users\jwx477404\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.9.4\jackson-annotations-2.9.4.jar;C:\Users\jwx477404\.m2\repository\org\springframework\spring-context\4.3.5.RELEASE\spring-context-4.3.5.RELEASE.jar;C:\Users\jwx477404\.m2\repository\org\springframework\spring-aop\4.3.5.RELEASE\spring-aop-4.3.5.RELEASE.jar;C:\Users\jwx477404\.m2\repository\org\springframework\spring-expression\4.3.5.RELEASE\spring-expression-4.3.5.RELEASE.jar;C:\Users\jwx477404\.m2\repository\log4j\log4j\1.2.17\log4j-1.2.17.jar;C:\Users\jwx477404\.m2\repository\javax\ws\rs\javax.ws.rs-api\2.0.1\javax.ws.rs-api-2.0.1.jar;C:\Users\jwx477404\.m2\repository\commons-io\commons-io\2.4\commons-io-2.4.jar;C:\Users\jwx477404\.m2\repository\javax\servlet\javax.servlet-api\3.1.0\javax.servlet-api-3.1.0.jar;C:\Users\jwx477404\.m2\repository\org\springframework\spring-beans\4.3.5.RELEASE\spring-beans-4.3.5.RELEASE.jar;C:\Users\jwx477404\.m2\repository\org\springframework\spring-core\4.3.5.RELEASE\spring-core-4.3.5.RELEASE.jar;C:\Users\jwx477404\.m2\repository\com\netflix\archaius\archaius-core\0.7.3\archaius-core-0.7.3.jar;C:\Users\jwx477404\.m2\repository\com\google\code\findbugs\jsr305\3.0.1\jsr305-3.0.1.jar;C:\Users\jwx477404\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.9.4\jackson-core-2.9.4.jar;C:\Users\jwx477404\.m2\repository\commons-configuration\commons-configuration\1.10\commons-configuration-1.10.jar;C:\Users\jwx477404\.m2\repository\commons-logging\commons-logging\1.2\commons-logging-1.2.jar;C:\Users\jwx477404\.m2\repository\org\yaml\snakeyaml\1.16\snakeyaml-1.16.jar;C:\Users\jwx477404\.m2\repository\org\slf4j\slf4j-api\1.7.7\slf4j-api-1.7.7.jar;C:\Users\jwx477404\.m2\repository\net\sf\json-lib\json-lib\2.4\json-lib-2.4-jdk15.jar;C:\Users\jwx477404\.m2\repository\commons-beanutils\commons-beanutils\1.9.2\commons-beanutils-1.9.2.jar;C:\Users\jwx477404\.m2\repository\commons-collections\commons-collections\3.2.2\commons-collections-3.2.2.jar;C:\Users\jwx477404\.m2\repository\net\sf\ezmorph\ezmorph\1.0.6\ezmorph-1.0.6.jar;C:\Users\jwx477404\.m2\repository\org\apache\httpcomponents\httpclient\4.5.2\httpclient-4.5.2.jar;C:\Users\jwx477404\.m2\repository\org\apache\httpcomponents\httpcore\4.4.6\httpcore-4.4.6.jar;C:\Users\jwx477404\.m2\repository\commons-codec\commons-codec\1.10\commons-codec-1.10.jar;C:\Users\jwx477404\.m2\repository\io\netty\netty-codec\4.1.17.Final\netty-codec-4.1.17.Final.jar;C:\Users\jwx477404\.m2\repository\io\netty\netty-codec-http\4.1.17.Final\netty-codec-http-4.1.17.Final.jar;C:\Users\jwx477404\.m2\repository\io\netty\netty-codec-http2\4.1.17.Final\netty-codec-http2-4.1.17.Final.jar;C:\Users\jwx477404\.m2\repository\io\netty\netty-common\4.1.17.Final\netty-common-4.1.17.Final.jar;C:\Users\jwx477404\.m2\repository\io\netty\netty-handler\4.1.17.Final\netty-handler-4.1.17.Final.jar;C:\Users\jwx477404\.m2\repository\io\netty\netty-buffer\4.1.17.Final\netty-buffer-4.1.17.Final.jar;C:\Users\jwx477404\.m2\repository\io\netty\netty-codec-socks\4.1.17.Final\netty-codec-socks-4.1.17.Final.jar;C:\Users\jwx477404\.m2\repository\io\netty\netty-handler-proxy\4.1.17.Final\netty-handler-proxy-4.1.17.Final.jar;C:\Users\jwx477404\.m2\repository\io\netty\netty-resolver\4.1.17.Final\netty-resolver-4.1.17.Final.jar;C:\Users\jwx477404\.m2\repository\io\netty\netty-transport\4.1.17.Final\netty-transport-4.1.17.Final.jar;C:\Users\jwx477404\.m2\repository\com\google\guava\guava\16.0.1\guava-16.0.1.jar;C:\Users\jwx477404\.m2\repository\javax\inject\javax.inject\1\javax.inject-1.jar;C:\Users\jwx477404\.m2\repository\org\springframework\spring-aspects\4.3.5.RELEASE\spring-aspects-4.3.5.RELEASE.jar;C:\Users\jwx477404\.m2\repository\org\aspectj\aspectjweaver\1.8.8\aspectjweaver-1.8.8.jar;C:\Users\jwx477404\.m2\repository\org\apache\servicecomb\config-cc\1.0.0.B003.10\config-cc-1.0.0.B003.10.jar;C:\Users\jwx477404\.m2\repository\org\apache\servicecomb\foundation-ssl\1.0.0.B003.10\foundation-ssl-1.0.0.B003.10.jar;C:\Users\jwx477404\.m2\repository\io\netty\netty-tcnative-boringssl-static\2.0.7.Final\netty-tcnative-boringssl-static-2.0.7.Final.jar;C:\Users\jwx477404\.m2\repository\org\apache\servicecomb\foundation-vertx\1.0.0.B003.10\foundation-vertx-1.0.0.B003.10.jar;C:\Users\jwx477404\.m2\repository\io\vertx\vertx-core\3.5.0\vertx-core-3.5.0.jar;C:\Users\jwx477404\.m2\repository\io\netty\netty-resolver-dns\4.1.17.Final\netty-resolver-dns-4.1.17.Final.jar;C:\Users\jwx477404\.m2\repository\io\netty\netty-codec-dns\4.1.17.Final\netty-codec-dns-4.1.17.Final.jar;C:\Users\jwx477404\.m2\repository\io\vertx\vertx-web\3.5.0\vertx-web-3.5.0.jar;C:\Users\jwx477404\.m2\repository\io\vertx\vertx-auth-common\3.5.0\vertx-auth-common-3.5.0.jar;C:\Users\jwx477404\.m2\repository\io\vertx\vertx-bridge-common\3.5.0\vertx-bridge-common-3.5.0.jar;C:\Users\jwx477404\.m2\repository\com\huawei\paas\cse\cse-solution-service-engine\2.3.12.9\cse-solution-service-engine-2.3.12.9.jar;C:\Users\jwx477404\.m2\repository\com\huawei\paas\cse\foundation-auth\2.3.12.9\foundation-auth-2.3.12.9.jar;C:\Users\jwx477404\.m2\repository\org\slf4j\slf4j-log4j12\1.7.7\slf4j-log4j12-1.7.7.jar;C:\Users\jwx477404\.m2\repository\org\apache\servicecomb\transport-highway\1.0.0.B003.10\transport-highway-1.0.0.B003.10.jar;C:\Users\jwx477404\.m2\repository\org\apache\servicecomb\common-protobuf\1.0.0.B003.10\common-protobuf-1.0.0.B003.10.jar;C:\Users\jwx477404\.m2\repository\io\protostuff\protostuff-core\1.5.2\protostuff-core-1.5.2.jar;C:\Users\jwx477404\.m2\repository\io\protostuff\protostuff-api\1.5.2\protostuff-api-1.5.2.jar;C:\Users\jwx477404\.m2\repository\io\protostuff\protostuff-runtime\1.5.2\protostuff-runtime-1.5.2.jar;C:\Users\jwx477404\.m2\repository\io\protostuff\protostuff-collectionschema\1.5.2\protostuff-collectionschema-1.5.2.jar;C:\Users\jwx477404\.m2\repository\com\fasterxml\jackson\dataformat\jackson-dataformat-protobuf\2.9.4\jackson-dataformat-protobuf-2.9.4.jar;C:\Users\jwx477404\.m2\repository\com\squareup\protoparser\4.0.3\protoparser-4.0.3.jar;C:\Users\jwx477404\.m2\repository\org\apache\servicecomb\common-javassist\1.0.0.B003.10\common-javassist-1.0.0.B003.10.jar;C:\Users\jwx477404\.m2\repository\org\javassist\javassist\3.18.1-GA\javassist-3.18.1-GA.jar;C:\Users\jwx477404\.m2\repository\org\apache\servicecomb\foundation-metrics\1.0.0.B003.10\foundation-metrics-1.0.0.B003.10.jar;C:\Users\jwx477404\.m2\repository\com\netflix\spectator\spectator-reg-servo\0.62.0\spectator-reg-servo-0.62.0.jar;C:\Users\jwx477404\.m2\repository\com\netflix\spectator\spectator-api\0.62.0\spectator-api-0.62.0.jar;C:\Users\jwx477404\.m2\repository\org\apache\servicecomb\transport-rest-vertx\1.0.0.B003.10\transport-rest-vertx-1.0.0.B003.10.jar;C:\Users\jwx477404\.m2\repository\org\apache\servicecomb\transport-rest-client\1.0.0.B003.10\transport-rest-client-1.0.0.B003.10.jar;C:\Users\jwx477404\.m2\repository\org\apache\servicecomb\common-rest\1.0.0.B003.10\common-rest-1.0.0.B003.10.jar;C:\Users\jwx477404\.m2\repository\org\apache\servicecomb\transport-rest-servlet\1.0.0.B003.10\transport-rest-servlet-1.0.0.B003.10.jar;C:\Users\jwx477404\.m2\repository\org\springframework\spring-webmvc\4.3.5.RELEASE\spring-webmvc-4.3.5.RELEASE.jar;C:\Users\jwx477404\.m2\repository\org\springframework\spring-web\4.3.5.RELEASE\spring-web-4.3.5.RELEASE.jar;C:\Users\jwx477404\.m2\repository\org\apache\servicecomb\provider-springmvc\1.0.0.B003.10\provider-springmvc-1.0.0.B003.10.jar;C:\Users\jwx477404\.m2\repository\org\apache\servicecomb\provider-rest-common\1.0.0.B003.10\provider-rest-common-1.0.0.B003.10.jar;C:\Users\jwx477404\.m2\repository\org\apache\servicecomb\swagger-invocation-springmvc\1.0.0.B003.10\swagger-invocation-springmvc-1.0.0.B003.10.jar;C:\Users\jwx477404\.m2\repository\org\apache\servicecomb\swagger-generator-springmvc\1.0.0.B003.10\swagger-generator-springmvc-1.0.0.B003.10.jar;C:\Users\jwx477404\.m2\repository\org\apache\servicecomb\swagger-generator-core\1.0.0.B003.10\swagger-generator-core-1.0.0.B003.10.jar;C:\Users\jwx477404\.m2\repository\io\swagger\swagger-core\1.5.12\swagger-core-1.5.12.jar;C:\Users\jwx477404\.m2\repository\org\apache\commons\commons-lang3\3.3.2\commons-lang3-3.3.2.jar;C:\Users\jwx477404\.m2\repository\com\fasterxml\jackson\dataformat\jackson-dataformat-yaml\2.9.4\jackson-dataformat-yaml-2.9.4.jar;C:\Users\jwx477404\.m2\repository\io\swagger\swagger-models\1.5.12\swagger-models-1.5.12.jar;C:\Users\jwx477404\.m2\repository\io\swagger\swagger-annotations\1.5.12\swagger-annotations-1.5.12.jar;C:\Users\jwx477404\.m2\repository\javax\validation\validation-api\1.1.0.Final\validation-api-1.1.0.Final.jar;C:\Users\jwx477404\.m2\repository\org\apache\servicecomb\provider-pojo\1.0.0.B003.10\provider-pojo-1.0.0.B003.10.jar;C:\Users\jwx477404\.m2\repository\org\apache\servicecomb\provider-jaxrs\1.0.0.B003.10\provider-jaxrs-1.0.0.B003.10.jar;C:\Users\jwx477404\.m2\repository\org\apache\servicecomb\swagger-invocation-jaxrs\1.0.0.B003.10\swagger-invocation-jaxrs-1.0.0.B003.10.jar;C:\Users\jwx477404\.m2\repository\org\apache\servicecomb\swagger-generator-jaxrs\1.0.0.B003.10\swagger-generator-jaxrs-1.0.0.B003.10.jar;C:\Users\jwx477404\.m2\repository\org\apache\servicecomb\handler-flowcontrol-qps\1.0.0.B003.10\handler-flowcontrol-qps-1.0.0.B003.10.jar;C:\Users\jwx477404\.m2\repository\org\apache\servicecomb\handler-bizkeeper\1.0.0.B003.10\handler-bizkeeper-1.0.0.B003.10.jar;C:\Users\jwx477404\.m2\repository\com\netflix\hystrix\hystrix-core\1.5.10\hystrix-core-1.5.10.jar;C:\Users\jwx477404\.m2\repository\org\hdrhistogram\HdrHistogram\2.1.9\HdrHistogram-2.1.9.jar;C:\Users\jwx477404\.m2\repository\org\apache\servicecomb\handler-loadbalance\1.0.0.B003.10\handler-loadbalance-1.0.0.B003.10.jar;C:\Users\jwx477404\.m2\repository\com\netflix\ribbon\ribbon-loadbalancer\2.2.2\ribbon-loadbalancer-2.2.2.jar;C:\Users\jwx477404\.m2\repository\com\netflix\netflix-commons\netflix-statistics\0.1.1\netflix-statistics-0.1.1.jar;C:\Users\jwx477404\.m2\repository\com\netflix\servo\servo-core\0.10.1\servo-core-0.10.1.jar;C:\Users\jwx477404\.m2\repository\com\netflix\servo\servo-internal\0.10.1\servo-internal-0.10.1.jar;C:\Users\jwx477404\.m2\repository\com\netflix\netflix-commons\netflix-commons-util\0.1.1\netflix-commons-util-0.1.1.jar;C:\Users\jwx477404\.m2\repository\com\netflix\ribbon\ribbon-core\2.2.2\ribbon-core-2.2.2.jar;C:\Users\jwx477404\.m2\repository\io\reactivex\rxjava\1.1.6\rxjava-1.1.6.jar;C:\Users\jwx477404\.m2\repository\com\huawei\paas\cse\cse-handler-cloud-extension\2.3.12.9\cse-handler-cloud-extension-2.3.12.9.jar;C:\Users\jwx477404\.m2\repository\com\huawei\paas\cse\cse-handler-performance-stats\2.3.12.9\cse-handler-performance-stats-2.3.12.9.jar;C:\Users\jwx477404\.m2\repository\com\huawei\paas\cse\cse-handler-tcc\2.3.12.9\cse-handler-tcc-2.3.12.9.jar;C:\Users\jwx477404\.m2\repository\com\huawei\paas\cse\cse-handler-tracing\2.3.12.9\cse-handler-tracing-2.3.12.9.jar;C:\Users\jwx477404\.m2\repository\org\apache\servicecomb\java-chassis-core\1.0.0.B003.10\java-chassis-core-1.0.0.B003.10.jar;C:\Users\jwx477404\.m2\repository\org\apache\servicecomb\service-registry\1.0.0.B003.10\service-registry-1.0.0.B003.10.jar;C:\Users\jwx477404\.m2\repository\org\apache\servicecomb\swagger-invocation-core\1.0.0.B003.10\swagger-invocation-core-1.0.0.B003.10.jar;C:\Users\jwx477404\.m2\repository\io\zipkin\brave\brave\4.13.1\brave-4.13.1.jar;C:\Users\jwx477404\.m2\repository\io\zipkin\zipkin2\zipkin\2.4.2\zipkin-2.4.2.jar;C:\Users\jwx477404\.m2\repository\io\zipkin\reporter2\zipkin-reporter\2.2.2\zipkin-reporter-2.2.2.jar;C:\Users\jwx477404\.m2\repository\com\netflix\ribbon\ribbon\2.2.2\ribbon-2.2.2.jar;C:\Users\jwx477404\.m2\repository\com\netflix\ribbon\ribbon-transport\2.2.2\ribbon-transport-2.2.2.jar;C:\Users\jwx477404\.m2\repository\io\reactivex\rxnetty-contexts\0.4.9\rxnetty-contexts-0.4.9.jar;C:\Users\jwx477404\.m2\repository\io\reactivex\rxnetty-servo\0.4.9\rxnetty-servo-0.4.9.jar;C:\Users\jwx477404\.m2\repository\io\reactivex\rxnetty\0.4.9\rxnetty-0.4.9.jar;C:\Users\jwx477404\.m2\repository\commons-lang\commons-lang\2.6\commons-lang-2.6.jar" com.huawei.paas.cse.demo.pojo.client.PojoClient
+log4j:WARN No appenders could be found for logger (org.springframework.core.io.support.PathMatchingResourcePatternResolver).
+log4j:WARN Please initialize the log4j system properly.
+log4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more info.
+log4j:WARN No such property [logPermission] in org.apache.log4j.RollingFileAppender.
+log4j:WARN No such property [logPermission] in org.apache.log4j.RollingFileAppender.
+2018-07-30 20:28:06,024 [INFO] Write merged log4j config file to D:\FST_CSE\cse-test-piles(2017-12-18)\cse-test-piles\pojo-client\target\classes\config\merged.log4j.properties org.apache.servicecomb.foundation.common.utils.Log4jUtils.outputFile(Log4jUtils.java:103)
+2018-07-30 20:28:06,083 [INFO] Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@19d37183: startup date [Mon Jul 30 20:28:06 GMT+08:00 2018]; root of context hierarchy org.springframework.context.support.AbstractApplicationContext.prepareRefresh(AbstractApplicationContext.java:582)
+2018-07-30 20:28:06,146 [INFO] Loading XML bean definitions from file [D:\FST_CSE\cse-test-piles(2017-12-18)\cse-test-piles\pojo-client\target\classes\META-INF\spring\pojo.client.bean.xml] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317)
+2018-07-30 20:28:06,399 [INFO] Loading XML bean definitions from file [D:\FST_CSE\cse-test-piles(2017-12-18)\cse-test-piles\pojo-client\target\classes\META-INF\spring\schema.bean.xml] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317)
+2018-07-30 20:28:06,589 [INFO] Loading XML bean definitions from URL [jar:file:/C:/Users/jwx477404/.m2/repository/org/apache/servicecomb/foundation-config/1.0.0.B003.10/foundation-config-1.0.0.B003.10.jar!/META-INF/spring/cse.bean.xml] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317)
+2018-07-30 20:28:06,610 [INFO] Loading XML bean definitions from URL [jar:file:/C:/Users/jwx477404/.m2/repository/org/apache/servicecomb/foundation-common/1.0.0.B003.10/foundation-common-1.0.0.B003.10.jar!/META-INF/spring/common.bean.xml] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317)
+2018-07-30 20:28:06,632 [INFO] Loading XML bean definitions from URL [jar:file:/C:/Users/jwx477404/.m2/repository/org/apache/servicecomb/foundation-vertx/1.0.0.B003.10/foundation-vertx-1.0.0.B003.10.jar!/META-INF/spring/cse.bean.xml] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317)
+2018-07-30 20:28:06,649 [INFO] Loading XML bean definitions from URL [jar:file:/C:/Users/jwx477404/.m2/repository/com/huawei/paas/cse/foundation-auth/2.3.12.9/foundation-auth-2.3.12.9.jar!/META-INF/spring/auth.bean.xml] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317)
+2018-07-30 20:28:06,663 [INFO] Loading XML bean definitions from URL [jar:file:/C:/Users/jwx477404/.m2/repository/org/apache/servicecomb/foundation-metrics/1.0.0.B003.10/foundation-metrics-1.0.0.B003.10.jar!/META-INF/spring/metrics.bean.xml] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317)
+2018-07-30 20:28:06,674 [INFO] Loading XML bean definitions from URL [jar:file:/C:/Users/jwx477404/.m2/repository/org/apache/servicecomb/transport-rest-client/1.0.0.B003.10/transport-rest-client-1.0.0.B003.10.jar!/META-INF/spring/cse.transport.rest.bean.xml] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317)
+2018-07-30 20:28:06,683 [INFO] Loading XML bean definitions from URL [jar:file:/C:/Users/jwx477404/.m2/repository/org/apache/servicecomb/handler-bizkeeper/1.0.0.B003.10/handler-bizkeeper-1.0.0.B003.10.jar!/META-INF/spring/cse.bean.xml] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317)
+2018-07-30 20:28:06,695 [INFO] Loading XML bean definitions from URL [jar:file:/C:/Users/jwx477404/.m2/repository/org/apache/servicecomb/handler-loadbalance/1.0.0.B003.10/handler-loadbalance-1.0.0.B003.10.jar!/META-INF/spring/cse.bean.xml] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317)
+2018-07-30 20:28:06,707 [INFO] Loading XML bean definitions from URL [jar:file:/C:/Users/jwx477404/.m2/repository/com/huawei/paas/cse/cse-handler-cloud-extension/2.3.12.9/cse-handler-cloud-extension-2.3.12.9.jar!/META-INF/spring/services.bean.xml] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317)
+2018-07-30 20:28:06,717 [INFO] Loading XML bean definitions from URL [jar:file:/C:/Users/jwx477404/.m2/repository/com/huawei/paas/cse/cse-handler-tcc/2.3.12.9/cse-handler-tcc-2.3.12.9.jar!/META-INF/spring/cse.tcc.bean.xml] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317)
+2018-07-30 20:28:06,742 [INFO] Loading XML bean definitions from URL [jar:file:/C:/Users/jwx477404/.m2/repository/org/apache/servicecomb/java-chassis-core/1.0.0.B003.10/java-chassis-core-1.0.0.B003.10.jar!/META-INF/spring/cse.bean.xml] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317)
+2018-07-30 20:28:07,810 [WARN] No URLs will be polled as dynamic configuration sources. com.netflix.config.sources.URLConfigurationSource.<init>(URLConfigurationSource.java:121)
+2018-07-30 20:28:07,814 [INFO] To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath. com.netflix.config.sources.URLConfigurationSource.<init>(URLConfigurationSource.java:122)
+2018-07-30 20:28:07,827 [INFO] create dynamic config: org.apache.servicecomb.config.ConfigUtil.createDynamicConfig(ConfigUtil.java:185)
+2018-07-30 20:28:07,947 [INFO] create local config: org.apache.servicecomb.config.ConfigUtil.createLocalConfig(ConfigUtil.java:103)
+2018-07-30 20:28:07,948 [INFO]  jar:file:/C:/Users/jwx477404/.m2/repository/com/huawei/paas/cse/cse-solution-service-engine/2.3.12.9/cse-solution-service-engine-2.3.12.9.jar!/microservice.yaml. org.apache.servicecomb.config.ConfigUtil.createLocalConfig(ConfigUtil.java:105)
+2018-07-30 20:28:07,948 [INFO]  file:/D:/FST_CSE/cse-test-piles(2017-12-18)/cse-test-piles/pojo-client/target/classes/microservice.yaml. org.apache.servicecomb.config.ConfigUtil.createLocalConfig(ConfigUtil.java:105)
+2018-07-30 20:28:07,997 [INFO] get the SPI service success, the extend service is: class org.apache.servicecomb.config.archaius.sources.ConfigCenterConfigurationSourceImpl org.apache.servicecomb.foundation.common.utils.SPIServiceUtils.getTargetService(SPIServiceUtils.java:51)
+2018-07-30 20:28:07,997 [WARN] Config Center configuration source is not configured! org.apache.servicecomb.config.archaius.sources.ConfigCenterConfigurationSourceImpl.isValidSource(ConfigCenterConfigurationSourceImpl.java:60)
+2018-07-30 20:28:07,997 [INFO] Config Source serverUri is not correctly configured. org.apache.servicecomb.config.ConfigUtil.createConfigFromConfigCenter(ConfigUtil.java:176)
+2018-07-30 20:28:08,373 [INFO] JSR-330 'javax.inject.Inject' annotation found and supported for autowiring org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.<init>(AutowiredAnnotationBeanPostProcessor.java:155)
+2018-07-30 20:28:09,970 [INFO] Found swagger generator context: org.apache.servicecomb.swagger.generator.springmvc.SpringmvcSwaggerGeneratorContext org.apache.servicecomb.swagger.generator.core.CompositeSwaggerGeneratorContext.<init>(CompositeSwaggerGeneratorContext.java:39)
+2018-07-30 20:28:09,970 [INFO] Found swagger generator context: org.apache.servicecomb.swagger.generator.jaxrs.JaxrsSwaggerGeneratorContext org.apache.servicecomb.swagger.generator.core.CompositeSwaggerGeneratorContext.<init>(CompositeSwaggerGeneratorContext.java:39)
+2018-07-30 20:28:09,971 [INFO] Found swagger generator context: org.apache.servicecomb.swagger.generator.pojo.PojoSwaggerGeneratorContext org.apache.servicecomb.swagger.generator.core.CompositeSwaggerGeneratorContext.<init>(CompositeSwaggerGeneratorContext.java:39)
+2018-07-30 20:28:10,005 [INFO] found factory org.apache.servicecomb.swagger.invocation.springmvc.response.SpringmvcProducerResponseMapperFactory of org.apache.servicecomb.swagger.invocation.response.producer.ProducerResponseMapperFactory: org.apache.servicecomb.swagger.invocation.response.ResponseMapperFactorys.lambda$new$2(ResponseMapperFactorys.java:41)
+2018-07-30 20:28:10,005 [INFO] found factory org.apache.servicecomb.swagger.invocation.jaxrs.response.JaxrsProducerResponseMapperFactory of org.apache.servicecomb.swagger.invocation.response.producer.ProducerResponseMapperFactory: org.apache.servicecomb.swagger.invocation.response.ResponseMapperFactorys.lambda$new$2(ResponseMapperFactorys.java:41)
+2018-07-30 20:28:10,006 [INFO] found factory org.apache.servicecomb.swagger.invocation.response.producer.CseResponseProducerResponseMapperFactory of org.apache.servicecomb.swagger.invocation.response.producer.ProducerResponseMapperFactory: org.apache.servicecomb.swagger.invocation.response.ResponseMapperFactorys.lambda$new$2(ResponseMapperFactorys.java:41)
+2018-07-30 20:28:10,007 [INFO] found factory org.apache.servicecomb.swagger.invocation.response.producer.CompletableFutureProducerResponseMapperFactory of org.apache.servicecomb.swagger.invocation.response.producer.ProducerResponseMapperFactory: org.apache.servicecomb.swagger.invocation.response.ResponseMapperFactorys.lambda$new$2(ResponseMapperFactorys.java:41)
+2018-07-30 20:28:10,007 [INFO] found factory org.apache.servicecomb.swagger.invocation.response.producer.DefaultProducerResponseMapperFactory of org.apache.servicecomb.swagger.invocation.response.producer.ProducerResponseMapperFactory: org.apache.servicecomb.swagger.invocation.response.ResponseMapperFactorys.lambda$new$2(ResponseMapperFactorys.java:41)
+2018-07-30 20:28:10,016 [INFO] found factory org.apache.servicecomb.swagger.invocation.springmvc.response.SpringmvcConsumerResponseMapperFactory of org.apache.servicecomb.swagger.invocation.response.consumer.ConsumerResponseMapperFactory: org.apache.servicecomb.swagger.invocation.response.ResponseMapperFactorys.lambda$new$2(ResponseMapperFactorys.java:41)
+2018-07-30 20:28:10,016 [INFO] found factory org.apache.servicecomb.swagger.invocation.jaxrs.response.JaxrsConsumerResponseMapperFactory of org.apache.servicecomb.swagger.invocation.response.consumer.ConsumerResponseMapperFactory: org.apache.servicecomb.swagger.invocation.response.ResponseMapperFactorys.lambda$new$2(ResponseMapperFactorys.java:41)
+2018-07-30 20:28:10,017 [INFO] found factory org.apache.servicecomb.swagger.invocation.response.consumer.CseResponseConsumerResponseMapperFactory of org.apache.servicecomb.swagger.invocation.response.consumer.ConsumerResponseMapperFactory: org.apache.servicecomb.swagger.invocation.response.ResponseMapperFactorys.lambda$new$2(ResponseMapperFactorys.java:41)
+2018-07-30 20:28:10,018 [INFO] found factory org.apache.servicecomb.swagger.invocation.response.consumer.CompletableFutureConsumerResponseMapperFactory of org.apache.servicecomb.swagger.invocation.response.consumer.ConsumerResponseMapperFactory: org.apache.servicecomb.swagger.invocation.response.ResponseMapperFactorys.lambda$new$2(ResponseMapperFactorys.java:41)
+2018-07-30 20:28:10,018 [INFO] found factory org.apache.servicecomb.swagger.invocation.response.consumer.DefaultConsumerResponseMapperFactory of org.apache.servicecomb.swagger.invocation.response.consumer.ConsumerResponseMapperFactory: org.apache.servicecomb.swagger.invocation.response.ResponseMapperFactorys.lambda$new$2(ResponseMapperFactorys.java:41)
+2018-07-30 20:28:10,290 [INFO] load microservice config, name=pojoclientjxy, paths=[jar:file:/C:/Users/jwx477404/.m2/repository/com/huawei/paas/cse/cse-solution-service-engine/2.3.12.9/cse-solution-service-engine-2.3.12.9.jar!/microservice.yaml, file:/D:/FST_CSE/cse-test-piles(2017-12-18)/cse-test-piles/pojo-client/target/classes/microservice.yaml] org.apache.servicecomb.serviceregistry.definition.MicroserviceDefinition.logConfigPath(MicroserviceDefinition.java:142)
+2018-07-30 20:28:10,354 [INFO] It is running in the normal mode, a separated service registry is required org.apache.servicecomb.serviceregistry.registry.ServiceRegistryFactory.create(ServiceRegistryFactory.java:81)
+2018-07-30 20:28:10,527 [INFO] add network interface name:eth3,host address:10.40.49.214 org.apache.servicecomb.foundation.common.net.NetUtils.doGetIpv4AddressFromNetworkInterface(NetUtils.java:114)
+2018-07-30 20:28:10,564 [INFO] add network interface name:ppp2,host address:172.25.0.12 org.apache.servicecomb.foundation.common.net.NetUtils.doGetIpv4AddressFromNetworkInterface(NetUtils.java:114)
+2018-07-30 20:28:10,570 [INFO] add network interface name:ppp3,host address:128.8.0.139 org.apache.servicecomb.foundation.common.net.NetUtils.doGetIpv4AddressFromNetworkInterface(NetUtils.java:114)
+2018-07-30 20:28:10,597 [INFO] add host name from localhost:szxy2jwx4774041,host address:128.8.0.139 org.apache.servicecomb.foundation.common.net.NetUtils.<clinit>(NetUtils.java:72)
+2018-07-30 20:28:11,318 [INFO] add ak/sk cipher default com.huawei.paas.foundation.auth.credentials.AKSKManager.lambda$static$0(AKSKManager.java:41)
+2018-07-30 20:28:11,318 [INFO] add ak/sk cipher security com.huawei.paas.foundation.auth.credentials.AKSKManager.lambda$static$0(AKSKManager.java:41)
+2018-07-30 20:28:11,320 [INFO] read ak/sk from microservice.yaml. com.huawei.paas.foundation.auth.credentials.AKSKOption.buildFromYaml(AKSKOption.java:153)
+2018-07-30 20:28:12,134 [INFO] executor group 2, thread per group 4. org.apache.servicecomb.core.executor.FixedThreadExecutor.<init>(FixedThreadExecutor.java:54)
+2018-07-30 20:28:12,694 [INFO] generate cse.gen.pojo_jxy.pojoclientjxy.manual.ManualTestIntf in classLoader sun.misc.Launcher$AppClassLoader@14dad5dc. org.apache.servicecomb.common.javassist.JavassistUtils.createClass(JavassistUtils.java:207)
+2018-07-30 20:28:12,831 [INFO] generate swagger for pojo-jxy/pojoclientjxy/manual, swagger: ---
+swagger: "2.0"
+info:
+  version: "1.0.0"
+  title: "swagger definition for com.huawei.paas.cse.demo.basicoperation.ManualTest"
+  x-java-interface: "cse.gen.pojo_jxy.pojoclientjxy.manual.ManualTestIntf"
+basePath: "/manual"
+consumes:
+- "application/json"
+produces:
+- "application/json"
+paths:
+  /client/session/{control}/{log}:
+    get:
+      operationId: "sessionStickinessRuleTest"
+      parameters:
+      - name: "control"
+        in: "path"
+        required: true
+        type: "string"
+      - name: "log"
+        in: "path"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "response of 200"
+          schema:
+            $ref: "#/definitions/ResponseBody"
+  /client/rc/{num}/bizk/{bizk}:
+    get:
+      operationId: "sendSomeRequest"
+      parameters:
+      - name: "num"
+        in: "path"
+        required: true
+        type: "string"
+      - name: "bizk"
+        in: "path"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "response of 200"
+          schema:
+            $ref: "#/definitions/ResponseBody"
+  /client/WeightedResponse/{time}:
+    get:
+      operationId: "WeightedResponseInvoke"
+      parameters:
+      - name: "time"
+        in: "path"
+        required: true
+        type: "integer"
+        format: "int32"
+      responses:
+        200:
+          description: "response of 200"
+          schema:
+            type: "string"
+  /client/{mode}/{time}:
+    get:
+      operationId: "pojoclienttest"
+      parameters:
+      - name: "mode"
+        in: "path"
+        required: true
+        type: "string"
+      - name: "time"
+        in: "path"
+        required: true
+        type: "integer"
+        format: "int32"
+      responses:
+        200:
+          description: "response of 200"
+          schema:
+            $ref: "#/definitions/ResponseBody"
+  /client/threadInvoke/{threadnum}:
+    get:
+      operationId: "threadInvoke"
+      parameters:
+      - name: "threadnum"
+        in: "path"
+        required: true
+        type: "integer"
+        format: "int32"
+      responses:
+        200:
+          description: "response of 200"
+          schema:
+            $ref: "#/definitions/ResponseBody"
+  /server/rc/{num}/bizk/{bizk}:
+    get:
+      operationId: "sendSomeRequestByServer"
+      parameters:
+      - name: "num"
+        in: "path"
+        required: true
+        type: "string"
+      - name: "bizk"
+        in: "path"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "response of 200"
+          schema:
+            $ref: "#/definitions/ResponseBody"
+  /client/grayRelese/{invokenum}/{log}:
+    get:
+      operationId: "grayReleseTest"
+      parameters:
+      - name: "invokenum"
+        in: "path"
+        required: true
+        type: "integer"
+        format: "int32"
+      - name: "log"
+        in: "path"
+        required: true
+        type: "integer"
+        format: "int32"
+      responses:
+        200:
+          description: "response of 200"
+          schema:
+            $ref: "#/definitions/ResponseBody"
+  /client/loadbalance/{num}/delaytime/{delaytime}:
+    get:
+      operationId: "loadbalance"
+      parameters:
+      - name: "num"
+        in: "path"
+        required: true
+        type: "integer"
+        format: "int32"
+      - name: "delaytime"
+        in: "path"
+        required: true
+        type: "integer"
+        format: "int32"
+      responses:
+        200:
+          description: "response of 200"
+          schema:
+            $ref: "#/definitions/ResponseBody"
+  /client/readlog/{startTime}/{message}:
+    get:
+      operationId: "readLogTest"
+      parameters:
+      - name: "startTime"
+        in: "path"
+        required: true
+        type: "string"
+      - name: "message"
+        in: "path"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "response of 200"
+          schema:
+            type: "string"
+  /client/tccTest/{tcc}/{mode}:
+    get:
+      operationId: "tccTest"
+      parameters:
+      - name: "tcc"
+        in: "path"
+        required: true
+        type: "integer"
+        format: "int32"
+      - name: "mode"
+        in: "path"
+        required: true
+        type: "integer"
+        format: "int32"
+      responses:
+        200:
+          description: "response of 200"
+          schema:
+            type: "string"
+  /client/mytest/strtest/{message}:
+    get:
+      operationId: "myTest"
+      parameters:
+      - name: "message"
+        in: "path"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "response of 200"
+          schema:
+            $ref: "#/definitions/ResponseBody"
+definitions:
+  ResponseBody:
+    type: "object"
+    properties:
+      temp:
+        type: "string"
+      result:
+        type: "string"
+      sdkLog:
+        type: "array"
+        items:
+          type: "string"
+    x-java-class: "com.huawei.paas.cse.demo.response.ResponseBody"
+ org.apache.servicecomb.core.definition.schema.ProducerSchemaFactory.createSchema(ProducerSchemaFactory.java:114)
+2018-07-30 20:28:12,835 [INFO] register schema pojo-jxy/pojoclientjxy/manual org.apache.servicecomb.core.definition.loader.SchemaLoader.registerSchema(SchemaLoader.java:91)
+2018-07-30 20:28:12,851 [INFO] found DiscoveryFilter: org.apache.servicecomb.serviceregistry.discovery.DiscoveryTree.sort(DiscoveryTree.java:53)
+2018-07-30 20:28:12,852 [INFO] DiscoveryFilter org.apache.servicecomb.loadbalance.filter.CseServerDiscoveryFilter. org.apache.servicecomb.serviceregistry.discovery.DiscoveryTree.sort(DiscoveryTree.java:55)
+2018-07-30 20:28:12,879 [INFO] generate cse.gen.pojo_jxy.pojoclientjxy.test.ClientImplIntf in classLoader sun.misc.Launcher$AppClassLoader@14dad5dc. org.apache.servicecomb.common.javassist.JavassistUtils.createClass(JavassistUtils.java:207)
+2018-07-30 20:28:12,902 [INFO] generate swagger for pojo-jxy/pojoclientjxy/test, swagger: ---
+swagger: "2.0"
+info:
+  version: "1.0.0"
+  title: "swagger definition for com.huawei.paas.cse.demo.pojo.client.ClientImpl"
+  x-java-interface: "cse.gen.pojo_jxy.pojoclientjxy.test.ClientImplIntf"
+basePath: "/demo"
+consumes:
+- "application/json"
+produces:
+- "application/json"
+paths:
+  /client/session/{control}/{log}:
+    get:
+      operationId: "sessionStickinessRuleTest"
+      parameters:
+      - name: "control"
+        in: "path"
+        required: true
+        type: "string"
+      - name: "log"
+        in: "path"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "response of 200"
+          schema:
+            $ref: "#/definitions/ResponseBody"
+  /client/rc/{num}/bizk/{bizk}:
+    get:
+      operationId: "sendSomeRequest"
+      parameters:
+      - name: "num"
+        in: "path"
+        required: true
+        type: "string"
+      - name: "bizk"
+        in: "path"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "response of 200"
+          schema:
+            type: "string"
+  /client/WeightedResponse/{time}:
+    get:
+      operationId: "WeightedResponseInvoke"
+      parameters:
+      - name: "time"
+        in: "path"
+        required: true
+        type: "integer"
+        format: "int32"
+      responses:
+        200:
+          description: "response of 200"
+          schema:
+            type: "string"
+  /client/{mode}/{time}:
+    get:
+      operationId: "pojoclienttest"
+      parameters:
+      - name: "mode"
+        in: "path"
+        required: true
+        type: "string"
+      - name: "time"
+        in: "path"
+        required: true
+        type: "integer"
+        format: "int32"
+      responses:
+        200:
+          description: "response of 200"
+          schema:
+            type: "string"
+  /client/threadInvoke/{threadnum}:
+    get:
+      operationId: "threadInvoke"
+      parameters:
+      - name: "threadnum"
+        in: "path"
+        required: true
+        type: "integer"
+        format: "int32"
+      responses:
+        200:
+          description: "response of 200"
+          schema:
+            type: "string"
+  /server/rc/{num}/bizk/{bizk}:
+    get:
+      operationId: "sendSomeRequestByServer"
+      parameters:
+      - name: "num"
+        in: "path"
+        required: true
+        type: "string"
+      - name: "bizk"
+        in: "path"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "response of 200"
+          schema:
+            type: "string"
+  /client/grayRelese/{invokenum}/{log}:
+    get:
+      operationId: "grayReleseTest"
+      parameters:
+      - name: "invokenum"
+        in: "path"
+        required: true
+        type: "integer"
+        format: "int32"
+      - name: "log"
+        in: "path"
+        required: true
+        type: "integer"
+        format: "int32"
+      responses:
+        200:
+          description: "response of 200"
+          schema:
+            type: "string"
+  /client/loadbalance/{num}/delaytime/{delaytime}:
+    get:
+      operationId: "loadbalance"
+      parameters:
+      - name: "num"
+        in: "path"
+        required: true
+        type: "integer"
+        format: "int32"
+      - name: "delaytime"
+        in: "path"
+        required: true
+        type: "integer"
+        format: "int32"
+      responses:
+        200:
+          description: "response of 200"
+          schema:
+            type: "string"
+  /client/readlog/{startTime}/{message}:
+    get:
+      operationId: "readLogTest"
+      parameters:
+      - name: "startTime"
+        in: "path"
+        required: true
+        type: "string"
+      - name: "message"
+        in: "path"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "response of 200"
+          schema:
+            type: "string"
+  /client/tccTest/{tcc}/{mode}:
+    get:
+      operationId: "tccTest"
+      parameters:
+      - name: "tcc"
+        in: "path"
+        required: true
+        type: "integer"
+        format: "int32"
+      - name: "mode"
+        in: "path"
+        required: true
+        type: "integer"
+        format: "int32"
+      responses:
+        200:
+          description: "response of 200"
+          schema:
+            type: "string"
+  /client/mytest/strtest/{message}:
+    get:
+      operationId: "myTest"
+      parameters:
+      - name: "message"
+        in: "path"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "response of 200"
+          schema:
+            $ref: "#/definitions/ResponseBody"
+definitions:
+  ResponseBody:
+    type: "object"
+    properties:
+      temp:
+        type: "string"
+      result:
+        type: "string"
+      sdkLog:
+        type: "array"
+        items:
+          type: "string"
+    x-java-class: "com.huawei.paas.cse.demo.response.ResponseBody"
+ org.apache.servicecomb.core.definition.schema.ProducerSchemaFactory.createSchema(ProducerSchemaFactory.java:114)
+2018-07-30 20:28:12,907 [INFO] register schema pojo-jxy/pojoclientjxy/test org.apache.servicecomb.core.definition.loader.SchemaLoader.registerSchema(SchemaLoader.java:91)
+2018-07-30 20:28:12,920 [WARN] address /0.0.0.0:1157, auto select a host address to publish 128.8.0.139:1157, maybe not the correct one org.apache.servicecomb.serviceregistry.RegistryUtils.genPublishIpPort(RegistryUtils.java:181)
+2018-07-30 20:28:12,925 [INFO] choose org.apache.servicecomb.transport.rest.vertx.VertxRestTransport for rest. org.apache.servicecomb.core.transport.TransportManager.chooseOneTransport(TransportManager.java:84)
+2018-07-30 20:28:12,925 [INFO] choose org.apache.servicecomb.transport.highway.HighwayTransport for highway. org.apache.servicecomb.core.transport.TransportManager.chooseOneTransport(TransportManager.java:84)
+2018-07-30 20:28:12,974 [INFO] Found HttpServerFilter: org.apache.servicecomb.common.rest.filter.inner.ServerRestArgsFilter. org.apache.servicecomb.transport.rest.vertx.AbstractVertxHttpDispatcher.<init>(AbstractVertxHttpDispatcher.java:40)
+2018-07-30 20:28:12,975 [INFO] Found HttpServerFilter: org.apache.servicecomb.common.rest.filter.tracing.TracingFilter. org.apache.servicecomb.transport.rest.vertx.AbstractVertxHttpDispatcher.<init>(AbstractVertxHttpDispatcher.java:40)
+2018-07-30 20:28:12,977 [INFO] init vertx http dispatcher org.apache.servicecomb.transport.rest.vertx.VertxRestDispatcher org.apache.servicecomb.transport.rest.vertx.RestServerVerticle.initDispatcher(RestServerVerticle.java:97)
+2018-07-30 20:28:12,981 [INFO] set uploads directory to null. org.apache.servicecomb.transport.rest.vertx.AbstractVertxHttpDispatcher.createBodyHandler(AbstractVertxHttpDispatcher.java:53)
+2018-07-30 20:28:13,041 [INFO] rest listen success. address=0.0.0.0:1157 org.apache.servicecomb.transport.rest.vertx.RestServerVerticle.lambda$startListen$0(RestServerVerticle.java:105)
+2018-07-30 20:28:13,042 [INFO] endpoint to publish: rest://128.8.0.139:1157 org.apache.servicecomb.core.transport.TransportManager.init(TransportManager.java:58)
+2018-07-30 20:28:13,067 [WARN] highway listen address is not configured, will not listen. org.apache.servicecomb.transport.highway.HighwayServerVerticle.startListen(HighwayServerVerticle.java:64)
+2018-07-30 20:28:13,090 [INFO] add schema to service paths. pojo-jxy:pojoclientjxy:test. org.apache.servicecomb.common.rest.locator.ServicePathManager.addSchema(ServicePathManager.java:91)
+2018-07-30 20:28:13,091 [INFO] add schema to service paths. pojo-jxy:pojoclientjxy:manual. org.apache.servicecomb.common.rest.locator.ServicePathManager.addSchema(ServicePathManager.java:91)
+2018-07-30 20:28:13,093 [INFO] Swagger mapped "{[/manual/client/loadbalance/{num}/delaytime/{delaytime}/], method=[GET], produces=[application/json]}" onto public abstract com.huawei.paas.cse.demo.response.ResponseBody cse.gen.pojo_jxy.pojoclientjxy.manual.ManualTestIntf.loadbalance(java.lang.Integer,java.lang.Integer) org.apache.servicecomb.common.rest.locator.MicroservicePaths.printPath(MicroservicePaths.java:103)
+2018-07-30 20:28:13,093 [INFO] Swagger mapped "{[/demo/client/loadbalance/{num}/delaytime/{delaytime}/], method=[GET], produces=[application/json]}" onto public abstract java.lang.String cse.gen.pojo_jxy.pojoclientjxy.test.ClientImplIntf.loadbalance(java.lang.Integer,java.lang.Integer) org.apache.servicecomb.common.rest.locator.MicroservicePaths.printPath(MicroservicePaths.java:103)
+2018-07-30 20:28:13,093 [INFO] Swagger mapped "{[/manual/client/WeightedResponse/{time}/], method=[GET], produces=[application/json]}" onto public abstract java.lang.String cse.gen.pojo_jxy.pojoclientjxy.manual.ManualTestIntf.WeightedResponseInvoke(java.lang.Integer) org.apache.servicecomb.common.rest.locator.MicroservicePaths.printPath(MicroservicePaths.java:103)
+2018-07-30 20:28:13,094 [INFO] Swagger mapped "{[/demo/client/WeightedResponse/{time}/], method=[GET], produces=[application/json]}" onto public abstract java.lang.String cse.gen.pojo_jxy.pojoclientjxy.test.ClientImplIntf.WeightedResponseInvoke(java.lang.Integer) org.apache.servicecomb.common.rest.locator.MicroservicePaths.printPath(MicroservicePaths.java:103)
+2018-07-30 20:28:13,094 [INFO] Swagger mapped "{[/manual/client/mytest/strtest/{message}/], method=[GET], produces=[application/json]}" onto public abstract com.huawei.paas.cse.demo.response.ResponseBody cse.gen.pojo_jxy.pojoclientjxy.manual.ManualTestIntf.myTest(java.lang.String) org.apache.servicecomb.common.rest.locator.MicroservicePaths.printPath(MicroservicePaths.java:103)
+2018-07-30 20:28:13,094 [INFO] Swagger mapped "{[/demo/client/mytest/strtest/{message}/], method=[GET], produces=[application/json]}" onto public abstract com.huawei.paas.cse.demo.response.ResponseBody cse.gen.pojo_jxy.pojoclientjxy.test.ClientImplIntf.myTest(java.lang.String) org.apache.servicecomb.common.rest.locator.MicroservicePaths.printPath(MicroservicePaths.java:103)
+2018-07-30 20:28:13,094 [INFO] Swagger mapped "{[/manual/client/threadInvoke/{threadnum}/], method=[GET], produces=[application/json]}" onto public abstract com.huawei.paas.cse.demo.response.ResponseBody cse.gen.pojo_jxy.pojoclientjxy.manual.ManualTestIntf.threadInvoke(java.lang.Integer) org.apache.servicecomb.common.rest.locator.MicroservicePaths.printPath(MicroservicePaths.java:103)
+2018-07-30 20:28:13,095 [INFO] Swagger mapped "{[/manual/client/grayRelese/{invokenum}/{log}/], method=[GET], produces=[application/json]}" onto public abstract com.huawei.paas.cse.demo.response.ResponseBody cse.gen.pojo_jxy.pojoclientjxy.manual.ManualTestIntf.grayReleseTest(java.lang.Integer,java.lang.Integer) org.apache.servicecomb.common.rest.locator.MicroservicePaths.printPath(MicroservicePaths.java:103)
+2018-07-30 20:28:13,095 [INFO] Swagger mapped "{[/demo/client/threadInvoke/{threadnum}/], method=[GET], produces=[application/json]}" onto public abstract java.lang.String cse.gen.pojo_jxy.pojoclientjxy.test.ClientImplIntf.threadInvoke(java.lang.Integer) org.apache.servicecomb.common.rest.locator.MicroservicePaths.printPath(MicroservicePaths.java:103)
+2018-07-30 20:28:13,095 [INFO] Swagger mapped "{[/demo/client/grayRelese/{invokenum}/{log}/], method=[GET], produces=[application/json]}" onto public abstract java.lang.String cse.gen.pojo_jxy.pojoclientjxy.test.ClientImplIntf.grayReleseTest(java.lang.Integer,java.lang.Integer) org.apache.servicecomb.common.rest.locator.MicroservicePaths.printPath(MicroservicePaths.java:103)
+2018-07-30 20:28:13,102 [INFO] Swagger mapped "{[/manual/client/session/{control}/{log}/], method=[GET], produces=[application/json]}" onto public abstract com.huawei.paas.cse.demo.response.ResponseBody cse.gen.pojo_jxy.pojoclientjxy.manual.ManualTestIntf.sessionStickinessRuleTest(java.lang.String,java.lang.String) org.apache.servicecomb.common.rest.locator.MicroservicePaths.printPath(MicroservicePaths.java:103)
+2018-07-30 20:28:13,102 [INFO] Swagger mapped "{[/manual/client/rc/{num}/bizk/{bizk}/], method=[GET], produces=[application/json]}" onto public abstract com.huawei.paas.cse.demo.response.ResponseBody cse.gen.pojo_jxy.pojoclientjxy.manual.ManualTestIntf.sendSomeRequest(java.lang.String,java.lang.String) org.apache.servicecomb.common.rest.locator.MicroservicePaths.printPath(MicroservicePaths.java:103)
+2018-07-30 20:28:13,103 [INFO] Swagger mapped "{[/manual/server/rc/{num}/bizk/{bizk}/], method=[GET], produces=[application/json]}" onto public abstract com.huawei.paas.cse.demo.response.ResponseBody cse.gen.pojo_jxy.pojoclientjxy.manual.ManualTestIntf.sendSomeRequestByServer(java.lang.String,java.lang.String) org.apache.servicecomb.common.rest.locator.MicroservicePaths.printPath(MicroservicePaths.java:103)
+2018-07-30 20:28:13,103 [INFO] Swagger mapped "{[/manual/client/readlog/{startTime}/{message}/], method=[GET], produces=[application/json]}" onto public abstract java.lang.String cse.gen.pojo_jxy.pojoclientjxy.manual.ManualTestIntf.readLogTest(java.lang.String,java.lang.String) org.apache.servicecomb.common.rest.locator.MicroservicePaths.printPath(MicroservicePaths.java:103)
+2018-07-30 20:28:13,104 [INFO] Swagger mapped "{[/manual/client/tccTest/{tcc}/{mode}/], method=[GET], produces=[application/json]}" onto public abstract java.lang.String cse.gen.pojo_jxy.pojoclientjxy.manual.ManualTestIntf.tccTest(java.lang.Integer,java.lang.Integer) org.apache.servicecomb.common.rest.locator.MicroservicePaths.printPath(MicroservicePaths.java:103)
+2018-07-30 20:28:13,104 [INFO] Swagger mapped "{[/demo/client/session/{control}/{log}/], method=[GET], produces=[application/json]}" onto public abstract com.huawei.paas.cse.demo.response.ResponseBody cse.gen.pojo_jxy.pojoclientjxy.test.ClientImplIntf.sessionStickinessRuleTest(java.lang.String,java.lang.String) org.apache.servicecomb.common.rest.locator.MicroservicePaths.printPath(MicroservicePaths.java:103)
+2018-07-30 20:28:13,104 [INFO] Swagger mapped "{[/demo/client/rc/{num}/bizk/{bizk}/], method=[GET], produces=[application/json]}" onto public abstract java.lang.String cse.gen.pojo_jxy.pojoclientjxy.test.ClientImplIntf.sendSomeRequest(java.lang.String,java.lang.String) org.apache.servicecomb.common.rest.locator.MicroservicePaths.printPath(MicroservicePaths.java:103)
+2018-07-30 20:28:13,105 [INFO] Swagger mapped "{[/demo/server/rc/{num}/bizk/{bizk}/], method=[GET], produces=[application/json]}" onto public abstract java.lang.String cse.gen.pojo_jxy.pojoclientjxy.test.ClientImplIntf.sendSomeRequestByServer(java.lang.String,java.lang.String) org.apache.servicecomb.common.rest.locator.MicroservicePaths.printPath(MicroservicePaths.java:103)
+2018-07-30 20:28:13,105 [INFO] Swagger mapped "{[/demo/client/readlog/{startTime}/{message}/], method=[GET], produces=[application/json]}" onto public abstract java.lang.String cse.gen.pojo_jxy.pojoclientjxy.test.ClientImplIntf.readLogTest(java.lang.String,java.lang.String) org.apache.servicecomb.common.rest.locator.MicroservicePaths.printPath(MicroservicePaths.java:103)
+2018-07-30 20:28:13,105 [INFO] Swagger mapped "{[/demo/client/tccTest/{tcc}/{mode}/], method=[GET], produces=[application/json]}" onto public abstract java.lang.String cse.gen.pojo_jxy.pojoclientjxy.test.ClientImplIntf.tccTest(java.lang.Integer,java.lang.Integer) org.apache.servicecomb.common.rest.locator.MicroservicePaths.printPath(MicroservicePaths.java:103)
+2018-07-30 20:28:13,105 [INFO] Swagger mapped "{[/manual/client/{mode}/{time}/], method=[GET], produces=[application/json]}" onto public abstract com.huawei.paas.cse.demo.response.ResponseBody cse.gen.pojo_jxy.pojoclientjxy.manual.ManualTestIntf.pojoclienttest(java.lang.String,java.lang.Integer) org.apache.servicecomb.common.rest.locator.MicroservicePaths.printPath(MicroservicePaths.java:103)
+2018-07-30 20:28:13,106 [INFO] Swagger mapped "{[/demo/client/{mode}/{time}/], method=[GET], produces=[application/json]}" onto public abstract java.lang.String cse.gen.pojo_jxy.pojoclientjxy.test.ClientImplIntf.pojoclienttest(java.lang.String,java.lang.Integer) org.apache.servicecomb.common.rest.locator.MicroservicePaths.printPath(MicroservicePaths.java:103)
+2018-07-30 20:28:13,113 [INFO] running microservice register task. org.apache.servicecomb.serviceregistry.task.MicroserviceRegisterTask.doRegister(MicroserviceRegisterTask.java:64)
+2018-07-30 20:28:13,123 [INFO] Microservice exists in service center, no need to register. id=2865602827 appId=pojo-jxy, name=pojoclientjxy, version=0.0.1 org.apache.servicecomb.serviceregistry.task.MicroserviceRegisterTask.doRegister(MicroserviceRegisterTask.java:72)
+2018-07-30 20:28:13,150 [INFO] SchemaIds is equals to service center. id=2865602827 appId=pojo-jxy, name=pojoclientjxy, version=0.0.1, schemaIds=[test, manual] org.apache.servicecomb.serviceregistry.task.MicroserviceRegisterTask.checkSchemaIdSet(MicroserviceRegisterTask.java:135)
+2018-07-30 20:28:13,161 [INFO] schemaId test exists true org.apache.servicecomb.serviceregistry.task.MicroserviceRegisterTask.registerSchemas(MicroserviceRegisterTask.java:151)
+2018-07-30 20:28:13,171 [INFO] schemaId manual exists true org.apache.servicecomb.serviceregistry.task.MicroserviceRegisterTask.registerSchemas(MicroserviceRegisterTask.java:151)
+2018-07-30 20:28:13,182 [INFO] create MicroserviceVersions, appId=default, microserviceName=SERVICECENTER. org.apache.servicecomb.serviceregistry.consumer.MicroserviceVersions.<init>(MicroserviceVersions.java:75)
+2018-07-30 20:28:13,198 [INFO] find instances[2] from service center success. service=default/SERVICECENTER/0.0.0+ org.apache.servicecomb.serviceregistry.registry.AbstractServiceRegistry.findServiceInstances(AbstractServiceRegistry.java:257)
+2018-07-30 20:28:13,198 [INFO] service id=2972923847, instance id=825440473, endpoints=[rest://172.16.0.235:30100?sslEnabled=true] org.apache.servicecomb.serviceregistry.registry.AbstractServiceRegistry.findServiceInstances(AbstractServiceRegistry.java:263)
+2018-07-30 20:28:13,199 [INFO] service id=2972923847, instance id=825507904, endpoints=[rest://172.16.0.219:30100?sslEnabled=true] org.apache.servicecomb.serviceregistry.registry.AbstractServiceRegistry.findServiceInstances(AbstractServiceRegistry.java:263)
+2018-07-30 20:28:13,210 [INFO] create MicroserviceVersionRule, appId=default, microserviceName=SERVICECENTER, versionRule=latest. org.apache.servicecomb.serviceregistry.consumer.MicroserviceVersions.createAndInitMicroserviceVersionRule(MicroserviceVersions.java:204)
+2018-07-30 20:28:13,225 [INFO] add microserviceVersion, appId=default, microserviceName=SERVICECENTER, version=1.0.0, versionRule=latest. org.apache.servicecomb.serviceregistry.consumer.MicroserviceVersionRule.addMicroserviceVersion(MicroserviceVersionRule.java:80)
+2018-07-30 20:28:13,231 [INFO] set instances, appId=default, microserviceName=SERVICECENTER, versionRule=latest, instanceId=825440473, endpoints=[rest://172.16.0.235:30100?sslEnabled=true]. org.apache.servicecomb.serviceregistry.consumer.MicroserviceVersionRule.lambda$setInstances$4(MicroserviceVersionRule.java:146)
+2018-07-30 20:28:13,232 [INFO] set instances, appId=default, microserviceName=SERVICECENTER, versionRule=latest, instanceId=825507904, endpoints=[rest://172.16.0.219:30100?sslEnabled=true]. org.apache.servicecomb.serviceregistry.consumer.MicroserviceVersionRule.lambda$setInstances$4(MicroserviceVersionRule.java:146)
+2018-07-30 20:28:13,233 [INFO] read MicroserviceRegisterTask status is FINISHED org.apache.servicecomb.serviceregistry.task.ServiceCenterTask.onRegisterTask(ServiceCenterTask.java:51)
+2018-07-30 20:28:13,233 [INFO] running microservice instance register task. org.apache.servicecomb.serviceregistry.task.MicroserviceInstanceRegisterTask.doRegister(MicroserviceInstanceRegisterTask.java:61)
+2018-07-30 20:28:13,282 [INFO] Register microservice instance success. microserviceId=2865602827 instanceId=885040931 endpoints=[rest://128.8.0.139:1157] lease 120s org.apache.servicecomb.serviceregistry.task.MicroserviceInstanceRegisterTask.doRegister(MicroserviceInstanceRegisterTask.java:83)
+2018-07-30 20:28:13,283 [INFO] receive MicroserviceInstanceRegisterTask event, check instance Id... org.apache.servicecomb.core.CseApplicationListener$1.afterRegistryInstance(CseApplicationListener.java:170)
+2018-07-30 20:28:13,285 [INFO] instance registry succeeds for the first time, will send AFTER_REGISTRY event. org.apache.servicecomb.core.CseApplicationListener$1.afterRegistryInstance(CseApplicationListener.java:172)
+2018-07-30 20:28:13,286 [INFO] Use the config to access to CSE Monitor!https://128.118.17.243:30109 com.huawei.paas.monitor.MonitorBootListener.onBootEvent(MonitorBootListener.java:44)
+2018-07-30 20:28:13,343 [INFO] Monitor data sender started. Configured data providers is {com.huawei.paas.monitor.HealthMonitorDataProvider,com.huawei.paas.cse.tcc.upload.TransactionMonitorDataProvider,} com.huawei.paas.monitor.DataFactory.start(DataFactory.java:90)
+2018-07-30 20:28:13,346 [INFO] read MicroserviceInstanceRegisterTask status is FINISHED org.apache.servicecomb.serviceregistry.task.ServiceCenterTask.onRegisterTask(ServiceCenterTask.java:51)
+2018-07-30 20:28:13,439 [INFO] create MicroserviceVersions, appId=pojo-jxy, microserviceName=pojojxy. org.apache.servicecomb.serviceregistry.consumer.MicroserviceVersions.<init>(MicroserviceVersions.java:75)
+2018-07-30 20:28:13,452 [INFO] find instances[1] from service center success. service=pojo-jxy/pojojxy/0.0.0+ org.apache.servicecomb.serviceregistry.registry.AbstractServiceRegistry.findServiceInstances(AbstractServiceRegistry.java:257)
+2018-07-30 20:28:13,453 [INFO] service id=2860521759, instance id=884320780, endpoints=[rest://128.8.0.139:1022] org.apache.servicecomb.serviceregistry.registry.AbstractServiceRegistry.findServiceInstances(AbstractServiceRegistry.java:263)
+2018-07-30 20:28:13,463 [INFO] create MicroserviceVersionRule, appId=pojo-jxy, microserviceName=pojojxy, versionRule=0.0.1+. org.apache.servicecomb.serviceregistry.consumer.MicroserviceVersions.createAndInitMicroserviceVersionRule(MicroserviceVersions.java:204)
+2018-07-30 20:28:13,463 [INFO] add microserviceVersion, appId=pojo-jxy, microserviceName=pojojxy, version=0.0.5, versionRule=0.0.1+. org.apache.servicecomb.serviceregistry.consumer.MicroserviceVersionRule.addMicroserviceVersion(MicroserviceVersionRule.java:80)
+2018-07-30 20:28:13,464 [INFO] set instances, appId=pojo-jxy, microserviceName=pojojxy, versionRule=0.0.1+, instanceId=884320780, endpoints=[rest://128.8.0.139:1022]. org.apache.servicecomb.serviceregistry.consumer.MicroserviceVersionRule.lambda$setInstances$4(MicroserviceVersionRule.java:146)
+2018-07-30 20:28:13,476 [INFO] load schema from service center, microservice=pojo-jxy:pojojxy:0.0.5, schemaId=tcc-server, result=true org.apache.servicecomb.core.definition.schema.ConsumerSchemaFactory.loadSwagger(ConsumerSchemaFactory.java:145)
+2018-07-30 20:28:13,488 [INFO] watching microservice 2865602827 successfully, the chosen service center address is 128.118.35.240:30100 org.apache.servicecomb.serviceregistry.client.http.ServiceRegistryClientImpl.lambda$watch$35(ServiceRegistryClientImpl.java:535)
+2018-07-30 20:28:13,571 [INFO] register schema pojo-jxy/pojojxy/tcc-server org.apache.servicecomb.core.definition.loader.SchemaLoader.registerSchema(SchemaLoader.java:91)
+2018-07-30 20:28:13,575 [INFO] generate cse.gen.pojo_jxy.pojojxy.tcc_server.splitParam.splitParamBody in classLoader sun.misc.Launcher$AppClassLoader@14dad5dc. org.apache.servicecomb.common.javassist.JavassistUtils.createClass(JavassistUtils.java:207)
+2018-07-30 20:28:13,584 [INFO] generate cse.gen.pojo_jxy.pojojxy.tcc_server.wrapParam.wrapParamBody in classLoader sun.misc.Launcher$AppClassLoader@14dad5dc. org.apache.servicecomb.common.javassist.JavassistUtils.createClass(JavassistUtils.java:207)
+2018-07-30 20:28:13,585 [INFO] generate cse.gen.pojo_jxy.pojojxy.tcc_server.serverCancel.serverCancelBody in classLoader sun.misc.Launcher$AppClassLoader@14dad5dc. org.apache.servicecomb.common.javassist.JavassistUtils.createClass(JavassistUtils.java:207)
+2018-07-30 20:28:13,587 [INFO] generate cse.gen.pojo_jxy.pojojxy.tcc_server.serverConfirm.serverConfirmBody in classLoader sun.misc.Launcher$AppClassLoader@14dad5dc. org.apache.servicecomb.common.javassist.JavassistUtils.createClass(JavassistUtils.java:207)
+2018-07-30 20:28:13,589 [INFO] generate cse.gen.pojo_jxy.pojojxy.tcc_server.TestTccImplIntf in classLoader sun.misc.Launcher$AppClassLoader@14dad5dc. org.apache.servicecomb.common.javassist.JavassistUtils.createClass(JavassistUtils.java:207)
+2018-07-30 20:28:13,590 [INFO] found DiscoveryFilter: org.apache.servicecomb.serviceregistry.discovery.DiscoveryTree.sort(DiscoveryTree.java:53)
+2018-07-30 20:28:13,590 [INFO] DiscoveryFilter org.apache.servicecomb.loadbalance.filter.CseServerDiscoveryFilter. org.apache.servicecomb.serviceregistry.discovery.DiscoveryTree.sort(DiscoveryTree.java:55)
+2018-07-30 20:28:13,603 [INFO] load schema from service center, microservice=pojo-jxy:pojojxy:0.0.5, schemaId=controller, result=true org.apache.servicecomb.core.definition.schema.ConsumerSchemaFactory.loadSwagger(ConsumerSchemaFactory.java:145)
+2018-07-30 20:28:13,634 [INFO] register schema pojo-jxy/pojojxy/controller org.apache.servicecomb.core.definition.loader.SchemaLoader.registerSchema(SchemaLoader.java:91)
+2018-07-30 20:28:13,636 [INFO] generate cse.gen.pojo_jxy.pojojxy.controller.ControllerImplIntf in classLoader sun.misc.Launcher$AppClassLoader@14dad5dc. org.apache.servicecomb.common.javassist.JavassistUtils.createClass(JavassistUtils.java:207)
+2018-07-30 20:28:13,648 [INFO] load schema from service center, microservice=pojo-jxy:pojojxy:0.0.5, schemaId=serverImpl, result=true org.apache.servicecomb.core.definition.schema.ConsumerSchemaFactory.loadSwagger(ConsumerSchemaFactory.java:145)
+2018-07-30 20:28:13,661 [INFO] register schema pojo-jxy/pojojxy/serverImpl org.apache.servicecomb.core.definition.loader.SchemaLoader.registerSchema(SchemaLoader.java:91)
+2018-07-30 20:28:13,662 [INFO] generate cse.gen.pojo_jxy.pojojxy.serverImpl.ServerImplIntf in classLoader sun.misc.Launcher$AppClassLoader@14dad5dc. org.apache.servicecomb.common.javassist.JavassistUtils.createClass(JavassistUtils.java:207)
+2018-07-30 20:28:13,681 [INFO] load schema from service center, microservice=pojo-jxy:pojojxy:0.0.5, schemaId=jaxrsserver, result=true org.apache.servicecomb.core.definition.schema.ConsumerSchemaFactory.loadSwagger(ConsumerSchemaFactory.java:145)
+2018-07-30 20:28:13,697 [INFO] register schema pojo-jxy/pojojxy/jaxrsserver org.apache.servicecomb.core.definition.loader.SchemaLoader.registerSchema(SchemaLoader.java:91)
+2018-07-30 20:28:13,698 [INFO] generate cse.gen.pojo_jxy.pojojxy.jaxrsserver.JaxrsImplIntf in classLoader sun.misc.Launcher$AppClassLoader@14dad5dc. org.apache.servicecomb.common.javassist.JavassistUtils.createClass(JavassistUtils.java:207)
+2018-07-30 20:28:13,713 [INFO] load schema from service center, microservice=pojo-jxy:pojojxy:0.0.5, schemaId=helloworldGreeter, result=true org.apache.servicecomb.core.definition.schema.ConsumerSchemaFactory.loadSwagger(ConsumerSchemaFactory.java:145)
+2018-07-30 20:28:13,718 [INFO] register schema pojo-jxy/pojojxy/helloworldGreeter org.apache.servicecomb.core.definition.loader.SchemaLoader.registerSchema(SchemaLoader.java:91)
+2018-07-30 20:28:13,720 [INFO] generate cse.gen.pojo_jxy.pojojxy.helloworldGreeter.HelloImplIntf in classLoader sun.misc.Launcher$AppClassLoader@14dad5dc. org.apache.servicecomb.common.javassist.JavassistUtils.createClass(JavassistUtils.java:207)
+2018-07-30 20:28:13,722 [INFO] add schema to service paths. pojo-jxy:pojojxy:tcc-server. org.apache.servicecomb.common.rest.locator.ServicePathManager.addSchema(ServicePathManager.java:91)
+2018-07-30 20:28:13,725 [INFO] add schema to service paths. pojo-jxy:pojojxy:controller. org.apache.servicecomb.common.rest.locator.ServicePathManager.addSchema(ServicePathManager.java:91)
+2018-07-30 20:28:13,728 [INFO] add schema to service paths. pojo-jxy:pojojxy:serverImpl. org.apache.servicecomb.common.rest.locator.ServicePathManager.addSchema(ServicePathManager.java:91)
+2018-07-30 20:28:13,729 [INFO] add schema to service paths. pojo-jxy:pojojxy:jaxrsserver. org.apache.servicecomb.common.rest.locator.ServicePathManager.addSchema(ServicePathManager.java:91)
+2018-07-30 20:28:13,730 [INFO] add schema to service paths. pojo-jxy:pojojxy:helloworldGreeter. org.apache.servicecomb.common.rest.locator.ServicePathManager.addSchema(ServicePathManager.java:91)
+2018-07-30 20:28:13,730 [INFO] Found schema ids from service center, pojo-jxy:pojojxy:0.0.1+:[tcc-server, controller, serverImpl, jaxrsserver, helloworldGreeter] org.apache.servicecomb.core.definition.schema.ConsumerSchemaFactory.getOrCreateMicroserviceMeta(ConsumerSchemaFactory.java:102)
+2018-07-30 20:28:13,754 [INFO] Using load balance rule com.netflix.loadbalancer.RoundRobinRule for microservice pojojxy. org.apache.servicecomb.loadbalance.ExtensionsManager.createLoadBalancerRule(ExtensionsManager.java:58)
+2018-07-30 20:28:13,876 [INFO] create loadBalancer, microserviceName=pojojxy, loadBalancerName=0.0.1+/. org.apache.servicecomb.loadbalance.LoadbalanceHandler.createLoadBalancer(LoadbalanceHandler.java:324)
+2018-07-30 20:28:14,219 [INFO] Found HttpClientFilter: org.apache.servicecomb.provider.springmvc.reference.RestTemplateCopyHeaderFilter. org.apache.servicecomb.transport.rest.client.http.VertxHttpMethod.<clinit>(VertxHttpMethod.java:61)
+2018-07-30 20:28:14,220 [INFO] Found HttpClientFilter: org.apache.servicecomb.common.rest.filter.inner.ClientRestArgsFilter. org.apache.servicecomb.transport.rest.client.http.VertxHttpMethod.<clinit>(VertxHttpMethod.java:61)
+2018-07-30 20:28:14,220 [INFO] Found HttpClientFilter: org.apache.servicecomb.transport.rest.client.http.DefaultHttpClientFilter. org.apache.servicecomb.transport.rest.client.http.VertxHttpMethod.<clinit>(VertxHttpMethod.java:61)
+2018-07-30 20:28:19,659 [INFO] ****invoking  Pojo model:invoke success:instance_ 1096_abf5:delaytime(s):4000  NO.1 com.huawei.paas.cse.demo.pojo.client.PojoClient.main(PojoClient.java:78)
+2018-07-30 20:28:24,535 [INFO] ****invoking  Pojo model:invoke success:instance_ 1096_abf5:delaytime(s):4000  NO.2 com.huawei.paas.cse.demo.pojo.client.PojoClient.main(PojoClient.java:78)
+2018-07-30 20:28:29,481 [INFO] ****invoking  Pojo model:invoke success:instance_ 1096_abf5:delaytime(s):4000  NO.3 com.huawei.paas.cse.demo.pojo.client.PojoClient.main(PojoClient.java:78)
+2018-07-30 20:28:34,437 [INFO] ****invoking  Pojo model:invoke success:instance_ 1096_abf5:delaytime(s):4000  NO.4 com.huawei.paas.cse.demo.pojo.client.PojoClient.main(PojoClient.java:78)
+2018-07-30 20:28:39,390 [INFO] ****invoking  Pojo model:invoke success:instance_ 1096_abf5:delaytime(s):4000  NO.5 com.huawei.paas.cse.demo.pojo.client.PojoClient.main(PojoClient.java:78)
+2018-07-30 20:28:43,020 [WARN] sc task interval changed from -1 to 30 org.apache.servicecomb.serviceregistry.task.ServiceCenterTaskMonitor.beginCycle(ServiceCenterTaskMonitor.java:39)
+2018-07-30 20:28:44,340 [INFO] ****invoking  Pojo model:invoke success:instance_ 1096_abf5:delaytime(s):4000  NO.6 com.huawei.paas.cse.demo.pojo.client.PojoClient.main(PojoClient.java:78)
+2018-07-30 20:28:49,293 [INFO] ****invoking  Pojo model:invoke success:instance_ 1096_abf5:delaytime(s):4000  NO.7 com.huawei.paas.cse.demo.pojo.client.PojoClient.main(PojoClient.java:78)
+2018-07-30 20:28:54,245 [INFO] ****invoking  Pojo model:invoke success:instance_ 1096_abf5:delaytime(s):4000  NO.8 com.huawei.paas.cse.demo.pojo.client.PojoClient.main(PojoClient.java:78)
+2018-07-30 20:28:59,197 [INFO] ****invoking  Pojo model:invoke success:instance_ 1096_abf5:delaytime(s):4000  NO.9 com.huawei.paas.cse.demo.pojo.client.PojoClient.main(PojoClient.java:78)
+2018-07-30 20:29:04,148 [INFO] ****invoking  Pojo model:invoke success:instance_ 1096_abf5:delaytime(s):4000  NO.10 com.huawei.paas.cse.demo.pojo.client.PojoClient.main(PojoClient.java:78)
+2018-07-30 20:29:09,101 [INFO] ****invoking  Pojo model:invoke success:instance_ 1096_abf5:delaytime(s):4000  NO.11 com.huawei.paas.cse.demo.pojo.client.PojoClient.main(PojoClient.java:78)
+2018-07-30 20:29:14,053 [INFO] ****invoking  Pojo model:invoke success:instance_ 1096_abf5:delaytime(s):4000  NO.12 com.huawei.paas.cse.demo.pojo.client.PojoClient.main(PojoClient.java:78)
+2018-07-30 20:29:19,004 [INFO] ****invoking  Pojo model:invoke success:instance_ 1096_abf5:delaytime(s):4000  NO.13 com.huawei.paas.cse.demo.pojo.client.PojoClient.main(PojoClient.java:78)
+2018-07-30 20:29:23,957 [INFO] ****invoking  Pojo model:invoke success:instance_ 1096_abf5:delaytime(s):4000  NO.14 com.huawei.paas.cse.demo.pojo.client.PojoClient.main(PojoClient.java:78)
+2018-07-30 20:29:28,910 [INFO] ****invoking  Pojo model:invoke success:instance_ 1096_abf5:delaytime(s):4000  NO.15 com.huawei.paas.cse.demo.pojo.client.PojoClient.main(PojoClient.java:78)
+2018-07-30 20:29:33,863 [INFO] ****invoking  Pojo model:invoke success:instance_ 1096_abf5:delaytime(s):4000  NO.16 com.huawei.paas.cse.demo.pojo.client.PojoClient.main(PojoClient.java:78)
+2018-07-30 20:29:38,813 [INFO] ****invoking  Pojo model:invoke success:instance_ 1096_abf5:delaytime(s):4000  NO.17 com.huawei.paas.cse.demo.pojo.client.PojoClient.main(PojoClient.java:78)
+2018-07-30 20:29:43,765 [INFO] ****invoking  Pojo model:invoke success:instance_ 1096_abf5:delaytime(s):4000  NO.18 com.huawei.paas.cse.demo.pojo.client.PojoClient.main(PojoClient.java:78)
+2018-07-30 20:29:45,862 [ERROR] PUT /v4/default/registry/microservices/2865602827/instances/885040931/heartbeat fail, endpoint is 128.118.35.240:30100, message: The timeout period of 3000ms has been exceeded while executing PUT /v4/default/registry/microservices/2865602827/instances/885040931/heartbeat for host 128.118.35.240 org.apache.servicecomb.serviceregistry.client.http.RestUtils.lambda$null$13(RestUtils.java:93)
+2018-07-30 20:29:45,863 [WARN] invoke service [/v4/default/registry/microservices/2865602827/instances/885040931/heartbeat] failed, retry. org.apache.servicecomb.serviceregistry.client.http.ServiceRegistryClientImpl.retry(ServiceRegistryClientImpl.java:86)
+2018-07-30 20:29:45,871 [INFO] Change service center address from 128.118.35.240:30100 to 172.16.0.219:30100 org.apache.servicecomb.serviceregistry.client.IpPortManager.getNextAvailableAddress(IpPortManager.java:84)
+2018-07-30 20:29:48,716 [INFO] ****invoking  Pojo model:invoke success:instance_ 1096_abf5:delaytime(s):4000  NO.19 com.huawei.paas.cse.demo.pojo.client.PojoClient.main(PojoClient.java:78)
+2018-07-30 20:29:48,850 [ERROR] PUT /v4/default/registry/microservices/2865602827/instances/885040931/heartbeat fail, endpoint is 172.16.0.219:30100, message: The timeout period of 3000ms has been exceeded while executing PUT /v4/default/registry/microservices/2865602827/instances/885040931/heartbeat for host 172.16.0.219 org.apache.servicecomb.serviceregistry.client.http.RestUtils.lambda$null$13(RestUtils.java:93)
+2018-07-30 20:29:48,850 [ERROR] Disconnected from service center and heartbeat failed for microservice instance=2865602827/885040931 org.apache.servicecomb.serviceregistry.task.MicroserviceInstanceHeartbeatTask.heartbeat(MicroserviceInstanceHeartbeatTask.java:71)
+heartbeat fail received
+2018-07-30 20:29:48,851 [INFO] read MicroserviceInstanceHeartbeatTask status is READY org.apache.servicecomb.serviceregistry.task.MicroserviceRegisterTask.onMicroserviceInstanceHeartbeatTask(MicroserviceRegisterTask.java:50)
+2018-07-30 20:29:48,852 [INFO] read MicroserviceInstanceHeartbeatTask status is READY org.apache.servicecomb.serviceregistry.task.ServiceCenterTask.onMicroserviceInstanceHeartbeatTask(ServiceCenterTask.java:63)
+2018-07-30 20:29:48,853 [WARN] sc task taken more than 5963ms to execute org.apache.servicecomb.serviceregistry.task.ServiceCenterTaskMonitor.endCycle(ServiceCenterTaskMonitor.java:51)
+2018-07-30 20:29:53,668 [INFO] ****invoking  Pojo model:invoke success:instance_ 1096_abf5:delaytime(s):4000  NO.20 com.huawei.paas.cse.demo.pojo.client.PojoClient.main(PojoClient.java:78)
+2018-07-30 20:29:58,620 [INFO] ****invoking  Pojo model:invoke success:instance_ 1096_abf5:delaytime(s):4000  NO.21 com.huawei.paas.cse.demo.pojo.client.PojoClient.main(PojoClient.java:78)
+2018-07-30 20:30:03,574 [INFO] ****invoking  Pojo model:invoke success:instance_ 1096_abf5:delaytime(s):4000  NO.22 com.huawei.paas.cse.demo.pojo.client.PojoClient.main(PojoClient.java:78)
+2018-07-30 20:30:06,771 [ERROR] PUT /v4/default/registry/microservices/2865602827/instances/885040931/heartbeat fail, endpoint is 172.16.0.219:30100, message: Connection timed out: no further information: /172.16.0.219:30100 org.apache.servicecomb.serviceregistry.client.http.RestUtils.lambda$null$13(RestUtils.java:93)
+2018-07-30 20:30:08,526 [INFO] ****invoking  Pojo model:invoke success:instance_ 1096_abf5:delaytime(s):4000  NO.23 com.huawei.paas.cse.demo.pojo.client.PojoClient.main(PojoClient.java:78)
+2018-07-30 20:30:12,705 [INFO] running microservice register task. org.apache.servicecomb.serviceregistry.task.MicroserviceRegisterTask.doRegister(MicroserviceRegisterTask.java:64)
+2018-07-30 20:30:12,709 [ERROR] GET /v4/default/registry/instances?rev=1655453.2&appId=default&serviceName=SERVICECENTER&version=0.0.0%2B fail, endpoint is 128.118.35.240:30100, message: The timeout period of 30000ms has been exceeded while executing GET /v4/default/registry/instances?rev=1655453.2&appId=default&serviceName=SERVICECENTER&version=0.0.0%2B for host 128.118.35.240 org.apache.servicecomb.serviceregistry.client.http.RestUtils.lambda$null$13(RestUtils.java:93)
+2018-07-30 20:30:12,709 [WARN] invoke service [/v4/default/registry/instances] failed, retry. org.apache.servicecomb.serviceregistry.client.http.ServiceRegistryClientImpl.retry(ServiceRegistryClientImpl.java:86)
+2018-07-30 20:30:12,710 [INFO] Change service center address from 128.118.35.240:30100 to 172.16.0.219:30100 org.apache.servicecomb.serviceregistry.client.IpPortManager.getNextAvailableAddress(IpPortManager.java:84)
+2018-07-30 20:30:12,748 [ERROR] watcher connect to service center server failed, microservice 2865602827, connection is closed accidentally org.apache.servicecomb.serviceregistry.client.http.ServiceRegistryClientImpl.watchErrorHandler(ServiceRegistryClientImpl.java:639)
+2018-07-30 20:30:12,749 [INFO] read exception event, message is :connection is closed accidentally org.apache.servicecomb.serviceregistry.task.ServiceCenterTask.onExceptionEvent(ServiceCenterTask.java:71)
+2018-07-30 20:30:12,750 [ERROR] ws close error. org.apache.servicecomb.serviceregistry.client.http.WebsocketUtils.lambda$null$23(WebsocketUtils.java:65)
+java.lang.IllegalStateException: WebSocket is closed
+	at io.vertx.core.http.impl.WebSocketImplBase.checkClosed(WebSocketImplBase.java:253)
+	at io.vertx.core.http.impl.WebSocketImplBase.close(WebSocketImplBase.java:99)
+	at org.apache.servicecomb.serviceregistry.client.http.WebsocketUtils.lambda$null$23(WebsocketUtils.java:63)
+	at io.vertx.core.impl.ContextImpl.lambda$wrapTask$2(ContextImpl.java:344)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:163)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:403)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:463)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:858)
+	at java.lang.Thread.run(Thread.java:745)
+2018-07-30 20:30:13,478 [INFO] ****invoking  Pojo model:invoke success:instance_ 1096_abf5:delaytime(s):4000  NO.24 com.huawei.paas.cse.demo.pojo.client.PojoClient.main(PojoClient.java:78)
+2018-07-30 20:30:18,431 [INFO] ****invoking  Pojo model:invoke success:instance_ 1096_abf5:delaytime(s):4000  NO.25 com.huawei.paas.cse.demo.pojo.client.PojoClient.main(PojoClient.java:78)
+2018-07-30 20:30:23,384 [INFO] ****invoking  Pojo model:invoke success:instance_ 1096_abf5:delaytime(s):4000  NO.26 com.huawei.paas.cse.demo.pojo.client.PojoClient.main(PojoClient.java:78)
+2018-07-30 20:30:28,334 [INFO] ****invoking  Pojo model:invoke success:instance_ 1096_abf5:delaytime(s):4000  NO.27 com.huawei.paas.cse.demo.pojo.client.PojoClient.main(PojoClient.java:78)
+2018-07-30 20:30:33,285 [INFO] ****invoking  Pojo model:invoke success:instance_ 1096_abf5:delaytime(s):4000  NO.28 com.huawei.paas.cse.demo.pojo.client.PojoClient.main(PojoClient.java:78)
+2018-07-30 20:30:33,704 [ERROR] GET /v4/default/registry/instances?rev=1655453.2&appId=default&serviceName=SERVICECENTER&version=0.0.0%2B fail, endpoint is 172.16.0.219:30100, message: Connection timed out: no further information: /172.16.0.219:30100 org.apache.servicecomb.serviceregistry.client.http.RestUtils.lambda$null$13(RestUtils.java:93)
+2018-07-30 20:30:33,705 [ERROR] Can not find any instances from service center due to previous errors. service=default/SERVICECENTER/0.0.0+ org.apache.servicecomb.serviceregistry.registry.AbstractServiceRegistry.findServiceInstances(AbstractServiceRegistry.java:244)
+2018-07-30 20:30:33,711 [ERROR] GET /v4/default/registry/existence?appId=pojo-jxy&type=microservice&serviceName=pojoclientjxy&env&version=0.0.1 fail, endpoint is 172.16.0.219:30100, message: Connection timed out: no further information: /172.16.0.219:30100 org.apache.servicecomb.serviceregistry.client.http.RestUtils.lambda$null$13(RestUtils.java:93)
+2018-07-30 20:30:33,711 [WARN] invoke service [/v4/default/registry/existence] failed, retry. org.apache.servicecomb.serviceregistry.client.http.ServiceRegistryClientImpl.retry(ServiceRegistryClientImpl.java:86)
+2018-07-30 20:30:33,711 [INFO] Change service center address from 172.16.0.219:30100 to 172.16.0.235:30100 org.apache.servicecomb.serviceregistry.client.IpPortManager.getNextAvailableAddress(IpPortManager.java:84)
+2018-07-30 20:30:38,237 [INFO] ****invoking  Pojo model:invoke success:instance_ 1096_abf5:delaytime(s):4000  NO.29 com.huawei.paas.cse.demo.pojo.client.PojoClient.main(PojoClient.java:78)
+2018-07-30 20:30:42,628 [ERROR] PUT /v4/default/registry/microservices/2865602827/instances/885040931/heartbeat fail, endpoint is 128.118.35.240:30100, message: Connection was closed org.apache.servicecomb.serviceregistry.client.http.RestUtils.lambda$null$13(RestUtils.java:93)
+2018-07-30 20:30:42,630 [ERROR] GET /v4/default/registry/instances?rev=1655453.2&appId=default&serviceName=SERVICECENTER&version=0.0.0%2B fail, endpoint is 128.118.35.240:30100, message: Connection was closed org.apache.servicecomb.serviceregistry.client.http.RestUtils.lambda$null$13(RestUtils.java:93)
+2018-07-30 20:30:43,188 [INFO] ****invoking  Pojo model:invoke success:instance_ 1096_abf5:delaytime(s):4000  NO.30 com.huawei.paas.cse.demo.pojo.client.PojoClient.main(PojoClient.java:78)
+2018-07-30 20:30:48,141 [INFO] ****invoking  Pojo model:invoke success:instance_ 1096_abf5:delaytime(s):4000  NO.31 com.huawei.paas.cse.demo.pojo.client.PojoClient.main(PojoClient.java:78)
+2018-07-30 20:30:53,095 [INFO] ****invoking  Pojo model:invoke success:instance_ 1096_abf5:delaytime(s):4000  NO.32 com.huawei.paas.cse.demo.pojo.client.PojoClient.main(PojoClient.java:78)
+2018-07-30 20:30:54,687 [ERROR] GET /v4/default/registry/instances?rev=1657098.1&appId=pojo-jxy&serviceName=pojojxy&version=0.0.0%2B fail, endpoint is 172.16.0.219:30100, message: Connection timed out: no further information: /172.16.0.219:30100 org.apache.servicecomb.serviceregistry.client.http.RestUtils.lambda$null$13(RestUtils.java:93)
+2018-07-30 20:30:54,688 [WARN] invoke service [/v4/default/registry/instances] failed, retry. org.apache.servicecomb.serviceregistry.client.http.ServiceRegistryClientImpl.retry(ServiceRegistryClientImpl.java:86)
+2018-07-30 20:30:54,688 [INFO] Change service center address from 172.16.0.219:30100 to 172.16.0.235:30100 org.apache.servicecomb.serviceregistry.client.IpPortManager.getNextAvailableAddress(IpPortManager.java:84)
+2018-07-30 20:30:54,692 [ERROR] GET /v4/default/registry/existence?appId=pojo-jxy&type=microservice&serviceName=pojoclientjxy&env&version=0.0.1 fail, endpoint is 172.16.0.235:30100, message: Connection timed out: no further information: /172.16.0.235:30100 org.apache.servicecomb.serviceregistry.client.http.RestUtils.lambda$null$13(RestUtils.java:93)
+2018-07-30 20:30:58,047 [INFO] ****invoking  Pojo model:invoke success:instance_ 1096_abf5:delaytime(s):4000  NO.33 com.huawei.paas.cse.demo.pojo.client.PojoClient.main(PojoClient.java:78)
+2018-07-30 20:31:02,998 [INFO] ****invoking  Pojo model:invoke success:instance_ 1096_abf5:delaytime(s):4000  NO.34 com.huawei.paas.cse.demo.pojo.client.PojoClient.main(PojoClient.java:78)
+2018-07-30 20:31:07,950 [INFO] ****invoking  Pojo model:invoke success:instance_ 1096_abf5:delaytime(s):4000  NO.35 com.huawei.paas.cse.demo.pojo.client.PojoClient.main(PojoClient.java:78)
+2018-07-30 20:31:12,902 [INFO] ****invoking  Pojo model:invoke success:instance_ 1096_abf5:delaytime(s):4000  NO.36 com.huawei.paas.cse.demo.pojo.client.PojoClient.main(PojoClient.java:78)
+2018-07-30 20:31:15,522 [ERROR] GET /v4/default/registry/instances?rev=1657098.1&appId=pojo-jxy&serviceName=pojojxy&version=0.0.0%2B fail, endpoint is 172.16.0.235:30100, message: Connection timed out: no further information: /172.16.0.235:30100 org.apache.servicecomb.serviceregistry.client.http.RestUtils.lambda$null$13(RestUtils.java:93)
+2018-07-30 20:31:15,523 [ERROR] Can not find any instances from service center due to previous errors. service=pojo-jxy/pojojxy/0.0.0+ org.apache.servicecomb.serviceregistry.registry.AbstractServiceRegistry.findServiceInstances(AbstractServiceRegistry.java:244)
+2018-07-30 20:31:15,528 [ERROR] POST /v4/default/registry/microservices fail, endpoint is 172.16.0.235:30100, message: Connection timed out: no further information: /172.16.0.235:30100 org.apache.servicecomb.serviceregistry.client.http.RestUtils.lambda$null$13(RestUtils.java:93)
+2018-07-30 20:31:15,528 [WARN] invoke service [/v4/default/registry/microservices] failed, retry. org.apache.servicecomb.serviceregistry.client.http.ServiceRegistryClientImpl.retry(ServiceRegistryClientImpl.java:86)
+2018-07-30 20:31:15,529 [INFO] Change service center address from 172.16.0.235:30100 to 128.118.35.240:30100 org.apache.servicecomb.serviceregistry.client.IpPortManager.getNextAvailableAddress(IpPortManager.java:84)
+2018-07-30 20:31:15,565 [WARN] get response for org.apache.servicecomb.serviceregistry.api.response.CreateServiceResponse failed, 400:Bad Request, {"errorCode":"400010","errorMessage":"Micro-service already exists","detail":"Service already exists."}
+ org.apache.servicecomb.serviceregistry.client.http.ServiceRegistryClientImpl.lambda$null$27(ServiceRegistryClientImpl.java:118)
+2018-07-30 20:31:15,565 [ERROR] Registry microservice failed. appId=pojo-jxy, name=pojoclientjxy, version=0.0.1 org.apache.servicecomb.serviceregistry.task.MicroserviceRegisterTask.doRegister(MicroserviceRegisterTask.java:85)
+2018-07-30 20:31:15,567 [INFO] read MicroserviceRegisterTask status is READY org.apache.servicecomb.serviceregistry.task.ServiceCenterTask.onRegisterTask(ServiceCenterTask.java:51)
+2018-07-30 20:31:15,575 [WARN] Bad Request org.apache.servicecomb.serviceregistry.client.http.ServiceRegistryClientImpl.heartbeat(ServiceRegistryClientImpl.java:503)
+2018-07-30 20:31:15,575 [ERROR] Update heartbeat to service center failed, microservice instance=2865602827/885040931 does not exist org.apache.servicecomb.serviceregistry.task.MicroserviceInstanceHeartbeatTask.heartbeat(MicroserviceInstanceHeartbeatTask.java:79)
+heartbeat fail received
+2018-07-30 20:31:15,576 [INFO] read MicroserviceInstanceHeartbeatTask status is READY org.apache.servicecomb.serviceregistry.task.MicroserviceRegisterTask.onMicroserviceInstanceHeartbeatTask(MicroserviceRegisterTask.java:50)
+2018-07-30 20:31:15,576 [INFO] read MicroserviceInstanceHeartbeatTask status is READY org.apache.servicecomb.serviceregistry.task.ServiceCenterTask.onMicroserviceInstanceHeartbeatTask(ServiceCenterTask.java:63)
+2018-07-30 20:31:15,577 [WARN] sc task taken more than 62872ms to execute org.apache.servicecomb.serviceregistry.task.ServiceCenterTaskMonitor.endCycle(ServiceCenterTaskMonitor.java:51)
+2018-07-30 20:31:15,577 [INFO] running microservice register task. org.apache.servicecomb.serviceregistry.task.MicroserviceRegisterTask.doRegister(MicroserviceRegisterTask.java:64)
+2018-07-30 20:31:15,581 [INFO] Microservice exists in service center, no need to register. id=2865602827 appId=pojo-jxy, name=pojoclientjxy, version=0.0.1 org.apache.servicecomb.serviceregistry.task.MicroserviceRegisterTask.doRegister(MicroserviceRegisterTask.java:72)
+2018-07-30 20:31:15,589 [INFO] SchemaIds is equals to service center. id=2865602827 appId=pojo-jxy, name=pojoclientjxy, version=0.0.1, schemaIds=[test, manual] org.apache.servicecomb.serviceregistry.task.MicroserviceRegisterTask.checkSchemaIdSet(MicroserviceRegisterTask.java:135)
+2018-07-30 20:31:15,600 [INFO] schemaId test exists true org.apache.servicecomb.serviceregistry.task.MicroserviceRegisterTask.registerSchemas(MicroserviceRegisterTask.java:151)
+2018-07-30 20:31:15,626 [INFO] find instances[1] from service center success. service=default/SERVICECENTER/0.0.0+ org.apache.servicecomb.serviceregistry.registry.AbstractServiceRegistry.findServiceInstances(AbstractServiceRegistry.java:257)
+2018-07-30 20:31:15,627 [INFO] service id=2972923847, instance id=825507904, endpoints=[rest://172.16.0.219:30100?sslEnabled=true] org.apache.servicecomb.serviceregistry.registry.AbstractServiceRegistry.findServiceInstances(AbstractServiceRegistry.java:263)
+2018-07-30 20:31:15,628 [INFO] set instances, appId=default, microserviceName=SERVICECENTER, versionRule=latest, instanceId=825507904, endpoints=[rest://172.16.0.219:30100?sslEnabled=true]. org.apache.servicecomb.serviceregistry.consumer.MicroserviceVersionRule.lambda$setInstances$4(MicroserviceVersionRule.java:146)
+2018-07-30 20:31:15,633 [INFO] watching microservice 2865602827 successfully, the chosen service center address is 128.118.35.240:30100 org.apache.servicecomb.serviceregistry.client.http.ServiceRegistryClientImpl.lambda$watch$35(ServiceRegistryClientImpl.java:535)
+2018-07-30 20:31:15,636 [INFO] schemaId manual exists true org.apache.servicecomb.serviceregistry.task.MicroserviceRegisterTask.registerSchemas(MicroserviceRegisterTask.java:151)
+2018-07-30 20:31:15,636 [INFO] read MicroserviceRegisterTask status is FINISHED org.apache.servicecomb.serviceregistry.task.ServiceCenterTask.onRegisterTask(ServiceCenterTask.java:51)
+2018-07-30 20:31:15,637 [INFO] running microservice instance register task. org.apache.servicecomb.serviceregistry.task.MicroserviceInstanceRegisterTask.doRegister(MicroserviceInstanceRegisterTask.java:61)
+2018-07-30 20:31:15,656 [INFO] Register microservice instance success. microserviceId=2865602827 instanceId=885040931 endpoints=[rest://128.8.0.139:1157] lease 120s org.apache.servicecomb.serviceregistry.task.MicroserviceInstanceRegisterTask.doRegister(MicroserviceInstanceRegisterTask.java:83)
+2018-07-30 20:31:15,657 [INFO] read MicroserviceInstanceRegisterTask status is FINISHED org.apache.servicecomb.serviceregistry.task.ServiceCenterTask.onRegisterTask(ServiceCenterTask.java:51)
+2018-07-30 20:31:15,795 [ERROR] locate path failed, status:Not Found, http method:GET, path:/v1/microservice/health/, microserviceName:pojoclientjxy org.apache.servicecomb.common.rest.locator.OperationLocator.locate(OperationLocator.java:72)
+2018-07-30 20:31:15,825 [ERROR] java.io.IOException: 远程主机强迫关闭了一个现有的连接。 io.vertx.core.net.impl.ConnectionBase.handleException(ConnectionBase.java:216)
+2018-07-30 20:31:17,854 [INFO] ****invoking  Pojo model:invoke success:instance_ 1096_abf5:delaytime(s):4000  NO.37 com.huawei.paas.cse.demo.pojo.client.PojoClient.main(PojoClient.java:78)
+2018-07-30 20:31:22,806 [INFO] ****invoking  Pojo model:invoke success:instance_ 1096_abf5:delaytime(s):4000  NO.38 com.huawei.paas.cse.demo.pojo.client.PojoClient.main(PojoClient.java:78)
+2018-07-30 20:31:27,757 [INFO] ****invoking  Pojo model:invoke success:instance_ 1096_abf5:delaytime(s):4000  NO.39 com.huawei.paas.cse.demo.pojo.client.PojoClient.main(PojoClient.java:78)
+2018-07-30 20:31:32,708 [INFO] ****invoking  Pojo model:invoke success:instance_ 1096_abf5:delaytime(s):4000  NO.40 com.huawei.paas.cse.demo.pojo.client.PojoClient.main(PojoClient.java:78)
+2018-07-30 20:31:36,344 [ERROR] GET /v4/default/registry/instances?rev=1655453.2&appId=default&serviceName=SERVICECENTER&version=0.0.0%2B fail, endpoint is 172.16.0.235:30100, message: Connection timed out: no further information: /172.16.0.235:30100 org.apache.servicecomb.serviceregistry.client.http.RestUtils.lambda$null$13(RestUtils.java:93)
+2018-07-30 20:31:36,345 [WARN] invoke service [/v4/default/registry/instances] failed, retry. org.apache.servicecomb.serviceregistry.client.http.ServiceRegistryClientImpl.retry(ServiceRegistryClientImpl.java:86)
+2018-07-30 20:31:36,345 [INFO] Change service center address from 172.16.0.235:30100 to 128.118.35.240:30100 org.apache.servicecomb.serviceregistry.client.IpPortManager.getNextAvailableAddress(IpPortManager.java:84)
+2018-07-30 20:31:36,354 [INFO] find instances[1] from service center success. service=default/SERVICECENTER/0.0.0+ org.apache.servicecomb.serviceregistry.registry.AbstractServiceRegistry.findServiceInstances(AbstractServiceRegistry.java:257)
+2018-07-30 20:31:36,354 [INFO] service id=2972923847, instance id=825507904, endpoints=[rest://172.16.0.219:30100?sslEnabled=true] org.apache.servicecomb.serviceregistry.registry.AbstractServiceRegistry.findServiceInstances(AbstractServiceRegistry.java:263)
+2018-07-30 20:31:36,355 [INFO] set instances, appId=default, microserviceName=SERVICECENTER, versionRule=latest, instanceId=825507904, endpoints=[rest://172.16.0.219:30100?sslEnabled=true]. org.apache.servicecomb.serviceregistry.consumer.MicroserviceVersionRule.lambda$setInstances$4(MicroserviceVersionRule.java:146)
+2018-07-30 20:31:37,660 [INFO] ****invoking  Pojo model:invoke success:instance_ 1096_abf5:delaytime(s):4000  NO.41 com.huawei.paas.cse.demo.pojo.client.PojoClient.main(PojoClient.java:78)
+2018-07-30 20:31:42,612 [INFO] ****invoking  Pojo model:invoke success:instance_ 1096_abf5:delaytime(s):4000  NO.42 com.huawei.paas.cse.demo.pojo.client.PojoClient.main(PojoClient.java:78)
+2018-07-30 20:31:47,565 [INFO] ****invoking  Pojo model:invoke success:instance_ 1096_abf5:delaytime(s):4000  NO.43 com.huawei.paas.cse.demo.pojo.client.PojoClient.main(PojoClient.java:78)
+2018-07-30 20:31:52,515 [INFO] ****invoking  Pojo model:invoke success:instance_ 1096_abf5:delaytime(s):4000  NO.44 com.huawei.paas.cse.demo.pojo.client.PojoClient.main(PojoClient.java:78)
+2018-07-30 20:31:57,472 [INFO] ****invoking  Pojo model:invoke success:instance_ 1096_abf5:delaytime(s):4000  NO.45 com.huawei.paas.cse.demo.pojo.client.PojoClient.main(PojoClient.java:78)
+2018-07-30 20:32:02,426 [INFO] ****invoking  Pojo model:invoke success:instance_ 1096_abf5:delaytime(s):4000  NO.46 com.huawei.paas.cse.demo.pojo.client.PojoClient.main(PojoClient.java:78)
