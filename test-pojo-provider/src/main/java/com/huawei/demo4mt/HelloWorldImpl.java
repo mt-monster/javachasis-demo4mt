@@ -1,18 +1,17 @@
 package com.huawei.demo4mt;
 
-import javax.servlet.http.Part;
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.List;
-
+import com.huawei.demo4mt.entity.Person;
+import com.huawei.demo4mt.helloworld.greeter.HelloWorld;
 import org.apache.commons.io.IOUtils;
 import org.apache.servicecomb.provider.pojo.RpcSchema;
 import org.apache.servicecomb.serviceregistry.RegistryUtils;
 import org.apache.servicecomb.serviceregistry.api.registry.MicroserviceInstance;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.huawei.demo4mt.entity.Person;
-import com.huawei.demo4mt.helloworld.greeter.HelloWorld;
+import javax.servlet.http.Part;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.List;
 
 @RpcSchema(schemaId = "demo4mt")
 public class HelloWorldImpl implements HelloWorld {
@@ -40,15 +39,15 @@ public class HelloWorldImpl implements HelloWorld {
         return list;
     }
 
-    public String SayHelloAgain(int delaytime) {
-
-        try {
-            Thread.sleep(delaytime * 100);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        return "\nPojo model:invoke success:instance_+:delaytime(s):" + delaytime;
-    }
+//    public String SayHelloAgain(int delaytime) {
+//
+//        try {
+//            Thread.sleep(delaytime * 100);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
+//        return "\nPojo model:invoke success:instance_+:delaytime(s):" + delaytime;
+//    }
 
     @Override public String SayHello(String name) {
         //    try {

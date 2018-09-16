@@ -29,10 +29,11 @@ public class TestThreadPool {
 
     public TestThreadPool() {
 
-        scheduledExecutorService = new ScheduledThreadPoolExecutor(2, new ThreadFactory() {
+        scheduledExecutorService = new ScheduledThreadPoolExecutor(4, new ThreadFactory() {
             @Override
             public Thread newThread(Runnable r) {
-                return new Thread(r, "this is testThread {" + cnt.getAndDecrement() +"}");
+//                return new Thread(r, "this is testThread {" + cnt.getAndIncrement() + "}");
+                return new Thread(r);
             }
         });
         testCompositeTask = new TestCompositeTask();
@@ -62,6 +63,21 @@ public class TestThreadPool {
         testCompositeTask.addTask(new TestTask3(ebus));
         testCompositeTask.run();
         scheduledExecutorService.scheduleAtFixedRate(testSCTask, 1000, 1000, TimeUnit.MILLISECONDS);
+
+        scheduledExecutorService.scheduleAtFixedRate(new Runnable() {
+            @Override
+            public void run() {
+                logger.info(Thread.currentThread().getName() + " 2nd schedulce?");
+            }
+        }, 500, 500, TimeUnit.MILLISECONDS);
+
+
+        scheduledExecutorService.scheduleAtFixedRate(new Runnable() {
+            @Override
+            public void run() {
+                logger.info(Thread.currentThread().getName() + " 3rd schedulce?");
+            }
+        }, 500, 500, TimeUnit.MILLISECONDS);
     }
 
 }

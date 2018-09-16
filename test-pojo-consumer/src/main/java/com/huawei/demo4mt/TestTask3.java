@@ -22,14 +22,14 @@ public class TestTask3 extends AbstractTask {
 
     @Override
     protected void doRun() {
-        logger.info(Thread.currentThread().getName() + " Thread [3] finish: ---" + "read the TestTask3 status is " + taskStatus);
         try {
 //            Thread.sleep(2000);
-            logger.info("thread 3 is sleeping for 2 sec");
+//            logger.info("thread 3 is sleeping for 2 sec");
             this.taskStatus = TaskStatus.FINISHED;
         } catch (Exception e) {
             e.printStackTrace();
         }
+        logger.info(Thread.currentThread().getName() + " Thread [3] finish: ---" + "read the TestTask3 status is " + taskStatus);
 
     }
 }
