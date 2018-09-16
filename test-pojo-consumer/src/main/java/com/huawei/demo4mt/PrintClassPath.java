@@ -1,0 +1,20 @@
+package com.huawei.demo4mt;
+
+import java.net.URL;
+import java.net.URLClassLoader;
+
+public class PrintClassPath {
+  public static void main(String[] args) {
+    int i = 0, j = 0;
+    ClassLoader systemClassLoader = ClassLoader.getSystemClassLoader();
+    URL[] urLs = ((URLClassLoader) systemClassLoader).getURLs();
+    for (URL urL : urLs) {
+      if (urL.getFile().contains("jdk")) {
+
+        System.out.println(urL.getFile() + "[" + ++i + "]");
+      }
+      else
+        System.out.println(urL.getFile() + "[" + ++j + "]");
+    }
+  }
+}
