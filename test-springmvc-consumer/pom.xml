@@ -5,7 +5,7 @@
     <artifactId>demo4mt</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <artifactId>test_springmvc-consumer</artifactId>
+  <artifactId>test-springmvc-consumer</artifactId>
 
   <dependencies>
     <dependency>
