@@ -16,15 +16,16 @@
 
 package com.huawei.demo4mt;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.ws.rs.QueryParam;
-import javax.ws.rs.core.Response.Status;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
-import org.apache.servicecomb.common.rest.codec.RestObjectMapper;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.ws.rs.QueryParam;
+import javax.ws.rs.core.Response.Status;
+
+import org.apache.servicecomb.common.rest.codec.RestObjectMapperFactory;
 import org.apache.servicecomb.provider.rest.common.RestSchema;
 import org.apache.servicecomb.swagger.extend.annotations.ResponseHeaders;
 import org.apache.servicecomb.swagger.invocation.Response;
@@ -129,7 +130,7 @@ public class CodeFirstSpringmvc {
     public String testRawJsonString(String jsonInput) {
         Map<String, String> person;
         try {
-            person = RestObjectMapper.INSTANCE.readValue(jsonInput.getBytes(), Map.class);
+            person = RestObjectMapperFactory.getRestObjectMapper().readValue(jsonInput.getBytes(), Map.class);
         } catch (Exception e) {
             e.printStackTrace();
             return null;
