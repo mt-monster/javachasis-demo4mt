@@ -8,10 +8,10 @@
   <artifactId>test-pojo-consumer</artifactId>
 
   <dependencies>
-    <dependency>
-      <groupId>com.huawei</groupId>
-      <artifactId>test-common</artifactId>
-      <version>0.0.1-SNAPSHOT</version>
-    </dependency>
+    <!--<dependency>-->
+      <!--<groupId>com.huawei</groupId>-->
+      <!--<artifactId>test-common</artifactId>-->
+      <!--<version>0.0.1-SNAPSHOT</version>-->
+    <!--</dependency>-->
   </dependencies>
 </project>

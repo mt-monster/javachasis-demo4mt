@@ -21,14 +21,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 
 public class SendServer {
 
   private static int num = 0, cnt = 0;
-  String oldPath = "C:/Users/m00416667/Downloads/cse-java-chassis-2.3.39.1RC";//src file
-  String newPath = "C:/Users/m00416667/Downloads/copy/";//dest file
+  String oldPath = "C:/Users/Administrator/Downloads/cse-java-chassis-2.3.35";//src file
+  String newPath = "C:/Users/Administrator/Downloads/t1/";//dest file
 
   public static void main(String[] args) {
     new SendServer().process();
@@ -130,7 +129,7 @@ public class SendServer {
         }
 
         if (temp.isFile() && temp.getName().contains("jar") && !temp.getName().contains("sources")) {
-          String fileName = newPath + "/" + (temp.getName()).toString();
+          String fileName = newPath + "/" + (temp.getName());
           File testFile = new File(fileName);
           if (!testFile.exists()) {
             FileInputStream input = new FileInputStream(temp);
