@@ -5,7 +5,7 @@ import java.net.URLClassLoader;
 
 public class PrintClassPath {
   public static void main(String[] args) {
-    int i = 0, j = 0;
+    int i = 0, j = 0,k=0;
     ClassLoader systemClassLoader = ClassLoader.getSystemClassLoader();
     URL[] urLs = ((URLClassLoader) systemClassLoader).getURLs();
     for (URL urL : urLs) {
@@ -13,8 +13,11 @@ public class PrintClassPath {
 
         System.out.println(urL.getFile() + "[" + ++i + "]");
       }
-      else
+      else if (urL.getFile().contains("target"))
         System.out.println(urL.getFile() + "[" + ++j + "]");
+      else {
+        System.out.println(urL.getFile() + "[" + ++k + "]");
+      }
     }
   }
 }
