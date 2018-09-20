@@ -6,6 +6,9 @@ import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+import com.huawei.demo4mt.ThreadPkg.ReadThread;
+import com.huawei.demo4mt.ThreadPkg.WhiteThread;
+
 /**
  * 一句话功能简述
  * 功能详细描述
