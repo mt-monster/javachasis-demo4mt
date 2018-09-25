@@ -27,6 +27,7 @@ public class MockStarring {
     ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
         "classpath*:META-INF/spring/*.bean.xml");
     context.start();
+//    RegistryUtils.getMicroserviceInstance()
 
   }
 
