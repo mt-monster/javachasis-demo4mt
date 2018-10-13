@@ -11,12 +11,6 @@
 
     <artifactId>test-common</artifactId>
 
-    <dependencies>
-        <dependency>
-            <groupId>com.huawei.paas.cse</groupId>
-            <artifactId>cse-solution-service-engine</artifactId>
-        </dependency>
-    </dependencies>
 
 
 </project>
