@@ -16,7 +16,7 @@ import java.net.Socket;
  * Package Name:com.huawei.demo4mt.NioPakage
  */
 public class Client {
-    private static int DEFAULT_SERVER_PORT = 12345;
+    private static int DEFAULT_SERVER_PORT = 12341;
 
     private static String DEFAULT_SERVER_IP = "127.0.0.1";
 

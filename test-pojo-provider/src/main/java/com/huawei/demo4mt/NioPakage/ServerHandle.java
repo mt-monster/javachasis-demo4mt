@@ -28,8 +28,8 @@ public class ServerHandle implements Runnable {
 
     public ServerHandle(int port) {
         try {
-            Selector selector = Selector.open();
-            ServerSocketChannel serverChannel = ServerSocketChannel.open();
+            selector = Selector.open();
+            serverChannel = ServerSocketChannel.open();
             serverChannel.configureBlocking(false);
             serverChannel.socket().bind(new InetSocketAddress(port), 1024);
             serverChannel.register(selector, SelectionKey.OP_ACCEPT);
@@ -47,17 +47,6 @@ public class ServerHandle implements Runnable {
 
     }
 
-    /**
-     * When an object implementing interface <code>Runnable</code> is used
-     * to create a thread, starting the thread causes the object's
-     * <code>run</code> method to be called in that separately executing
-     * thread.
-     * <p>
-     * The general contract of the method <code>run</code> is that it may
-     * take any action whatsoever.
-     *
-     * @see     Thread#run()
-     */
     @Override public void run() {
         while (started) {
             try {
