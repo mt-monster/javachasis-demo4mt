@@ -15,50 +15,27 @@ import java.net.Socket;
  * @since [产品/模块版本]
  * Package Name:com.huawei.demo4mt.NioPakage
  */
-public class ServerHandler implements Runnable {
+public class Client {
+    private static int DEFAULT_SERVER_PORT = 12345;
 
-    private Socket socket;
+    private static String DEFAULT_SERVER_IP = "127.0.0.1";
 
-    public ServerHandler(Socket socket) {
-        this.socket = socket;
+    public static void send(String expression) {
+        send(DEFAULT_SERVER_PORT, expression);
     }
 
-    /**
-     * When an object implementing interface <code>Runnable</code> is used
-     * to create a thread, starting the thread causes the object's
-     * <code>run</code> method to be called in that separately executing
-     * thread.
-     * <p>
-     * The general contract of the method <code>run</code> is that it may
-     * take any action whatsoever.
-     *
-     * @see     Thread#run()
-     */
-    @Override public void run() {
-        System.out.println("serverhandler is coming....");
+    public static void send(int port, String expression) {
+        System.out.println("算术表达式为：" + expression);
+        Socket socket = null;
         BufferedReader in = null;
         PrintWriter out = null;
         try {
+            socket = new Socket(DEFAULT_SERVER_IP, port);
             in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
             out = new PrintWriter(socket.getOutputStream(), true);
-            String expression;
-            String result;
-
-            while (true) {
-                if ((expression = in.readLine()) == null) {
-                    break;
-                }
-                System.out.println("服务器收到消息: " + expression);
-                try {
-                    result = Calculator.cal(expression).toString();
-                } catch (Exception e) {
-                    e.printStackTrace();
-                    result = "计算错误" + e.getMessage();
-                }
-                out.println(result);
-            }
-
-        } catch (Exception e) {
+            out.println(expression);
+            System.out.println("___结果为：" + in.readLine());
+        } catch (IOException e) {
             e.printStackTrace();
         } finally {
             if (in != null) {
@@ -82,6 +59,6 @@ public class ServerHandler implements Runnable {
                 socket = null;
             }
         }
-
     }
+
 }
