@@ -2,6 +2,9 @@ package com.huawei.demo4mt.NioPakage;
 
 import java.util.Scanner;
 
+import com.huawei.demo4mt.AioPkg.AioClient;
+import com.huawei.demo4mt.AioPkg.AioServer;
+
 /**
  * 一句话功能简述
  * 功能详细描述
@@ -13,9 +16,17 @@ import java.util.Scanner;
  */
 public class TestNio {
     public static void main(String[] args) throws Exception {
-        NioServer.start();
+        System.out.println("choose which mode to test... 1:Nio,2:Aio");
+        Boolean opt = new Scanner(System.in).nextLine().equals("1") ? true : false;
+        if (opt) {
+            NioServer.start();
+            Thread.sleep(2000);
+            NioClient.start();
+            while (NioClient.sendMsg(new Scanner(System.in).nextLine()));
+        }
+        AioServer.start();
         Thread.sleep(2000);
-        NioClient.start();
-        while (NioClient.sendMsg(new Scanner(System.in).nextLine()));
+        AioClient.start();
+        while (AioClient.sendMsg(new Scanner(System.in).nextLine()));
     }
 }

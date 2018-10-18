@@ -53,7 +53,6 @@ public class ClientHandle implements Runnable {
             SocketChannel sc = (SocketChannel) key.channel();
             if (key.isConnectable()) {
                 if (sc.finishConnect()) {
-                    ;
                 } else {
                     System.exit(1);
                 }
