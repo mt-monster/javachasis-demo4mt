@@ -2,6 +2,7 @@ package com.huawei.demo4mt.AioPkg;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
+import java.nio.ByteBuffer;
 import java.nio.channels.AsynchronousSocketChannel;
 import java.nio.channels.CompletionHandler;
 import java.util.concurrent.CountDownLatch;
@@ -33,6 +34,12 @@ public class AsyncClientHandler implements Runnable, CompletionHandler<Void,Asyn
      }
 
     public void sendMsg(String msg) {
+        byte[] req = msg.getBytes();
+        ByteBuffer writeBuffer = ByteBuffer.allocate(req.length);
+        writeBuffer.put(req);
+        writeBuffer.flip();
+        //异步写
+        clientChannel.write(writeBuffer, writeBuffer,new WriteHandler(clientChannel, latch));
     }
 
     @Override public void run() {
