@@ -92,13 +92,14 @@
         </pluginManagement>
     </build>
     <modules>
-        <module>test-pojo-consumer</module>
-        <module>test-pojo-provider</module>
+        <!--<module>test-pojo-consumer</module>-->
+        <!--<module>test-pojo-provider</module>-->
         <!--<module>test-pojo-provider2</module>-->
         <module>test-common</module>
+        <module>test-demo</module>
         <!--<module>test-eventbus</module>-->
         <!--<module>test-springmvc-consumer</module>-->
-        <!--<module>test-springmvc-provider</module>-->
+        <module>test-springmvc-provider</module>
         <!--<module>test-springmvc-provider2</module>-->
     </modules>
 </project>

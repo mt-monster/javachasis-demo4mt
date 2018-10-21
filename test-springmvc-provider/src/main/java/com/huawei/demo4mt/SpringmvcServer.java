@@ -31,10 +31,10 @@ import org.apache.servicecomb.foundation.common.utils.Log4jUtils;
 public class SpringmvcServer {
     public static void main(String[] args) throws Exception {
 
-        if(System.getenv("SERVICE_CENTER") != null) {
-            System.setProperty("cse.service.registry.address", "https://"+System.getenv("SERVICE_CENTER")+":30100");
-            System.setProperty("cse.config.client.serverUri",  "https://"+System.getenv("SERVICE_CENTER")+":30103");
-        }
+//        if(System.getenv("SERVICE_CENTER") != null) {
+//            System.setProperty("cse.service.registry.address", "https://"+System.getenv("SERVICE_CENTER")+":30100");
+//            System.setProperty("cse.config.client.serverUri",  "https://"+System.getenv("SERVICE_CENTER")+":30103");
+//        }
         Log4jUtils.init();
         BeanUtils.init();
         
