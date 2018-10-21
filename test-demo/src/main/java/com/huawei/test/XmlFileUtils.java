@@ -12,13 +12,9 @@ import javax.xml.xpath.XPath;
 import javax.xml.xpath.XPathConstants;
 import javax.xml.xpath.XPathExpressionException;
 import javax.xml.xpath.XPathFactory;
-
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.io.IOException;
 
-import org.dom4j.io.OutputFormat;
-import org.dom4j.io.XMLWriter;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
@@ -44,7 +40,7 @@ public class XmlFileUtils {
      */
     public Document parseFile(String filename) throws Exception {
         DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
-//        dbf.setIgnoringElementContentWhitespace(true);
+        dbf.setIgnoringElementContentWhitespace(true);
         dbf.setValidating(false);
         DocumentBuilder db = dbf.newDocumentBuilder();
         XPathFactory xPathFactory = XPathFactory.newInstance();
@@ -84,14 +80,11 @@ public class XmlFileUtils {
         return nodeRet;
     }
 
-    public void writeToXMl(Node node) throws IOException {
-        OutputFormat format = OutputFormat.createPrettyPrint();
-        format.setEncoding("utf-8");
-        XMLWriter writer = new XMLWriter(new FileOutputStream("D:\\m00416667\\springcloud-sample\\springcloud-consumer\\pom.xml"),format);
-        writer.write(node);
-        writer.close();
-    }
-
+    /**
+     *
+     * @param document
+     * @param filePath
+     */
     public void saveXml(Document document,String filePath){
         TransformerFactory transformerFactory = TransformerFactory.newInstance();
         try {

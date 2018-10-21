@@ -1,7 +1,6 @@
 package com.huawei.test;
 
 import java.io.File;
-import java.io.FileFilter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -33,48 +32,43 @@ public class ReplaceRobot {
 
     private String replaceFileName = "pom.xml";
 
-    private List<String> relativeFiles = new ArrayList<>();
-
     public ReplaceRobot(String basePath, String... sdkVersion) {
         this.basePath = basePath;
         this.sdkVersion = sdkVersion;
-        relativeFiles.add("");
     }
 
     public static void main(String[] args) throws Exception {
         String[] sdkVersion = {"java.version", "spring-cloud.version"};
-        new ReplaceRobot("D:\\m00416667\\springcloud-sample\\springcloud-consumer", sdkVersion).process();
+        new ReplaceRobot("D:\\m00416667\\springcloud-sample", sdkVersion).process();
     }
 
-    private void process() {
-        // TODO: 2018/10/18 multiPath
-        String filePath = relativeFiles.get(0);
-        File file = new File(basePath + filePath);
+    private void process() throws Exception {
+        if (!(new File(basePath).isDirectory())) {
+            throw new Exception("not correct path");
+        }
+
+        File file = new File(basePath);
+        ArrayList<File> fileArrayList = new ArrayList<>();
         // 抓取所有pom文件
-        File[] files = file.listFiles(new FileFilter() {
-            public boolean accept(File subFile) {
-                String filePath = subFile.getAbsolutePath();
-                // 处理pom文件
-                logger.debug("containFiles???   " + subFile.getName().contains(replaceFileName));
-                if (subFile.getName().contains(replaceFileName)) {
-                    try {
-                        processReplaceFile(filePath);
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
-                    return true;
-                }
-                return false;
-            }
+        List<File> findFileList = listAllDir(file, 0, replaceFileName, fileArrayList);
+        System.out.println(findFileList.size());
+        for (int i = 0; i < findFileList.size(); i++) {
+            System.out.println("---------" + findFileList.get(i).getName());
+            processReplaceFile(findFileList.get(i).getAbsolutePath());
+        }
+        findFileList.stream().forEachOrdered(x-> processReplaceFile(x.getAbsolutePath()));
 
-        });
     }
 
-    private void processReplaceFile(String filePath) throws Exception {
-        Document doc = xmlUtil.parseFile(filePath);
-        logger.debug("尝试修改节点内容中。。。");
-        buildCseDependency(doc, filePath);
-
+    private void processReplaceFile(String filePath){
+        Document doc = null;
+        try {
+            doc = xmlUtil.parseFile(filePath);
+            logger.debug("尝试修改节点内容中。。。");
+            buildCseDependency(doc, filePath);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     private void buildCseDependency(Document doc, String filePath) throws Exception {
@@ -117,4 +111,44 @@ public class ReplaceRobot {
         xmlUtil.saveXml(doc, filePath);
 
     }
+
+    /**
+     *
+     * @param file
+     * @param flag
+     * @param name
+     * @param fileArrayList
+     * @return
+     */
+    public List<File> listAllDir(File file, int flag, String name, ArrayList<File> fileArrayList) {
+        String str = ".";
+        for (int i = 0; i < flag; i++) {
+            str += ".";
+        }
+        if (file.isFile()) {
+            if (file.getName().contains(name)) {
+                System.out.println(file.getAbsolutePath());
+                fileArrayList.add(file);
+            }
+            System.out.println(str + file);
+        } else {
+            try {
+                File[] temp = file.listFiles();
+                for (int i = 0; i < temp.length; i++) {
+                    if (temp[i].getName().contains(name)) {
+                        System.out.println(temp[i].getAbsolutePath());
+                        fileArrayList.add(temp[i]);
+                    }
+                    if (!temp[i].isFile()) {
+                        listAllDir(temp[i], flag + 1, name, fileArrayList);
+                    }
+                }
+            } catch (NullPointerException e) {
+                e.printStackTrace();
+                System.out.println("寻找到某些非正常文件");
+            }
+        }
+        return fileArrayList;
+    }
+
 }
