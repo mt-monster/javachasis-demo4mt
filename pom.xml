@@ -23,12 +23,12 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
-    <dependencies>
-        <dependency>
-            <groupId>com.huawei.paas.cse</groupId>
-            <artifactId>cse-solution-service-engine</artifactId>
-        </dependency>
-    </dependencies>
+    <!--<dependencies>-->
+        <!--<dependency>-->
+            <!--<groupId>com.huawei.paas.cse</groupId>-->
+            <!--<artifactId>cse-solution-service-engine</artifactId>-->
+        <!--</dependency>-->
+    <!--</dependencies>-->
     <build>
         <pluginManagement>
             <plugins>
@@ -95,11 +95,11 @@
         <!--<module>test-pojo-consumer</module>-->
         <!--<module>test-pojo-provider</module>-->
         <!--<module>test-pojo-provider2</module>-->
-        <module>test-common</module>
+        <!--<module>test-common</module>-->
         <module>test-demo</module>
         <!--<module>test-eventbus</module>-->
         <!--<module>test-springmvc-consumer</module>-->
-        <module>test-springmvc-provider</module>
+        <!--<module>test-springmvc-provider</module>-->
         <!--<module>test-springmvc-provider2</module>-->
     </modules>
 </project>

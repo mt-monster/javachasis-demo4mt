@@ -1,8 +1,12 @@
 package com.huawei.test;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.nio.charset.Charset;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -24,22 +28,39 @@ public class ReplaceRobot {
 
     private static final Logger logger = LoggerFactory.getLogger(ReplaceRobot.class);
 
-    private XmlFileUtils xmlUtil = new XmlFileUtils();
+    private String sdkVersion = "2.3.39";
 
     private String basePath;
 
-    private String[] sdkVersion;
+    private String[] operAdd;
 
-    private String replaceFileName = "pom.xml";
+    private DomRepHelper domRepHelper = new DomRepHelper();
 
-    public ReplaceRobot(String basePath, String... sdkVersion) {
+    private YmlRepHelper ymlRepHelper = new YmlRepHelper();
+
+    private static Map filterMap = new HashMap();
+
+    static {
+        filterMap.putIfAbsent(Constants.findFileName[0], new pomFilter());
+        filterMap.putIfAbsent(Constants.findFileName[1], new appYmlFilter());
+    }
+
+    public ReplaceRobot(String basePath) {
+        this.basePath = basePath;
+    }
+
+    public ReplaceRobot(String basePath, String sdkVersion, String... operAdd) {
         this.basePath = basePath;
         this.sdkVersion = sdkVersion;
+        this.operAdd = operAdd;
     }
 
     public static void main(String[] args) throws Exception {
-        String[] sdkVersion = {"java.version", "spring-cloud.version"};
-        new ReplaceRobot("D:\\m00416667\\springcloud-sample", sdkVersion).process();
+        String[] operAdd = {"provider", ""};
+        //获取当前绝对路径
+        String abPath = new File("").getCanonicalPath();
+        ReplaceRobot robot = new ReplaceRobot(abPath);
+        robot.process();
     }
 
     private void process() throws Exception {
@@ -50,44 +71,77 @@ public class ReplaceRobot {
         File file = new File(basePath);
         ArrayList<File> fileArrayList = new ArrayList<>();
         // 抓取所有pom文件
-        List<File> findFileList = listAllDir(file, 0, replaceFileName, fileArrayList);
-        System.out.println(findFileList.size());
-        for (int i = 0; i < findFileList.size(); i++) {
-            System.out.println("---------" + findFileList.get(i).getName());
-            processReplaceFile(findFileList.get(i).getAbsolutePath());
-        }
-        findFileList.stream().forEachOrdered(x-> processReplaceFile(x.getAbsolutePath()));
+
+        List<File> findPomFileList = DiffAllDir(file, 0, Constants.findFileName[0], fileArrayList);
+        System.out.println("----------" + findPomFileList.size());
+        findPomFileList.stream().forEach(x -> {
+            try {
+                //                processPomReplaceFile(x.getAbsolutePath());
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
+
+        List<File> findSpringFileList = DiffAllDir(file, 0, Constants.findFileName[1], fileArrayList);
+        System.out.println("******" + findSpringFileList.size());
+        findSpringFileList.stream().forEach(x -> {
+            try {
+                processSprReplaceFile(x.getAbsolutePath());
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
+    }
+
+    private void processSprReplaceFile(String filePath) throws Exception {
+        buildCseApplicationYml(filePath);
+    }
+
+    private void processPomReplaceFile(String filePath) throws Exception {
+        logger.debug("---------" + filePath);
+        Document doc = domRepHelper.parseFile(filePath);
+        logger.debug("尝试POM修改节点内容中....");
+        delModules(doc);
+        buildCseDependency(doc, filePath);
+        domRepHelper.saveXml(doc, filePath);
+    }
+
+    private void buildCseApplicationYml(String filePath) throws Exception {
+        Map<String, Object> allMap = ymlRepHelper.yaml2Properties(filePath);
+        ymlRepHelper.testDumpWriterforyaml(filePath,allMap);
 
     }
 
-    private void processReplaceFile(String filePath){
-        Document doc = null;
-        try {
-            doc = xmlUtil.parseFile(filePath);
-            logger.debug("尝试修改节点内容中。。。");
-            buildCseDependency(doc, filePath);
-        } catch (Exception e) {
-            e.printStackTrace();
+    private void delModules(Document doc) throws Exception {
+        logger.debug("enter delModules....");
+        NodeList modNode = domRepHelper.getNodeList(doc, "/project/modules/module");
+        for (int i = 0; i < modNode.getLength(); i++) {
+            Node node = modNode.item(i);
+            String modNodeText = domRepHelper.getNodeValue(node);
+            if (modNodeText.equals("eureka-server")) {
+                logger.debug("******* {}  ******* ", modNodeText);
+                logger.debug("########  doing delete:  ");
+                domRepHelper.delNode(node);
+            }
         }
     }
 
     private void buildCseDependency(Document doc, String filePath) throws Exception {
         logger.debug("enter buildCseDependency....");
 
-        NodeList deNode = xmlUtil.getNodeList(doc, "/project/dependencies/dependency/artifactId");
-        NodeList depaNode = xmlUtil.getNodeList(doc, "/project/dependencies");
+        NodeList deNode = domRepHelper.getNodeList(doc, "/project/dependencies/dependency/artifactId");
+        NodeList depaNode = domRepHelper.getNodeList(doc, "/project/dependencies");
 
-        System.out.println(deNode.getLength());
         boolean isExistCse = false;
         for (int i = 0; i < deNode.getLength(); i++) {
             Node node = deNode.item(i);
-            String artiNodeText = node.getTextContent();
+            String artiNodeText = domRepHelper.getNodeValue(node);
             logger.debug("Denode**********" + artiNodeText);
             if (artiNodeText.equals("spring-cloud-starter-eureka")) {
-                Node node_temp = node.getParentNode();
-                System.out.println(node_temp.getNodeName());
-                System.out.println(node_temp.getTextContent());
-                node_temp.getParentNode().removeChild(node_temp);
+                domRepHelper.delNode(node);
+            }
+            if (artiNodeText.equals("spring-cloud-starter-eureka-server")) {
+                domRepHelper.delNode(node);
             }
             if (artiNodeText.equals("cse-solution-spring-cloud")) {
                 isExistCse = true;
@@ -102,53 +156,59 @@ public class ReplaceRobot {
             Element aId = doc.createElement("artifactId");
             aId.setTextContent("cse-solution-spring-cloud");
             Element vId = doc.createElement("version");
-            vId.setTextContent("2.3.39");
+            vId.setTextContent(sdkVersion);
             dep.appendChild(gId);
             dep.appendChild(aId);
             dep.appendChild(vId);
             depaNode.item(depaNode.getLength() - 1).appendChild(dep);
         }
-        xmlUtil.saveXml(doc, filePath);
-
     }
 
-    /**
-     *
-     * @param file
-     * @param flag
-     * @param name
-     * @param fileArrayList
-     * @return
-     */
-    public List<File> listAllDir(File file, int flag, String name, ArrayList<File> fileArrayList) {
+    private List<File> DiffAllDir(File file, int flag, String nameFilter, ArrayList<File> fileArrayList)
+            throws Exception {
+
+        //        String path = file.getCanonicalPath();
+        //        String fileName = path;
+        //        System.out.println(fileName);
+        //        File[] listFiles = file.listFiles();
+        //        for (int i = 0; i < listFiles.length; i++) {
+        //            String name = file.getCanonicalPath();
+        //            System.out.println(name);
+        //            if (name.equals(Constants.findFileName[0])) {
+        //                return ((pomFilter) filterMap.get(Constants.findFileName[0])).process(file, flag, fileArrayList);
+        //            }
+        //            if (name.equals(Constants.findFileName[1])) {
+        //                return ((appYmlFilter) filterMap.get(Constants.findFileName[1])).process(file, flag, fileArrayList);
+        //            }
+        //
+        //        }
+
         String str = ".";
         for (int i = 0; i < flag; i++) {
             str += ".";
         }
         if (file.isFile()) {
-            if (file.getName().contains(name)) {
-                System.out.println(file.getAbsolutePath());
+            if (file.getName().contains(nameFilter)) {
+                logger.debug(file.getAbsolutePath());
                 fileArrayList.add(file);
             }
-            System.out.println(str + file);
+            logger.debug(str + file);
         } else {
             try {
                 File[] temp = file.listFiles();
                 for (int i = 0; i < temp.length; i++) {
-                    if (temp[i].getName().contains(name)) {
-                        System.out.println(temp[i].getAbsolutePath());
+                    if (temp[i].getName().contains(nameFilter)) {
+                        logger.debug(temp[i].getAbsolutePath());
                         fileArrayList.add(temp[i]);
                     }
                     if (!temp[i].isFile()) {
-                        listAllDir(temp[i], flag + 1, name, fileArrayList);
+                        DiffAllDir(temp[i], flag + 1, nameFilter, fileArrayList);
                     }
                 }
             } catch (NullPointerException e) {
-                e.printStackTrace();
-                System.out.println("寻找到某些非正常文件");
+                logger.error("not find replacefile ", e.getMessage());
             }
         }
         return fileArrayList;
     }
-
 }

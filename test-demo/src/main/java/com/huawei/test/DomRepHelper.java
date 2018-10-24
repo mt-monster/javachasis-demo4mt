@@ -15,6 +15,8 @@ import javax.xml.xpath.XPathFactory;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
@@ -28,7 +30,9 @@ import org.w3c.dom.NodeList;
  * @since [产品/模块版本]
  * Package Name:com.huawei.test
  */
-public class XmlFileUtils {
+public class DomRepHelper {
+
+    private static final Logger logger = LoggerFactory.getLogger(DomRepHelper.class);
 
     public XPath oXpath;
 
@@ -68,6 +72,13 @@ public class XmlFileUtils {
         return nodeList;
     }
 
+    public Node delNode(Node node) throws Exception {
+        Node node_temp = node.getParentNode();
+        logger.debug(node_temp.getNodeName());
+        logger.debug(node_temp.getTextContent());
+        return node.getParentNode().removeChild(node);
+    }
+
     /**
      *
      * @param node
@@ -85,7 +96,7 @@ public class XmlFileUtils {
      * @param document
      * @param filePath
      */
-    public void saveXml(Document document,String filePath){
+    public void saveXml(Document document, String filePath) {
         TransformerFactory transformerFactory = TransformerFactory.newInstance();
         try {
             Transformer transformer = transformerFactory.newTransformer();
@@ -94,7 +105,7 @@ public class XmlFileUtils {
             domSource.setNode(document);
             StreamResult streamResult = new StreamResult();
             streamResult.setOutputStream(new FileOutputStream(filePath));
-            transformer.transform(domSource,streamResult);
+            transformer.transform(domSource, streamResult);
         } catch (TransformerConfigurationException e) {
             e.printStackTrace();
         } catch (FileNotFoundException e) {
