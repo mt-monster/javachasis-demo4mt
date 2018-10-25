@@ -9,6 +9,6 @@ package com.huawei.test;
  * @since [产品/模块版本]
  * Package Name:com.huawei.test
  */
-public  final class Constants {
-    public final static String findFileName[] = {"pom.xml", "test.yml"};
+public final class Constants {
+    public final static String findFileName[] = {"pom.xml", "application.yml"};
 }

@@ -4,7 +4,6 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.Transformer;
-import javax.xml.transform.TransformerConfigurationException;
 import javax.xml.transform.TransformerException;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
@@ -46,6 +45,7 @@ public class DomRepHelper {
      * @throws Exception
      */
     public Document parseFile(String filename) {
+        logger.info("begin parse POM content....");
         DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
         dbf.setIgnoringElementContentWhitespace(true);
         dbf.setValidating(false);
@@ -53,16 +53,14 @@ public class DomRepHelper {
         try {
             db = dbf.newDocumentBuilder();
         } catch (ParserConfigurationException e) {
-            e.printStackTrace();
+            logger.error("Failed to parse POM file. The failure message is: {}", e.getMessage());
         }
         XPathFactory xPathFactory = XPathFactory.newInstance();
         this.oXpath = xPathFactory.newXPath();
         try {
             return db.parse(filename);
-        } catch (SAXException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
+        } catch (SAXException | IOException e) {
+            logger.error("Failed to parse POM file. The failure message is: {}", e.getMessage());
         }
         return null;
     }
@@ -82,8 +80,13 @@ public class DomRepHelper {
      * @param xpath
      * @return
      */
-    public NodeList getNodeList(Node node, String xpath) throws XPathExpressionException {
-        NodeList nodeList = (NodeList) oXpath.evaluate(xpath, node, XPathConstants.NODESET);
+    public NodeList getNodeList(Node node, String xpath) {
+        NodeList nodeList = null;
+        try {
+            nodeList = (NodeList) oXpath.evaluate(xpath, node, XPathConstants.NODESET);
+        } catch (XPathExpressionException e) {
+            logger.error(e.getMessage(), e.getCause());
+        }
         return nodeList;
     }
 
@@ -93,10 +96,12 @@ public class DomRepHelper {
      * @return
      * @throws Exception
      */
-    public Node delNode(Node node) throws Exception {
+    public Node delNode(Node node) {
         Node node_temp = node.getParentNode();
-        logger.debug(node_temp.getNodeName());
-        logger.debug(node_temp.getTextContent());
+        logger.debug("temp--->" + node_temp.getNodeName());
+        logger.debug("temp--->" + node_temp.getTextContent());
+        logger.debug("pa---->" + node_temp.getParentNode().getNodeName());
+        logger.debug("pa---->" + node_temp.getParentNode().getTextContent());
         return node.getParentNode().removeChild(node);
     }
 
@@ -118,6 +123,7 @@ public class DomRepHelper {
      * @param filePath
      */
     public void saveXml(Document document, String filePath) {
+        logger.info("begin save allfixs to pom file....");
         TransformerFactory transformerFactory = TransformerFactory.newInstance();
         try {
             Transformer transformer = transformerFactory.newTransformer();
@@ -127,11 +133,7 @@ public class DomRepHelper {
             StreamResult streamResult = new StreamResult();
             streamResult.setOutputStream(new FileOutputStream(filePath));
             transformer.transform(domSource, streamResult);
-        } catch (TransformerConfigurationException e) {
-            logger.error("Failed to save XML file. The failure message is: {}", e.getMessage());
-        } catch (FileNotFoundException e) {
-            logger.error("Failed to save XML file. The failure message is: {}", e.getMessage());
-        } catch (TransformerException e) {
+        } catch (FileNotFoundException | TransformerException e) {
             logger.error("Failed to save XML file. The failure message is: {}", e.getMessage());
         }
 

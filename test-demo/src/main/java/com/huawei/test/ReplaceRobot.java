@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Stream;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -48,7 +49,7 @@ public class ReplaceRobot {
 
     public static void main(String[] args) throws Exception {
         String sdkVersion = "2.3.39";
-        String[] operAdd = {"provider", "pojoService"};
+        String[] operAdd = {"helloprovider", "pojoService"};
         // TODO: 2018/10/25 留下交互入口
         //        String[] opers = cmdScan();
         //        operAdd = opers;
@@ -87,108 +88,113 @@ public class ReplaceRobot {
         logger.info("The number of crawled pom files is ：{} ", findPomFileList.size());
         findPomFileList.stream().forEach(x -> {
             try {
+                logger.debug("---------->" + x.getAbsolutePath());
                 processPomReplaceFile(x.getAbsolutePath());
             } catch (Exception e) {
+                logger.error("Failed to process Pom File. The failure message is: {}", e.getMessage());
 
             }
         });
-
+        fileArrayList.clear();
         List<File> findSpringFileList = DiffAllDir(file, 0, Constants.findFileName[1], fileArrayList);
         logger.info("The number of crawled Spring files is ：{} ", findSpringFileList.size());
 
-        findSpringFileList.stream().forEach(x -> {
+        findSpringFileList.stream().forEach(f -> {
             try {
-                processSprReplaceFile(x.getAbsolutePath());
+                logger.debug("---------->" + f.getAbsolutePath());
+                processSprReplaceFile(f.getAbsolutePath());
             } catch (Exception e) {
-
+                logger.error("Failed to process Spring File. The failure message is: {}", e.getMessage());
             }
         });
+        logger.info("-----All To The End-----");
     }
 
-    private void processSprReplaceFile(String filePath) throws Exception {
+    private void processSprReplaceFile(String filePath) {
         logger.info("SpringYaml Path---------" + filePath);
         buildCseApplicationYml(filePath);
-        logger.debug("-----The End-----");
     }
 
     private void processPomReplaceFile(String filePath) {
-        logger.info("Find POM Path is --------- " + filePath);
-        Document doc = null;
-        logger.info("Try  to parse POM content....");
-        doc = domRepHelper.parseFile(filePath);
+        logger.info("Find POM Path is ---------> " + filePath);
+        //-----0.parse pom files
+        Document doc = domRepHelper.parseFile(filePath);
+        logger.info("end parse POM content....");
+
         //-----1.delete eureka modules
-        try {
-            logger.info("Try to delete eureka modules....");
-            delModules(doc);
-        } catch (Exception e) {
-            logger.error("Failed to delete eureka modules. The failure message is: {}", e.getMessage());
-        }
+        delModules(doc);
+        logger.info("end delete eureka modules....");
         //-----2.add cse dependency
-        try {
-            logger.info("Try to build CSE-extra pom file....");
-            buildCseDependency(doc, filePath);
-        } catch (Exception e) {
-            logger.error("Failed to build CSE-extra pom file. The failure message is: {}", e.getMessage());
-        }
+        buildCseDependency(doc);
+        logger.info("end build CSE-extra pom file....");
+
         //-----3.save all2XMl
         domRepHelper.saveXml(doc, filePath);
+        logger.info("end save allfixs to pom file....");
 
-        logger.info("Modify POM content successfully....");
+        logger.info("Modify POM content successfully--------->");
     }
 
-    private void buildCseApplicationYml(String filePath) throws Exception {
+    private void buildCseApplicationYml(String filePath) {
 
-        for (int i = 0; i < operAdd.length; i++) {
+        Stream.of(operAdd).forEach(oper -> {
             //--------1.read the original yaml to map
             Map<String, Object> originMap = ymlRepHelper.yaml2Properties(filePath);
             //--------2.add oper config to map
-            ymlRepHelper.addProperties2Yaml(filePath, operAdd[i], originMap);
+            ymlRepHelper.addProperties2Yaml(filePath, oper, originMap);
 
-        }
-
+        });
         //--------3.add cse config
         Map<String, Object> originMap = ymlRepHelper.yaml2Properties(filePath);
         String csePath = new File(basePath + "/cse.yml").getAbsolutePath();
-        logger.info("-------" + csePath);
+        logger.debug("-------" + csePath);
         Map<String, Object> cseMap = ymlRepHelper.yaml2Properties(csePath);
         originMap.putAll(cseMap);
         ymlRepHelper.addCseProp2Yaml(filePath, originMap);
-
     }
 
-    private void delModules(Document doc) throws Exception {
-        logger.debug("enter delModules....");
-        NodeList modNode = domRepHelper.getNodeList(doc, "/project/modules/module");
+    private void delModules(Document doc) {
+        logger.info("begin delete eureka modules....");
+        NodeList modNode = null;
+        modNode = domRepHelper.getNodeList(doc, "/project/modules/module");
         for (int i = 0; i < modNode.getLength(); i++) {
             Node node = modNode.item(i);
             String modNodeText = domRepHelper.getNodeValue(node);
             if (modNodeText.equals("eureka-server")) {
                 logger.debug("******* {}  ******* ", modNodeText);
                 logger.debug("########  doing delete:  ");
-                domRepHelper.delNode(node);
+                try {
+                    domRepHelper.delNode(node);
+                } catch (Exception e) {
+                    logger.error("Failed to delete eureka Nodes. The failure message is: {}", e.getMessage());
+                }
             }
         }
     }
 
-    private void buildCseDependency(Document doc, String filePath) throws Exception {
-        logger.debug("enter buildCseDependency....");
-
-        NodeList deNode = domRepHelper.getNodeList(doc, "/project/dependencies/dependency/artifactId");
-        NodeList depaNode = domRepHelper.getNodeList(doc, "/project/dependencies");
+    private void buildCseDependency(Document doc) {
+        logger.info("begin build CSE-extra pom file....");
+        NodeList deNode = null, depaNode = null;
+        deNode = domRepHelper.getNodeList(doc, "/project/dependencies/dependency/artifactId");
+        depaNode = domRepHelper.getNodeList(doc, "/project/dependencies");
 
         boolean isExistCse = false;
         for (int i = 0; i < deNode.getLength(); i++) {
             Node node = deNode.item(i);
             String artiNodeText = domRepHelper.getNodeValue(node);
             logger.debug("Denode**********" + artiNodeText);
-            if (artiNodeText.equals("spring-cloud-starter-eureka")) {
-                domRepHelper.delNode(node);
-            }
-            if (artiNodeText.equals("spring-cloud-starter-eureka-server")) {
-                domRepHelper.delNode(node);
-            }
-            if (artiNodeText.equals("cse-solution-spring-cloud")) {
-                isExistCse = true;
+            try {
+                if (artiNodeText.equals("spring-cloud-starter-eureka")) {
+                    domRepHelper.delNode(node.getParentNode());
+                }
+                if (artiNodeText.equals("spring-cloud-starter-eureka-server")) {
+                    domRepHelper.delNode(node.getParentNode());
+                }
+                if (artiNodeText.equals("cse-solution-spring-cloud")) {
+                    isExistCse = true;
+                }
+            } catch (Exception e) {
+                logger.error("Failed to build CSE-extra pom file. The failure message is: {}", e.getMessage());
             }
 
         }
@@ -214,7 +220,7 @@ public class ReplaceRobot {
             str += ".";
         }
         if (file.isFile()) {
-            if (file.getName().contains(nameFilter)) {
+            if (file.getName().equals(nameFilter)) {
                 logger.info(file.getAbsolutePath());
                 fileArrayList.add(file);
             }
@@ -223,7 +229,7 @@ public class ReplaceRobot {
             try {
                 File[] temp = file.listFiles();
                 for (int i = 0; i < temp.length; i++) {
-                    if (temp[i].getName().contains(nameFilter)) {
+                    if (temp[i].getName().equals(nameFilter)) {
                         logger.debug(temp[i].getAbsolutePath());
                         fileArrayList.add(temp[i]);
                     }

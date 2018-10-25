@@ -39,12 +39,10 @@ public class YmlRepHelper {
         try {
             YamlReader reader = new YamlReader(new FileReader(filePah));
             Object object = reader.read();
-            System.out.println(object);
             map = (Map) object;
-        } catch (FileNotFoundException e) {
+        } catch (FileNotFoundException |YamlException e) {
             e.printStackTrace();
-        } catch (YamlException e) {
-            e.printStackTrace();
+            logger.error("Failed to transfer yaml to Properties. The failure message is: {}", e.getMessage());
         }
         return map;
 
@@ -56,8 +54,7 @@ public class YmlRepHelper {
      * @param operStr
      * @param originMap
      */
-    public void addProperties2Yaml(String filePath, String operStr,
-            Map<String, Object> originMap) {
+    public void addProperties2Yaml(String filePath, String operStr,Map<String, Object> originMap) {
         HashMap<String, Object> objFi = new HashMap<>();
         HashMap<String, Object> objSe = new HashMap<>();
         HashMap<String, Object> allMap = new HashMap<>();
@@ -67,7 +64,7 @@ public class YmlRepHelper {
         allMap.putIfAbsent(operStr, objFi);
         originMap.putAll(allMap);
         save2Yaml(sortMapByKey(originMap), filePath);
-        logger.info("------Service Add End--------");
+        logger.debug("------Service Add End--------");
     }
 
     /**
@@ -77,7 +74,7 @@ public class YmlRepHelper {
      */
     public void addCseProp2Yaml(String filePath, Map<String, Object> originMap) {
         save2Yaml(sortMapByKey(originMap), filePath);
-        logger.info("------Cse Add End--------");
+        logger.debug("------Cse Add End--------");
     }
 
     /**
@@ -90,7 +87,7 @@ public class YmlRepHelper {
         try {
             yaml.dump(originMap, new FileWriter(filePath));
         } catch (IOException e) {
-            e.printStackTrace();
+            logger.error("Failed to save Properties to yaml. The failure message is: {}", e.getMessage());
         }
     }
 
