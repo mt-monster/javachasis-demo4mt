@@ -10,5 +10,5 @@ package com.huawei.test;
  * Package Name:com.huawei.test
  */
 public  final class Constants {
-    public final static String findFileName[] = {"pomba.xml", "test.yml"};
+    public final static String findFileName[] = {"pom.xml", "test.yml"};
 }

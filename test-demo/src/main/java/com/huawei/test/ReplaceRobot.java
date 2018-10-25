@@ -1,10 +1,8 @@
 package com.huawei.test;
 
 import java.io.File;
-import java.io.FileInputStream;
-import java.nio.charset.Charset;
+import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -32,18 +30,11 @@ public class ReplaceRobot {
 
     private String basePath;
 
-    private String[] operAdd;
+    private String[] operAdd = new String[] {};
 
     private DomRepHelper domRepHelper = new DomRepHelper();
 
     private YmlRepHelper ymlRepHelper = new YmlRepHelper();
-
-    private static Map filterMap = new HashMap();
-
-    static {
-        filterMap.putIfAbsent(Constants.findFileName[0], new pomFilter());
-        filterMap.putIfAbsent(Constants.findFileName[1], new appYmlFilter());
-    }
 
     public ReplaceRobot(String basePath) {
         this.basePath = basePath;
@@ -56,59 +47,112 @@ public class ReplaceRobot {
     }
 
     public static void main(String[] args) throws Exception {
-        String[] operAdd = {"provider", ""};
-        //获取当前绝对路径
-        String abPath = new File("").getCanonicalPath();
-        ReplaceRobot robot = new ReplaceRobot(abPath);
+        String sdkVersion = "2.3.39";
+        String[] operAdd = {"provider", "pojoService"};
+        // TODO: 2018/10/25 留下交互入口
+        //        String[] opers = cmdScan();
+        //        operAdd = opers;
+        //------------获取当前绝对路径
+        String abPath = new File("").getAbsolutePath();
+        logger.info("<-------root path is------> {}", abPath);
+        ReplaceRobot robot = new ReplaceRobot(abPath, sdkVersion, operAdd);
         robot.process();
+    }
+
+    private static String[] cmdScan() {
+        try {
+            logger.info("请输入要替换的服务名，每个服务名以逗号相隔....");
+            byte[] b = new byte[1024];
+            int end = System.in.read(b);
+            String s = new String(b, 0, end);
+            logger.info("-----" + s);
+            String[] split = s.split(",");
+            return split;
+
+        } catch (IOException e) {
+            logger.error(e.getMessage());
+        }
+
+        return new String[0];
     }
 
     private void process() throws Exception {
         if (!(new File(basePath).isDirectory())) {
             throw new Exception("not correct path");
         }
-
         File file = new File(basePath);
         ArrayList<File> fileArrayList = new ArrayList<>();
-        // 抓取所有pom文件
-
+        //----------crawled all pom files
         List<File> findPomFileList = DiffAllDir(file, 0, Constants.findFileName[0], fileArrayList);
-        System.out.println("----------" + findPomFileList.size());
+        logger.info("The number of crawled pom files is ：{} ", findPomFileList.size());
         findPomFileList.stream().forEach(x -> {
             try {
-                //                processPomReplaceFile(x.getAbsolutePath());
+                processPomReplaceFile(x.getAbsolutePath());
             } catch (Exception e) {
-                e.printStackTrace();
+
             }
         });
 
         List<File> findSpringFileList = DiffAllDir(file, 0, Constants.findFileName[1], fileArrayList);
-        System.out.println("******" + findSpringFileList.size());
+        logger.info("The number of crawled Spring files is ：{} ", findSpringFileList.size());
+
         findSpringFileList.stream().forEach(x -> {
             try {
                 processSprReplaceFile(x.getAbsolutePath());
             } catch (Exception e) {
-                e.printStackTrace();
+
             }
         });
     }
 
     private void processSprReplaceFile(String filePath) throws Exception {
+        logger.info("SpringYaml Path---------" + filePath);
         buildCseApplicationYml(filePath);
+        logger.debug("-----The End-----");
     }
 
-    private void processPomReplaceFile(String filePath) throws Exception {
-        logger.debug("---------" + filePath);
-        Document doc = domRepHelper.parseFile(filePath);
-        logger.debug("尝试POM修改节点内容中....");
-        delModules(doc);
-        buildCseDependency(doc, filePath);
+    private void processPomReplaceFile(String filePath) {
+        logger.info("Find POM Path is --------- " + filePath);
+        Document doc = null;
+        logger.info("Try  to parse POM content....");
+        doc = domRepHelper.parseFile(filePath);
+        //-----1.delete eureka modules
+        try {
+            logger.info("Try to delete eureka modules....");
+            delModules(doc);
+        } catch (Exception e) {
+            logger.error("Failed to delete eureka modules. The failure message is: {}", e.getMessage());
+        }
+        //-----2.add cse dependency
+        try {
+            logger.info("Try to build CSE-extra pom file....");
+            buildCseDependency(doc, filePath);
+        } catch (Exception e) {
+            logger.error("Failed to build CSE-extra pom file. The failure message is: {}", e.getMessage());
+        }
+        //-----3.save all2XMl
         domRepHelper.saveXml(doc, filePath);
+
+        logger.info("Modify POM content successfully....");
     }
 
     private void buildCseApplicationYml(String filePath) throws Exception {
-        Map<String, Object> allMap = ymlRepHelper.yaml2Properties(filePath);
-        ymlRepHelper.testDumpWriterforyaml(filePath,allMap);
+
+        for (int i = 0; i < operAdd.length; i++) {
+            //--------1.read the original yaml to map
+            Map<String, Object> originMap = ymlRepHelper.yaml2Properties(filePath);
+            //--------2.add oper config to map
+            ymlRepHelper.addProperties2Yaml(filePath, operAdd[i], originMap);
+
+        }
+
+        //--------3.add cse config
+        Map<String, Object> originMap = ymlRepHelper.yaml2Properties(filePath);
+        String csePath = new File(basePath + "/cse.yml").getAbsolutePath();
+        logger.info("-------" + csePath);
+        Map<String, Object> cseMap = ymlRepHelper.yaml2Properties(csePath);
+        originMap.putAll(cseMap);
+        ymlRepHelper.addCseProp2Yaml(filePath, originMap);
 
     }
 
@@ -164,35 +208,17 @@ public class ReplaceRobot {
         }
     }
 
-    private List<File> DiffAllDir(File file, int flag, String nameFilter, ArrayList<File> fileArrayList)
-            throws Exception {
-
-        //        String path = file.getCanonicalPath();
-        //        String fileName = path;
-        //        System.out.println(fileName);
-        //        File[] listFiles = file.listFiles();
-        //        for (int i = 0; i < listFiles.length; i++) {
-        //            String name = file.getCanonicalPath();
-        //            System.out.println(name);
-        //            if (name.equals(Constants.findFileName[0])) {
-        //                return ((pomFilter) filterMap.get(Constants.findFileName[0])).process(file, flag, fileArrayList);
-        //            }
-        //            if (name.equals(Constants.findFileName[1])) {
-        //                return ((appYmlFilter) filterMap.get(Constants.findFileName[1])).process(file, flag, fileArrayList);
-        //            }
-        //
-        //        }
-
+    private List<File> DiffAllDir(File file, int flag, String nameFilter, ArrayList<File> fileArrayList) {
         String str = ".";
         for (int i = 0; i < flag; i++) {
             str += ".";
         }
         if (file.isFile()) {
             if (file.getName().contains(nameFilter)) {
-                logger.debug(file.getAbsolutePath());
+                logger.info(file.getAbsolutePath());
                 fileArrayList.add(file);
             }
-            logger.debug(str + file);
+            logger.info(str + file);
         } else {
             try {
                 File[] temp = file.listFiles();

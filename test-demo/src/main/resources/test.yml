@@ -3,17 +3,12 @@ spring:
     name: helloconsumer
 server:
   port: '7211'
-endpoints:
-  restart:
-    enabled: 'true'
-  health:
-    sensitive: 'false'
-  shutdown:
-    enabled: 'true'
-cse:
-  helloprovider:
-    ribbon:
-      NIWSServerListClassName: org.apache.servicecomb.springboot.starter.discovery.ServiceCombServerList
+provider:
+  ribbon:
+    NIWSServerListClassName: org.apache.servicecomb.springboot.starter.discovery.ServiceCombServerList
+pojoService:
+  ribbon:
+    NIWSServerListClassName: org.apache.servicecomb.springboot.starter.discovery.ServiceCombServerList
 eureka:
   instance:
     leaseRenewalIntervalInSeconds: '10'
@@ -22,3 +17,14 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:7071/eureka/
+endpoints:
+  restart:
+    enabled: 'true'
+  health:
+    sensitive: 'false'
+  shutdown:
+    enabled: 'true'
+cse:
+  service:
+    registry:
+      address: http://127.0.0.1:30100

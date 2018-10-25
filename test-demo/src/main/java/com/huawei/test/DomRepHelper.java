@@ -2,6 +2,7 @@ package com.huawei.test;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerConfigurationException;
 import javax.xml.transform.TransformerException;
@@ -14,12 +15,14 @@ import javax.xml.xpath.XPathExpressionException;
 import javax.xml.xpath.XPathFactory;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.IOException;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
+import org.xml.sax.SAXException;
 
 /**
  * 一句话功能简述
@@ -42,14 +45,26 @@ public class DomRepHelper {
      * @return
      * @throws Exception
      */
-    public Document parseFile(String filename) throws Exception {
+    public Document parseFile(String filename) {
         DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
         dbf.setIgnoringElementContentWhitespace(true);
         dbf.setValidating(false);
-        DocumentBuilder db = dbf.newDocumentBuilder();
+        DocumentBuilder db = null;
+        try {
+            db = dbf.newDocumentBuilder();
+        } catch (ParserConfigurationException e) {
+            e.printStackTrace();
+        }
         XPathFactory xPathFactory = XPathFactory.newInstance();
         this.oXpath = xPathFactory.newXPath();
-        return db.parse(filename);
+        try {
+            return db.parse(filename);
+        } catch (SAXException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
     /**
@@ -72,6 +87,12 @@ public class DomRepHelper {
         return nodeList;
     }
 
+    /**
+     *
+     * @param node
+     * @return
+     * @throws Exception
+     */
     public Node delNode(Node node) throws Exception {
         Node node_temp = node.getParentNode();
         logger.debug(node_temp.getNodeName());
@@ -107,11 +128,11 @@ public class DomRepHelper {
             streamResult.setOutputStream(new FileOutputStream(filePath));
             transformer.transform(domSource, streamResult);
         } catch (TransformerConfigurationException e) {
-            e.printStackTrace();
+            logger.error("Failed to save XML file. The failure message is: {}", e.getMessage());
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
+            logger.error("Failed to save XML file. The failure message is: {}", e.getMessage());
         } catch (TransformerException e) {
-            e.printStackTrace();
+            logger.error("Failed to save XML file. The failure message is: {}", e.getMessage());
         }
 
     }
