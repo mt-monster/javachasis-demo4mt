@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Scanner;
 import java.util.stream.Stream;
 
 import org.slf4j.Logger;
@@ -27,7 +28,7 @@ public class ReplaceRobot {
 
     private static final Logger logger = LoggerFactory.getLogger(ReplaceRobot.class);
 
-    private String sdkVersion = "2.3.39";
+    private static String sdkVersion = "2.3.39";
 
     private String basePath;
 
@@ -36,6 +37,8 @@ public class ReplaceRobot {
     private DomRepHelper domRepHelper = new DomRepHelper();
 
     private YmlRepHelper ymlRepHelper = new YmlRepHelper();
+
+    private static boolean isNeedChangeSdk = true;
 
     public ReplaceRobot(String basePath) {
         this.basePath = basePath;
@@ -48,16 +51,45 @@ public class ReplaceRobot {
     }
 
     public static void main(String[] args) throws Exception {
-        String sdkVersion = "2.3.39";
+        logger.info("<-------BEGIN TO WORK------>");
+        // ------------------留下交互入口
+        logger.info("是否需要替换sdk版本号，默认替换版本号是2.3.39,请输入Y(es)/N(o)，并以回车结束....");
+        judgeChangeSdk();
         String[] operAdd = {"helloprovider", "pojoService"};
-        // TODO: 2018/10/25 留下交互入口
-        //        String[] opers = cmdScan();
-        //        operAdd = opers;
+        String[] opers = cmdScan();
+        operAdd = opers;
         //------------获取当前绝对路径
         String abPath = new File("").getAbsolutePath();
         logger.info("<-------root path is------> {}", abPath);
         ReplaceRobot robot = new ReplaceRobot(abPath, sdkVersion, operAdd);
         robot.process();
+    }
+
+    private static void judgeChangeSdk() {
+        Scanner sc = new Scanner(System.in);
+        String s = sc.next();
+        if (s.equals("Y") || s.equals("y")) {
+            sdkVersion = sdkScan();
+        } else if (s.equals("N") || s.equals("n")) {
+            logger.info("采用缺省的sdk版本号替换工程.......");
+        } else {
+            logger.error("输入的字符不合法，请重新输入......");
+            judgeChangeSdk();
+        }
+    }
+
+    private static String sdkScan() {
+        String regex = "^[A-Za-z0-9.]+$";
+//        String reg= "^[\\u4e00-\\u9fa5]{0,}$";
+        logger.info("请输入要替换的SDK版本号，例如2.3.39,回车键结束输入........");
+        Scanner sc = new Scanner(System.in);
+        String s = sc.next();
+        logger.debug("输入要替换的SDK版本号是-----" + s);
+        if (!s.matches(regex)) {
+            logger.error("输入的版本号包含非法字符，请重新输入.....");
+            sdkScan();
+        }
+        return s;
     }
 
     private static String[] cmdScan() {
@@ -72,6 +104,7 @@ public class ReplaceRobot {
 
         } catch (IOException e) {
             logger.error(e.getMessage());
+            System.exit(1);
         }
 
         return new String[0];
