@@ -60,11 +60,11 @@ public class TestMgr {
 
   public static void summary() {
     if (errorList.isEmpty()) {
-      LOGGER.info("............. test finished ............");
+      LOGGER.info("............. sprmigrate finished ............");
       return;
     }
 
-    LOGGER.info("............. test not finished ............");
+    LOGGER.info("............. sprmigrate not finished ............");
     for (Throwable e : errorList) {
       LOGGER.info("", e);
     }

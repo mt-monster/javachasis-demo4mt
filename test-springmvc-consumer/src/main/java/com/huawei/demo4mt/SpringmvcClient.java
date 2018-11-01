@@ -62,7 +62,7 @@ public class SpringmvcClient {
         restTemplate = RestTemplateBuilder.create();
         controller = BeanUtils.getBean("controller");
 
-        // test dark launch concurrency
+        // sprmigrate dark launch concurrency
         CountDownLatch countDownLatch = new CountDownLatch(4);
         for (int i = 0; i < 4; i++) {
             int index = i;

@@ -1,4 +1,4 @@
-package com.huawei.test;
+package com.huawei.sprmigrate;
 
 import java.util.concurrent.RejectedExecutionHandler;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
@@ -34,7 +34,7 @@ class testTask implements Runnable{
 
   @Override
   public void run() {
-    System.out.println("test task");
+    System.out.println("sprmigrate task");
   }
   
 }

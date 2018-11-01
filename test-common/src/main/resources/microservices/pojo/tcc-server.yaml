@@ -2,7 +2,7 @@
 # as a demonstration of an API spec in YAML
 swagger: '2.0'
 info:
-  title: cse test
+  title: cse sprmigrate
   version: 1.0.0
   x-java-interface: com.huawei.demo4mt.tccserver.TestTcc
   

@@ -50,8 +50,8 @@ public class CodeFirstRestTemplateSpringmvc extends CodeFirstRestTemplate {
     protected void testExtend(RestTemplate template, String cseUrlPrefix) {
         super.testExtend(template, cseUrlPrefix);
 
-        testResponseEntity("springmvc", template, cseUrlPrefix);
-        testIntf();
+//        testResponseEntity("springmvc", template, cseUrlPrefix);
+//        testIntf();
     }
 
     private void testIntf() {

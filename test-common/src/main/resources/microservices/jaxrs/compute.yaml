@@ -2,7 +2,7 @@
 # as a demonstration of an API spec in YAML
 swagger: '2.0'
 info:
-  title: rest test
+  title: rest sprmigrate
   version: 1.0.0
   x-java-interface: com.huawei.demo4mt.compute.Compute
   
@@ -84,7 +84,7 @@ paths:
           type: string
       responses:
         200:
-          description: test RawJson String
+          description: sprmigrate RawJson String
           schema:
             type: string
   /saysomething:

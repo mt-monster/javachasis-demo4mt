@@ -14,24 +14,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+package com.huawei.sprmigrate;
 
-package com.huawei.demo4mt.controller;
-
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
-
-import org.springframework.web.bind.annotation.RequestParam;
-
-import com.huawei.demo4mt.entity.Person;
-
-public interface Controller {
-  int add(@Min(1)@RequestParam("a")int a,@Max(5) @RequestParam("b") int b);
-
-  String sayHello(String name);
-
-  String saySomething(String prefix, Person user);
-
-  String sayHi(String name);
-
-  String sayHei(String name);
+public final class Constants {
+    public final static String findFileName[] = {"pom.xml", "application.yml"};
 }

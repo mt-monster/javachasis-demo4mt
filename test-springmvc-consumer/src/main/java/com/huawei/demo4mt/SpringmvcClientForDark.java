@@ -53,7 +53,7 @@ public class SpringmvcClientForDark {
     public static void run() throws Exception {
         restTemplate = RestTemplateBuilder.create();
         String prefix = "cse://springmvc";
-        //test darklaunch concurrency
+        //sprmigrate darklaunch concurrency
 
         CountDownLatch countDownLatch = new CountDownLatch(4);
         for (int i = 0; i < 100; i++) {
