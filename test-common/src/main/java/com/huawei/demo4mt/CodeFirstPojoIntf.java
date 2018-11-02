@@ -22,7 +22,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.huawei.demo4mt.entity.Person;
-import com.huawei.demo4mt.server.User;
+import com.huawei.demo4mt.entity.User;
 
 public interface CodeFirstPojoIntf {
   Map<String, User> testUserMap(Map<String, User> userMap);

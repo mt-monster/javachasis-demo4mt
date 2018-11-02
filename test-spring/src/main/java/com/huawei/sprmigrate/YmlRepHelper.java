@@ -47,9 +47,10 @@ public class YmlRepHelper {
         try {
             YamlReader reader = new YamlReader(new FileReader(filePah));
             Object object = reader.read();
-            map = (Map) object;
+            if (object instanceof Map) {
+                map = (Map) object;
+            }
         } catch (FileNotFoundException |YamlException e) {
-            e.printStackTrace();
             logger.error("Failed to transfer yaml to Properties. The failure message is: {}", e.getMessage());
         }
         return map;

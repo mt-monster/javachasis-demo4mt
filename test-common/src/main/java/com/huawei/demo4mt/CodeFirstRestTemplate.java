@@ -30,7 +30,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
 
 import com.huawei.demo4mt.entity.Person;
-import com.huawei.demo4mt.server.User;
+import com.huawei.demo4mt.entity.User;
 
 /**
  * <一句话功能简述>
@@ -76,7 +76,7 @@ public class CodeFirstRestTemplate {
         User user2 = new User();
         user2.setNames(new String[] {"u3", "u4"});
 
-        Map<String, User> userMap = new HashMap<>();
+        Map<String, User> userMap = new HashMap<String, User>();
         userMap.put("u1", user1);
         userMap.put("u2", user2);
 

@@ -4,6 +4,8 @@ import java.util.Date;
 
 import org.springframework.http.ResponseEntity;
 
+import com.huawei.demo4mt.entity.Person;
+
 /**
  * 一句话功能简述
  * 功能详细描述
@@ -14,5 +16,6 @@ import org.springframework.http.ResponseEntity;
  * Package Name:com.huawei.demo4mt
  */
 public interface CodeFirstSpringmvcIntf {
-    public ResponseEntity<String> responseEntity (String strBody,Date date);
+    ResponseEntity<Person> responseEntity(Date date);
+
 }

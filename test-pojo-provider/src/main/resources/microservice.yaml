@@ -1,19 +1,20 @@
 APPLICATION_ID: pojoApp
 service_description:
   name: pojoprovider
-  version: 0.0.1
+  version: 0.0.3
 cse:
   service:
     registry:
-      address: https://cse.cn-north-1.myhwclouds.com:443
+#      address: https://cse.cn-north-1.myhwclouds.com:443
+      address: http://127.0.0.1:30100
       instance:
         watch: false
   rest:
     address: 0.0.0.0:17081
   highway:
     address: 0.0.0.0:17082
-  credentials:
-    accessKey: UVGH5JDYDP0LUWTIH12T
-    secretKey: khhlXrWxdcsKDfB2nY1NwpIPac38OWO6CBiqtxyg
-    project: cn-north-1
-    akskCustomCipher: default
+#  credentials:
+#    accessKey: UVGH5JDYDP0LUWTIH12T
+#    secretKey: khhlXrWxdcsKDfB2nY1NwpIPac38OWO6CBiqtxyg
+#    project: cn-north-1
+#    akskCustomCipher: default

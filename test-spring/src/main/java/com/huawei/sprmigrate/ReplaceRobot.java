@@ -88,7 +88,6 @@ public class ReplaceRobot {
 
     private static String sdkScan() {
         String regex = "^[A-Za-z0-9.]+$";
-//        String reg= "^[\\u4e00-\\u9fa5]{0,}$";
         logger.info("请输入要替换的SDK版本号，例如2.3.39,回车键结束输入........");
         Scanner sc = new Scanner(System.in);
         String s = sc.next();
@@ -202,8 +201,6 @@ public class ReplaceRobot {
             Node node = modNode.item(i);
             String modNodeText = domRepHelper.getNodeValue(node);
             if (modNodeText.equals("eureka-server")) {
-                logger.debug("******* {}  ******* ", modNodeText);
-                logger.debug("########  doing delete:  ");
                 try {
                     domRepHelper.delNode(node);
                 } catch (Exception e) {

@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: helloconsumer
+server:
+  port: '7211'
+eureka:
+  instance:
+    leaseRenewalIntervalInSeconds: '10'
+    metadataMap:
+      instanceId: ${vcap.application.instance_id:${spring.application.name}:${spring.application.instance_id:${server.port}}}
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:7071/eureka/
+endpoints:
+  restart:
+    enabled: 'true'
+  health:
+    sensitive: 'false'
+  shutdown:
+    enabled: 'true'
