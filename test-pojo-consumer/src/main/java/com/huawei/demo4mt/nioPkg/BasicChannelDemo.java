@@ -1,4 +1,4 @@
-package com.huawei.demo4mt.nioPkg;
+package com.huawei.demo4mt.NioPkg;
 
 import java.io.RandomAccessFile;
 import java.net.URL;
@@ -28,7 +28,7 @@ public class BasicChannelDemo {
     String path = "data/nio-data.txt";
     URL systemResource = BasicChannelDemo.class.getClassLoader().getResource("");
     System.out.println(systemResource + path);
-    RandomAccessFile afile = new RandomAccessFile("test-pojo-consumer/target/classes/data/nio-data.txt", "rw");
+    RandomAccessFile afile = new RandomAccessFile("sprmigrate-pojo-consumer/target/classes/data/nio-data.txt", "rw");
     FileChannel channel = afile.getChannel();
     ByteBuffer buf = ByteBuffer.allocate(5);
     int bytesRead = channel.read(buf);
