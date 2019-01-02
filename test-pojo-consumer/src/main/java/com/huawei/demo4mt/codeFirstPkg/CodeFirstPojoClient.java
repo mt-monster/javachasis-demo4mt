@@ -3,8 +3,6 @@ package com.huawei.demo4mt.codeFirstPkg;
 import java.util.HashMap;
 import java.util.Map;
 
-import javax.inject.Inject;
-
 import org.apache.servicecomb.core.CseContext;
 import org.apache.servicecomb.provider.pojo.RpcReference;
 
@@ -17,9 +15,6 @@ public class CodeFirstPojoClient {
   @RpcReference(microserviceName = "pojoprovider", schemaId = "com.huawei.demo4mt.CodeFirstPojoIntf")
   public CodeFirstPojoClientIntf codeFirstAnnotation;
 
-  @Inject
-  private CodeFirstPojoIntf codeFirstFromYml;
-
   @RpcReference(microserviceName = "pojoprovider")
   public CodeFirstPojoClientIntf codeFirstAnnotationWithoutSchemaId;
 
@@ -30,7 +25,6 @@ public class CodeFirstPojoClient {
       TestMgr.setMsg(microserviceName, transport);
       testAll(codeFirstAnnotation, transport);
       testAll(codeFirstAnnotationWithoutSchemaId, transport);
-      testAll(codeFirstFromYml, transport);
 
     }
   }

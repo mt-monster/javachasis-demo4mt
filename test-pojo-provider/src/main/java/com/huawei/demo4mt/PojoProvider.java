@@ -7,5 +7,6 @@ public class PojoProvider {
   public static void main(String[] args) throws Exception {
     Log4jUtils.init();
     BeanUtils.init();
+    System.out.println("xxxxx");
   } 
 }
