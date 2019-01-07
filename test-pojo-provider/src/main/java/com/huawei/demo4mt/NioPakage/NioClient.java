@@ -16,7 +16,7 @@ public class NioClient {
 
     private static ClientHandle clientHandle;
 
-    public static void start() {
+    protected static void start() {
         start(DEFAULT_HOST, DEFAULT_PORT);
     }
 
@@ -28,8 +28,8 @@ public class NioClient {
         new Thread(clientHandle, "Client").start();
     }
 
-    public static boolean sendMsg(String msg) throws Exception {
-        if (msg.equals("q")) {
+    protected static boolean sendMsg(String msg) throws Exception {
+        if ("q".equals(msg)) {
             return false;
         }
         clientHandle.sendMsg(msg);

@@ -13,8 +13,8 @@ import javax.script.ScriptEngineManager;
  * Package Name:com.huawei.demo4mt.NioPakage
  */
 public final class Calculator {
-   public static final ScriptEngine jse= new ScriptEngineManager().getEngineByName("JavaScript");
+   public static final ScriptEngine JSE= new ScriptEngineManager().getEngineByName("JavaScript");
    public static Object cal(String expression) throws Exception{
-       return jse.eval(expression);
+       return JSE.eval(expression);
    }
 }

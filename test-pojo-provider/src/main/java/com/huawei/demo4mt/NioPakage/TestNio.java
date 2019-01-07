@@ -17,7 +17,7 @@ import com.huawei.demo4mt.AioPkg.AioServer;
 public class TestNio {
     public static void main(String[] args) throws Exception {
         System.out.println("choose which mode to sprmigrate... 1:Nio,2:Aio");
-        Boolean opt = new Scanner(System.in).nextLine().equals("1") ? true : false;
+        Boolean opt = "1".equals(new Scanner(System.in).nextLine()) ? true : false;
         if (opt) {
             NioServer.start();
             Thread.sleep(2000);

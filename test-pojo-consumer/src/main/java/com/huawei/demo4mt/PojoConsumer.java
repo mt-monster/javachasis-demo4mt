@@ -33,6 +33,8 @@ public class PojoConsumer {
   public static void main(String[] args) throws Exception {
     Log4jUtils.init();
     BeanUtils.init();
+    String envProperty = System.getProperty("user.dir");
+    logger.warn("envProperty is-------------->>"+envProperty);
     String[] beans = BeanUtils.getContext().getBeanDefinitionNames();
     for (String bn : beans) {
       logger.info("[" + bn + "}");
@@ -51,7 +53,7 @@ public class PojoConsumer {
    */
   private static void buildTest1() {
     IntStream.range(0, 100).parallel().forEach(s -> {
-      if (Thread.currentThread().getName().equals("main")) {
+      if ("main".equals(Thread.currentThread().getName())) {
         return;
       }
       Thread.currentThread().setContextClassLoader(null);

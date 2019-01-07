@@ -149,9 +149,9 @@
         <configuration>
           <skip>${maven.test.skip}</skip>
           <testFailureIgnore>${maven.test.failure.ignore}</testFailureIgnore>
-          <excludes>
-            <exclude>${excludesFile}</exclude>
-          </excludes>
+          <!--<excludes>-->
+            <!--<exclude>${excludesFile}</exclude>-->
+          <!--</excludes>-->
           <forkCount>1</forkCount>
           <reuseForks>true</reuseForks>
           <runOrder>alphabetical</runOrder>
@@ -163,7 +163,7 @@
         <version>3.0.1</version>
         <configuration>
           <findbugsXmlOutput>true</findbugsXmlOutput>
-          <findbugsXmlWithMessages>true</findbugsXmlWithMessages>
+          <!--<findbugsXmlWithMessages>true</findbugsXmlWithMessages>-->
           <xmlOutput>true</xmlOutput>
           <excludeFilterFile>findbugs-exclude.xml</excludeFilterFile>
         </configuration>

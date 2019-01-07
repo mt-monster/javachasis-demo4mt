@@ -1,11 +1,11 @@
 package com.huawei.demo4mt.threadPkg;
 
-import com.google.common.eventbus.EventBus;
-import com.google.common.eventbus.Subscribe;
-
 import org.apache.servicecomb.serviceregistry.task.TaskStatus;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import com.google.common.eventbus.EventBus;
+import com.google.common.eventbus.Subscribe;
 
 public class TestTask2 extends AbstractTask {
 
@@ -17,7 +17,7 @@ public class TestTask2 extends AbstractTask {
 
 
     @Subscribe
-    protected void ListenTask1(TestTask1 testTask1) {
+    protected void listenTask1(TestTask1 testTask1) {
         if (testTask1.taskStatus == TaskStatus.FINISHED) {
             this.taskStatus = TaskStatus.READY;
         }

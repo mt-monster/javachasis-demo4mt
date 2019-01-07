@@ -44,24 +44,29 @@ public class CodeFirstPojo implements CodeFirstPojoIntf {
     return users;
   }
 
+  @Override
   public String[] testStrings(String[] input) {
     input[0] += input[0] + "0";
     return input;
   }
 
+  @Override
   public byte[] testBytes(byte[] input) {
     input[0] = (byte) (input[0] + 1);
     return input;
   }
 
+  @Override
   public int reduce(int a, int b) {
     return a - b;
   }
 
+  @Override
   public Date addDate(Date date, long second) {
     return new Date(date.getTime() + second * 1000);
   }
 
+  @Override
   public Person sayHello(Person user) {
     user.setName("hello " + user.getName());
     return user;
@@ -79,10 +84,12 @@ public class CodeFirstPojo implements CodeFirstPojoIntf {
   //        return "hello " + person.get("name");
   //    }
 
+  @Override
   public String saySomething(String prefix, Person user) {
     return prefix + " " + user.getName();
   }
 
+  @Override
   public String sayHi(String name) {
     ContextUtils.getInvocationContext().setStatus(202);
     return name + " sayhi, context k: "
@@ -97,10 +104,12 @@ public class CodeFirstPojo implements CodeFirstPojoIntf {
     return future;
   }
 
+  @Override
   public boolean isTrue() {
     return true;
   }
 
+  @Override
   public String addString(List<String> s) {
     String result = "";
     for (String x : s) {
