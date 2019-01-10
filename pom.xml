@@ -324,6 +324,7 @@
     <!--<module>test-tcc</module>-->
     <!--<module>test-pojo-provider2</module>-->
     <module>test-common</module>
+    <module>test-spring-boot</module>
     <!--<module>test-eventbus</module>-->
     <!--<module>test-springmvc-consumer</module>-->
     <!--<module>test-springmvc-provider</module>-->

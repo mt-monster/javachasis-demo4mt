@@ -43,9 +43,9 @@ import com.huawei.demo4mt.entity.User;
  */
 public class CodeFirstRestTemplate {
     public void testCodeFirst(RestTemplate template, String microserviceName, String basePath) {
-        for (String transport : DemoConst.transports) {
+        for (String transport : DemoConst.TRANSPORTS) {
             CseContext.getInstance().getConsumerProviderManager().setTransport(microserviceName, transport);
-            TestMgr.setMsg(microserviceName, transport);
+            TestMgr.setMSG(microserviceName, transport);
 
             String cseUrlPrefix = "cse://" + microserviceName + basePath;
 

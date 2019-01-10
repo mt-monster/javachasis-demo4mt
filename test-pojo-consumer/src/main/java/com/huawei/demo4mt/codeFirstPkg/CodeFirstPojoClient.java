@@ -20,9 +20,9 @@ public class CodeFirstPojoClient {
 
 
   public void testCodeFirstAll(String microserviceName) {
-    for (String transport : DemoConst.transports) {
+    for (String transport : DemoConst.TRANSPORTS) {
       CseContext.getInstance().getConsumerProviderManager().setTransport(microserviceName, transport);
-      TestMgr.setMsg(microserviceName, transport);
+      TestMgr.setMSG(microserviceName, transport);
       testAll(codeFirstAnnotation, transport);
       testAll(codeFirstAnnotationWithoutSchemaId, transport);
 

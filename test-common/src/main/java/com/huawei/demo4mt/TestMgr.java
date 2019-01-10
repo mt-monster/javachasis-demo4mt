@@ -31,11 +31,11 @@ public class TestMgr {
 
   private static String MSG = "";
 
-  public static void setMSG(String MSG) {
+  public void setMSG(String MSG) {
     TestMgr.MSG = MSG;
   }
 
-  public void setMsg(String microserviceName, String transport) {
+  public static void setMSG(String microserviceName, String transport) {
     TestMgr.MSG = String.format("microservice=%s, transport=%s", microserviceName, transport);
   }
 
@@ -52,13 +52,13 @@ public class TestMgr {
     }
   }
 
-  public void checkNotEmpty(String real) {
+  public static void checkNotEmpty(String real) {
     if (StringUtils.isEmpty(real)) {
       errorList.add(new Error(MSG + " | unexpected null result, method is " + getCaller()));
     }
   }
 
-  public void summary() {
+  public static void summary() {
     if (errorList.isEmpty()) {
       LOGGER.info("............. sprmigrate finished ............");
       return;
@@ -70,11 +70,11 @@ public class TestMgr {
     }
   }
 
-  public List<Throwable> errors() {
+  public static List<Throwable> errors() {
     return errorList;
   }
 
-  private String getCaller() {
+  private static String getCaller() {
     StackTraceElement[] stackTrace = Thread.currentThread().getStackTrace();
     if (stackTrace.length < 3) {
       return null;
