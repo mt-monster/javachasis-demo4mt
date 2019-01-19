@@ -30,7 +30,7 @@ public class WriteHandler implements CompletionHandler<Integer, ByteBuffer> {
         else {
             //读取数据
             ByteBuffer readBuffer = ByteBuffer.allocate(1024);
-            clientChannel.read(readBuffer,readBuffer,new ClientReadHandler(clientChannel, latch));
+            clientChannel.read(readBuffer,readBuffer,new com.huawei.demo4mt.AioPkg.ClientReadHandler(clientChannel, latch));
         }
 
     }

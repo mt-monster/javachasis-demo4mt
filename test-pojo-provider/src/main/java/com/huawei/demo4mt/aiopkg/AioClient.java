@@ -9,7 +9,7 @@ import java.util.Scanner;
  * @version [版本号, ]
  * @see  [相关类/方法]
  * @since [产品/模块版本]
- * Package Name:com.huawei.demo4mt.aiopkg
+ * Package Name:com.huawei.demo4mt.AioPkg
  */
 public class AioClient {
     private static String DEFAULT_HOST = "127.0.0.1";
@@ -32,7 +32,7 @@ public class AioClient {
 
     //向服务器发送消息
     public static boolean sendMsg(String msg) throws Exception {
-        if (msg.equals("q")) {
+        if ("q".equals(msg)) {
             return false;
         }
         clientHandle.sendMsg(msg);
@@ -44,6 +44,8 @@ public class AioClient {
         AioClient.start();
         System.out.println("请输入请求消息：");
         Scanner scanner = new Scanner(System.in);
-        while(AioClient.sendMsg(scanner.nextLine()));
+        while(AioClient.sendMsg(scanner.nextLine())) {
+          ;
+        }
     }
 }

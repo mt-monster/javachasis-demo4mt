@@ -12,7 +12,7 @@ import java.util.concurrent.CountDownLatch;
  * @version [版本号, ]
  * @see  [相关类/方法]
  * @since [产品/模块版本]
- * Package Name:com.huawei.demo4mt.aiopkg
+ * Package Name:com.huawei.demo4mt.AioPkg
  */
 public class AsyncServerHandler implements Runnable {
     public CountDownLatch latch;
@@ -32,7 +32,7 @@ public class AsyncServerHandler implements Runnable {
 
     @Override public void run() {
         latch = new CountDownLatch(1);
-        serverSocketChannel.accept(this,new AccpetHandler());
+        serverSocketChannel.accept(this,new com.huawei.demo4mt.AioPkg.AccpetHandler());
         try {
             latch.await();
         } catch (Exception e) {
