@@ -32,7 +32,7 @@ under the License.
  |  2. Global Level. This settings.xml file provides configuration for all Maven
  |                 users on a machine (assuming they're all using the same Maven
  |                 installation). It's normally provided in
- |                 ${maven.home}/conf/settings.xml.
+ |                 ${maven.conf}/settings.xml.
  |
  |                 NOTE: This location can be overridden with the CLI option:
  |
@@ -144,6 +144,12 @@ under the License.
    | server for that repository.
    |-->
   <mirrors>
+    <mirror>
+      <id>huaweicloud</id>
+      <mirrorOf>*,!HuaweiCloudSDK</mirrorOf>
+      <url>https://repo.huaweicloud.com/repository/maven/</url>
+    </mirror>
+
     <!-- mirror
      | Specifies a repository mirror site to use instead of a given repository. The repository that
      | this mirror serves has an ID that matches the mirrorOf element of this mirror. IDs are used
@@ -156,12 +162,6 @@ under the License.
       <url>http://my.repository.com/repo/path</url>
     </mirror>
      -->
-    <mirror>
-      <id>cse1</id>
-      <mirrorOf>*</mirrorOf>
-      <name>Nexus cse</name>
-      <url>http://maven.huaweicse.com/nexus/content/groups/public</url>
-    </mirror>	 
   </mirrors>
 
   <!-- profiles
@@ -186,13 +186,40 @@ under the License.
    |
    |-->
   <profiles>
+    <profile>
+      <id>MyProfile</id>
+      <repositories>
+        <repository>
+          <id>HuaweiCloudSDK</id>
+          <url>https://repo.huaweicloud.com/repository/maven/huaweicloudsdk/</url>
+          <releases>
+            <enabled>true</enabled>
+          </releases>
+          <snapshots>
+            <enabled>false</enabled>
+          </snapshots>
+        </repository>
+      </repositories>
+      <pluginRepositories>
+        <pluginRepository>
+          <id>HuaweiCloudSDK</id>
+          <url>https://repo.huaweicloud.com/repository/maven/huaweicloudsdk/</url>
+          <releases>
+            <enabled>true</enabled>
+          </releases>
+          <snapshots>
+            <enabled>false</enabled>
+          </snapshots>
+        </pluginRepository>
+      </pluginRepositories>
+    </profile>
     <!-- profile
      | Specifies a set of introductions to the build process, to be activated using one or more of the
      | mechanisms described above. For inheritance purposes, and to activate profiles via <activatedProfiles/>
      | or the command line, profiles have to have an ID that is unique.
      |
      | An encouraged best practice for profile identification is to use a consistent naming convention
-     | for profiles, such as 'env-dev', 'env-sprmigrate', 'env-production', 'user-jdcasey', 'user-brett', etc.
+     | for profiles, such as 'env-dev', 'env-test', 'env-production', 'user-jdcasey', 'user-brett', etc.
      | This will make it more intuitive to understand what the set of introduced profiles is attempting
      | to accomplish, particularly when you only have a list of profile id's for debug.
      |
@@ -215,21 +242,7 @@ under the License.
       </repositories>
     </profile>
     -->
-    <profile>
-      <id>nexusProfile</id>
-      <repositories>
-        <repository>
-          <id>cse1</id>
-          <url>http://maven.huaweicse.com/nexus/content/groups/public</url>
-        </repository>
-      </repositories>
-	  <pluginRepositories>
-		<pluginRepository>
-			<id>cse1</id>
-			<url>http://maven.huaweicse.com/nexus/content/groups/public</url>
-		</pluginRepository>
-	  </pluginRepositories>	
-	</profile>
+
     <!--
      | Here is another profile, activated by the system property 'target-env' with a value of 'dev',
      | which provides a specific path to the Tomcat instance. To use this, your plugin configuration
@@ -275,6 +288,7 @@ under the License.
   </activeProfiles>
   -->
   <activeProfiles>
-    <activeProfile>nexusProfile</activeProfile>
+    <activeProfile>MyProfile</activeProfile>
   </activeProfiles>
+
 </settings>
