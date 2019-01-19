@@ -1,4 +1,4 @@
-package com.huawei.demo4mt.nioPkg;
+package com.huawei.demo4mt.niopkg;
 
 import java.util.Date;
 
@@ -9,7 +9,7 @@ import java.util.Date;
  * @version [版本号, ]
  * @see  [相关类/方法]
  * @since [产品/模块版本]
- * Package Name:com.huawei.demo4mt.nioPkg
+ * Package Name:com.huawei.demo4mt.niopkg
  */
 public class Wang implements CallbackIntf {
 

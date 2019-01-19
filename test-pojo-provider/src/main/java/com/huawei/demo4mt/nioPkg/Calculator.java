@@ -1,4 +1,4 @@
-package com.huawei.demo4mt.nioPkg;
+package com.huawei.demo4mt.niopkg;
 
 import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
@@ -10,7 +10,7 @@ import javax.script.ScriptEngineManager;
  * @version [版本号, ]
  * @see  [相关类/方法]
  * @since [产品/模块版本]
- * Package Name:com.huawei.demo4mt.nioPkg
+ * Package Name:com.huawei.demo4mt.niopkg
  */
 public final class Calculator {
    public static final ScriptEngine jse= new ScriptEngineManager().getEngineByName("JavaScript");

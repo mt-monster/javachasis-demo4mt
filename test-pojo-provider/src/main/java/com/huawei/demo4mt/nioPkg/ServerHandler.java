@@ -1,4 +1,4 @@
-package com.huawei.demo4mt.nioPkg;
+package com.huawei.demo4mt.niopkg;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -13,7 +13,7 @@ import java.net.Socket;
  * @version [版本号, ]
  * @see  [相关类/方法]
  * @since [产品/模块版本]
- * Package Name:com.huawei.demo4mt.nioPkg
+ * Package Name:com.huawei.demo4mt.niopkg
  */
 public class ServerHandler implements Runnable {
 

@@ -1,4 +1,4 @@
-package com.huawei.demo4mt.nioPkg;
+package com.huawei.demo4mt.niopkg;
 
 public interface CallbackIntf {
    void calTime(long time);

@@ -1,4 +1,4 @@
-package com.huawei.demo4mt.NioPkg;
+package com.huawei.demo4mt.nioPkg;
 
 import java.io.RandomAccessFile;
 import java.net.URL;

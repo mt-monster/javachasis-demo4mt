@@ -303,5 +303,6 @@
     <!--<module>test-springmvc-consumer</module>-->
     <!--<module>test-springmvc-provider</module>-->
     <!--<module>test-springmvc-provider2</module>-->
+    <module>test-weakreference</module>
   </modules>
 </project>

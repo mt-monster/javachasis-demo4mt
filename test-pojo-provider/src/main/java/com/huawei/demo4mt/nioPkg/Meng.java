@@ -1,4 +1,4 @@
-package com.huawei.demo4mt.nioPkg;
+package com.huawei.demo4mt.niopkg;
 
 /**
  * 一句话功能简述
@@ -7,7 +7,7 @@ package com.huawei.demo4mt.nioPkg;
  * @version [版本号, ]
  * @see  [相关类/方法]
  * @since [产品/模块版本]
- * Package Name:com.huawei.demo4mt.nioPkg
+ * Package Name:com.huawei.demo4mt.niopkg
  */
 public class Meng {
     public void answerTime(CallbackIntf callback , String name) {
