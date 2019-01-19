@@ -1,4 +1,4 @@
-package com.huawei.demo4mt.AioPkg;
+package com.huawei.demo4mt.aiopkg;
 
 import java.nio.ByteBuffer;
 import java.nio.channels.AsynchronousSocketChannel;
@@ -11,20 +11,20 @@ import java.nio.channels.CompletionHandler;
  * @version [版本号, ]
  * @see  [相关类/方法]
  * @since [产品/模块版本]
- * Package Name:com.huawei.demo4mt.AioPkg
+ * Package Name:com.huawei.demo4mt.aiopkg
  */
-public class AccpetHandler implements CompletionHandler<AsynchronousSocketChannel, AsyncServerHandler> {
-    @Override public void completed(AsynchronousSocketChannel socketChannel, AsyncServerHandler serverHandler) {
+public class AccpetHandler implements CompletionHandler<AsynchronousSocketChannel, com.huawei.demo4mt.aiopkg.AsyncServerHandler> {
+    @Override public void completed(AsynchronousSocketChannel socketChannel, com.huawei.demo4mt.aiopkg.AsyncServerHandler serverHandler) {
 
-        AioServer.clientcount++;
-        System.out.println("连接的客户端数： " + AioServer.clientcount);
+        com.huawei.demo4mt.aiopkg.AioServer.clientcount++;
+        System.out.println("连接的客户端数： " + com.huawei.demo4mt.aiopkg.AioServer.clientcount);
         serverHandler.serverSocketChannel.accept(serverHandler, this);
         ByteBuffer byteBuffer = ByteBuffer.allocate(1024);
-        socketChannel.read(byteBuffer, byteBuffer, new ReadHandler(socketChannel));
+        socketChannel.read(byteBuffer, byteBuffer, new com.huawei.demo4mt.aiopkg.ReadHandler(socketChannel));
 
     }
 
-    @Override public void failed(Throwable exc, AsyncServerHandler serverHandler) {
+    @Override public void failed(Throwable exc, com.huawei.demo4mt.aiopkg.AsyncServerHandler serverHandler) {
         exc.printStackTrace();
         serverHandler.latch.countDown();
     }

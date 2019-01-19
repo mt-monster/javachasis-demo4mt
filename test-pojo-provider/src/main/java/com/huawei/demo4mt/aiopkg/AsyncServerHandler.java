@@ -1,4 +1,4 @@
-package com.huawei.demo4mt.AioPkg;
+package com.huawei.demo4mt.aiopkg;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
@@ -12,7 +12,7 @@ import java.util.concurrent.CountDownLatch;
  * @version [版本号, ]
  * @see  [相关类/方法]
  * @since [产品/模块版本]
- * Package Name:com.huawei.demo4mt.AioPkg
+ * Package Name:com.huawei.demo4mt.aiopkg
  */
 public class AsyncServerHandler implements Runnable {
     public CountDownLatch latch;

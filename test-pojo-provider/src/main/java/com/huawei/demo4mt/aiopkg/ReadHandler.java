@@ -1,11 +1,12 @@
-package com.huawei.demo4mt.AioPkg;
+package com.huawei.demo4mt.aiopkg;
 
-import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.channels.AsynchronousSocketChannel;
 import java.nio.channels.CompletionHandler;
+import java.nio.charset.StandardCharsets;
 
-import com.huawei.demo4mt.NioPakage.Calculator;
+import com.huawei.demo4mt.niopkg.Calculator;
+
 
 /**
  * 一句话功能简述
@@ -14,7 +15,7 @@ import com.huawei.demo4mt.NioPakage.Calculator;
  * @version [版本号, ]
  * @see  [相关类/方法]
  * @since [产品/模块版本]
- * Package Name:com.huawei.demo4mt.AioPkg
+ * Package Name:com.huawei.demo4mt.aiopkg
  */
 public class ReadHandler implements CompletionHandler<Integer, ByteBuffer> {
 
@@ -29,7 +30,7 @@ public class ReadHandler implements CompletionHandler<Integer, ByteBuffer> {
         byte[] msg = new byte[buffer.remaining()];
         buffer.get(msg);
         try {
-            String expression = new String(msg, "UTF-8");
+            String expression = new String(msg, StandardCharsets.UTF_8);
             System.out.println("服务器接收到的信息：" + expression);
             String calResult = null;
             try {
@@ -52,9 +53,9 @@ public class ReadHandler implements CompletionHandler<Integer, ByteBuffer> {
         writeBuffer.flip();
         channel.write(writeBuffer, writeBuffer, new CompletionHandler<Integer, ByteBuffer>() {
             @Override public void completed(Integer result, ByteBuffer buffer) {
-                if (buffer.hasRemaining())
-                    channel.write(buffer, buffer, this);
-                else{
+                if (buffer.hasRemaining()) {
+                  channel.write(buffer, buffer, this);
+                }else{
                     //创建新的Buffer
                     ByteBuffer readBuffer = ByteBuffer.allocate(1024);
                     //异步读  第三个参数为接收消息回调的业务Handler

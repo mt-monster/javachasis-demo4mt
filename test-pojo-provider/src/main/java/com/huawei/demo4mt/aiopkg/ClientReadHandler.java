@@ -1,10 +1,10 @@
-package com.huawei.demo4mt.AioPkg;
+package com.huawei.demo4mt.aiopkg;
 
 import java.io.IOException;
-import java.io.UnsupportedEncodingException;
 import java.nio.ByteBuffer;
 import java.nio.channels.AsynchronousSocketChannel;
 import java.nio.channels.CompletionHandler;
+import java.nio.charset.StandardCharsets;
 import java.util.concurrent.CountDownLatch;
 
 /**
@@ -14,7 +14,7 @@ import java.util.concurrent.CountDownLatch;
  * @version [版本号, ]
  * @see  [相关类/方法]
  * @since [产品/模块版本]
- * Package Name:com.huawei.demo4mt.AioPkg
+ * Package Name:com.huawei.demo4mt.aiopkg
  */
 public class ClientReadHandler implements CompletionHandler<Integer, ByteBuffer> {
     private AsynchronousSocketChannel clientChannel;
@@ -31,12 +31,8 @@ public class ClientReadHandler implements CompletionHandler<Integer, ByteBuffer>
         byte[] bytes = new byte[buffer.remaining()];
         buffer.get(bytes);
         String body;
-        try {
-            body = new String(bytes, "UTF-8");
-            System.out.println("客户端收到结果:" + body);
-        } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
-        }
+        body = new String(bytes, StandardCharsets.UTF_8);
+        System.out.println("客户端收到结果:" + body);
     }
 
     @Override public void failed(Throwable exc, ByteBuffer byteBuffer) {

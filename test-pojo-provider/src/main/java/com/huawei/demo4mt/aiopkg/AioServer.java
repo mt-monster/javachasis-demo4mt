@@ -1,4 +1,4 @@
-package com.huawei.demo4mt.AioPkg;
+package com.huawei.demo4mt.aiopkg;
 
 /**
  * 一句话功能简述
@@ -7,7 +7,7 @@ package com.huawei.demo4mt.AioPkg;
  * @version [版本号, ]
  * @see  [相关类/方法]
  * @since [产品/模块版本]
- * Package Name:com.huawei.demo4mt.AioPkg
+ * Package Name:com.huawei.demo4mt.aiopkg
  */
 public class AioServer {
 

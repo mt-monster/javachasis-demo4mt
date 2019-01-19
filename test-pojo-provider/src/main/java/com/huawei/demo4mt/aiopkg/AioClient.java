@@ -1,4 +1,4 @@
-package com.huawei.demo4mt.AioPkg;
+package com.huawei.demo4mt.aiopkg;
 
 import java.util.Scanner;
 
@@ -9,14 +9,14 @@ import java.util.Scanner;
  * @version [版本号, ]
  * @see  [相关类/方法]
  * @since [产品/模块版本]
- * Package Name:com.huawei.demo4mt.AioPkg
+ * Package Name:com.huawei.demo4mt.aiopkg
  */
 public class AioClient {
     private static String DEFAULT_HOST = "127.0.0.1";
 
     private static int DEFAULT_PORT = 12345;
 
-    private static AsyncClientHandler clientHandle;
+    private static com.huawei.demo4mt.aiopkg.AsyncClientHandler clientHandle;
 
     public static void start() {
         start(DEFAULT_HOST, DEFAULT_PORT);
@@ -26,7 +26,7 @@ public class AioClient {
         if (clientHandle != null) {
             return;
         }
-        clientHandle = new AsyncClientHandler(ip, port);
+        clientHandle = new com.huawei.demo4mt.aiopkg.AsyncClientHandler(ip, port);
         new Thread(clientHandle, "Client").start();
     }
 
@@ -45,7 +45,6 @@ public class AioClient {
         System.out.println("请输入请求消息：");
         Scanner scanner = new Scanner(System.in);
         while(AioClient.sendMsg(scanner.nextLine())) {
-          ;
         }
     }
 }
