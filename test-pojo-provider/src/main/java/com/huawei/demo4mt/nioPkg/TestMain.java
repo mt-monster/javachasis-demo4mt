@@ -1,4 +1,4 @@
-package com.huawei.demo4mt.niopkg;
+package com.huawei.demo4mt.nioPkg;
 
 import java.util.Random;
 
@@ -9,7 +9,7 @@ import java.util.Random;
  * @version [版本号, ]
  * @see  [相关类/方法]
  * @since [产品/模块版本]
- * Package Name:com.huawei.demo4mt.niopkg
+ * Package Name:com.huawei.demo4mt.nioPkg
  */
 public class TestMain {
 
