@@ -1,4 +1,4 @@
-package com.huawei.demo4mt.aiopkg;
+package com.huawei.demo4mt.AioPkg;
 
 import java.nio.ByteBuffer;
 import java.nio.channels.AsynchronousSocketChannel;
