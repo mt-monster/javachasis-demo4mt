@@ -1,12 +1,8 @@
-package com.huawei.demo4mt.AioPkg;
+package com.huawei.demo4mt.aiopkg;
 
 import java.nio.ByteBuffer;
 import java.nio.channels.AsynchronousSocketChannel;
 import java.nio.channels.CompletionHandler;
-
-import com.huawei.demo4mt.aiopkg.AioServer;
-import com.huawei.demo4mt.aiopkg.AsyncServerHandler;
-import com.huawei.demo4mt.aiopkg.ReadHandler;
 
 /**
  * 一句话功能简述

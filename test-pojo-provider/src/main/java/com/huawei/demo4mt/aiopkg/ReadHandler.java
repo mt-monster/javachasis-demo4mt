@@ -3,8 +3,10 @@ package com.huawei.demo4mt.aiopkg;
 import java.nio.ByteBuffer;
 import java.nio.channels.AsynchronousSocketChannel;
 import java.nio.channels.CompletionHandler;
+import java.nio.charset.StandardCharsets;
 
-import com.huawei.demo4mt.NioPakage.Calculator;
+import com.huawei.demo4mt.niopkg.Calculator;
+
 
 /**
  * 一句话功能简述
@@ -17,70 +19,68 @@ import com.huawei.demo4mt.NioPakage.Calculator;
  */
 public class ReadHandler implements CompletionHandler<Integer, ByteBuffer> {
 
-    private AsynchronousSocketChannel channel;
+  private AsynchronousSocketChannel channel;
 
-    public ReadHandler(AsynchronousSocketChannel socketChannel) {
-        this.channel = socketChannel;
+  public ReadHandler(AsynchronousSocketChannel socketChannel) {
+    this.channel = socketChannel;
+  }
+
+  @Override
+  public void completed(Integer result, ByteBuffer buffer) {
+    buffer.flip();
+    byte[] msg = new byte[buffer.remaining()];
+    buffer.get(msg);
+    try {
+      String expression = new String(msg, StandardCharsets.UTF_8);
+      System.out.println("服务器接收到的信息：" + expression);
+      String calResult = null;
+      try {
+        calResult = Calculator.cal(expression).toString();
+      } catch (Exception e) {
+        e.printStackTrace();
+        calResult = "计算错误：" + e.getMessage();
+      }
+      dowrite(calResult);
+    } catch (Exception e) {
+      e.printStackTrace();
     }
+  }
 
-    @Override public void completed(Integer result, ByteBuffer buffer) {
-        buffer.flip();
-        byte[] msg = new byte[buffer.remaining()];
-        buffer.get(msg);
-        try {
-            String expression = new String(msg, "UTF-8");
-            System.out.println("服务器接收到的信息：" + expression);
-            String calResult = null;
-            try {
-                calResult = Calculator.cal(expression).toString();
-            } catch (Exception e) {
-                e.printStackTrace();
-                calResult = "计算错误：" + e.getMessage();
-            }
-            dowrite(calResult);
-        } catch (Exception e) {
-            e.printStackTrace();
+  private void dowrite(String data) {
+    byte[] bytes = data.getBytes();
+    ByteBuffer writeBuffer = ByteBuffer.allocate(bytes.length);
+    writeBuffer.put(bytes);
+    writeBuffer.flip();
+    channel.write(writeBuffer, writeBuffer, new CompletionHandler<Integer, ByteBuffer>() {
+      @Override
+      public void completed(Integer result, ByteBuffer buffer) {
+        if (buffer.hasRemaining()) {
+          channel.write(buffer, buffer, this);
+        } else {
+          //创建新的Buffer
+          ByteBuffer readBuffer = ByteBuffer.allocate(1024);
+          //异步读  第三个参数为接收消息回调的业务Handler
+          channel.read(readBuffer, readBuffer, new ReadHandler(channel));
         }
+      }
 
-    }
-
-    private void dowrite(String data) {
-        byte[] bytes = data.getBytes();
-        ByteBuffer writeBuffer = ByteBuffer.allocate(bytes.length);
-        writeBuffer.put(bytes);
-        writeBuffer.flip();
-        channel.write(writeBuffer, writeBuffer, new CompletionHandler<Integer, ByteBuffer>() {
-            @Override public void completed(Integer result, ByteBuffer buffer) {
-                if (buffer.hasRemaining())
-                    channel.write(buffer, buffer, this);
-                else{
-                    //创建新的Buffer
-                    ByteBuffer readBuffer = ByteBuffer.allocate(1024);
-                    //异步读  第三个参数为接收消息回调的业务Handler
-                    channel.read(readBuffer, readBuffer, new ReadHandler(channel));
-                }
-
-            }
-
-            @Override public void failed(Throwable exc, ByteBuffer attachment) {
-                try {
-                    channel.close();
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-
-            }
-        });
-
-
-    }
-
-    @Override public void failed(Throwable exc, ByteBuffer attachment) {
+      @Override
+      public void failed(Throwable exc, ByteBuffer attachment) {
         try {
-            this.channel.close();
+          channel.close();
         } catch (Exception e) {
-            e.printStackTrace();
+          e.printStackTrace();
         }
+      }
+    });
+  }
 
+  @Override
+  public void failed(Throwable exc, ByteBuffer attachment) {
+    try {
+      this.channel.close();
+    } catch (Exception e) {
+      e.printStackTrace();
     }
+  }
 }
