@@ -1,4 +1,4 @@
-package com.huawei.demo4mt.aiopkg;
+package com.huawei.demo4mt.AioPkg;
 
 import java.util.Scanner;
 
@@ -45,6 +45,7 @@ public class AioClient {
         System.out.println("请输入请求消息：");
         Scanner scanner = new Scanner(System.in);
         while(AioClient.sendMsg(scanner.nextLine())) {
+          ;
         }
     }
 }
