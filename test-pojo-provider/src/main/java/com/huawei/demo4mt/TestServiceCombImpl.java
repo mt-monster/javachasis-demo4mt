@@ -1,4 +1,4 @@
-//package com.huawei.helloworldIntf;
+//package com.huawei.helloworld;
 //
 //import org.apache.servicecomb.provider.pojo.RpcSchema;
 //import org.springframework.web.bind.annotation.RequestMapping;

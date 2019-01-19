@@ -10,12 +10,12 @@ import com.google.common.eventbus.Subscribe;
 public class TestTask3 extends AbstractTask {
     private static Logger logger = LoggerFactory.getLogger(TestTask3.class);
 
-    public TestTask3(EventBus eventBus) {
+    protected TestTask3(EventBus eventBus) {
         super(eventBus);
     }
 
     @Subscribe
-    protected void ListenTask2(TestTask1 testTask2) {
+    protected void listenTask2(TestTask1 testTask2) {
         if (testTask2.taskStatus == TaskStatus.FINISHED) {
             this.taskStatus = TaskStatus.READY;
         }

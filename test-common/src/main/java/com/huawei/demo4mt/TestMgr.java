@@ -29,14 +29,14 @@ public class TestMgr {
 
   private static final List<Throwable> errorList = new ArrayList<>();
 
-  private static String msg = "";
+  private static String MSG = "";
 
-  public static void setMsg(String msg) {
-    TestMgr.msg = msg;
+  public void setMSG(String MSG) {
+    TestMgr.MSG = MSG;
   }
 
-  public static void setMsg(String microserviceName, String transport) {
-    TestMgr.msg = String.format("microservice=%s, transport=%s", microserviceName, transport);
+  public static void setMSG(String microserviceName, String transport) {
+    TestMgr.MSG = String.format("microservice=%s, transport=%s", microserviceName, transport);
   }
 
   public static void check(Object expect, Object real) {
@@ -48,23 +48,23 @@ public class TestMgr {
     String strReal = String.valueOf(real);
 
     if (!strExpect.equals(strReal)) {
-      errorList.add(new Error(msg + " | Expect " + strExpect + ", but " + strReal));
+      errorList.add(new Error(MSG + " | Expect " + strExpect + ", but " + strReal));
     }
   }
 
   public static void checkNotEmpty(String real) {
     if (StringUtils.isEmpty(real)) {
-      errorList.add(new Error(msg + " | unexpected null result, method is " + getCaller()));
+      errorList.add(new Error(MSG + " | unexpected null result, method is " + getCaller()));
     }
   }
 
   public static void summary() {
     if (errorList.isEmpty()) {
-      LOGGER.info("............. test finished ............");
+      LOGGER.info("............. sprmigrate finished ............");
       return;
     }
 
-    LOGGER.info("............. test not finished ............");
+    LOGGER.info("............. sprmigrate not finished ............");
     for (Throwable e : errorList) {
       LOGGER.info("", e);
     }

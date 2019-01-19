@@ -17,7 +17,7 @@ public class TestTask2 extends AbstractTask {
 
 
     @Subscribe
-    protected void ListenTask1(TestTask1 testTask1) {
+    protected void listenTask1(TestTask1 testTask1) {
         if (testTask1.taskStatus == TaskStatus.FINISHED) {
             this.taskStatus = TaskStatus.READY;
         }

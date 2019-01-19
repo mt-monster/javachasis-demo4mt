@@ -26,7 +26,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.client.RestTemplate;
 
-import com.huawei.demo4mt.controllerIntf.Controller;
+import com.huawei.demo4mt.controller.Controller;
 
 /**
  * <一句话功能简述>

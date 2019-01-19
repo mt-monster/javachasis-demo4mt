@@ -1,6 +1,5 @@
 package com.huawei.demo4mt;
 
-import java.util.Arrays;
 import java.util.stream.IntStream;
 
 import javax.inject.Inject;
@@ -10,77 +9,72 @@ import org.apache.servicecomb.foundation.common.utils.Log4jUtils;
 import org.apache.servicecomb.provider.pojo.RpcReference;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Component;
 
 import com.huawei.demo4mt.codeFirstPkg.CodeFirstPojoClient;
-import com.huawei.demo4mt.helloworldIntf.HelloWorld;
+
 
 @Component
 public class PojoConsumer {
 
-    public static final Logger LOGGER = LoggerFactory.getLogger(PojoConsumer.class);
+  private static Logger logger = LoggerFactory.getLogger(PojoConsumer.class);
 
-    public static CodeFirstPojoClient codeFirstPojoClient;
+  @RpcReference(microserviceName = "pojoprovider", schemaId = "demo4mt")
+  public static HelloWorld helloworld;
 
-    @Inject
-    public void setCodeFirstPojoClient(CodeFirstPojoClient codeFirstPojoClient) {
-        PojoConsumer.codeFirstPojoClient = codeFirstPojoClient;
+  @Inject
+  public void setCodeFirstPojoClient(CodeFirstPojoClient codeFirstPojoClient) {
+    PojoConsumer.codeFirstPojoClient = codeFirstPojoClient;
+  }
+
+  public static CodeFirstPojoClient codeFirstPojoClient;
+
+
+  public static void main(String[] args) throws Exception {
+    Log4jUtils.init();
+    BeanUtils.init();
+    String envProperty = System.getProperty("user.dir");
+    logger.warn("envProperty is-------------->>"+envProperty);
+    String[] beans = BeanUtils.getContext().getBeanDefinitionNames();
+    for (String bn : beans) {
+      logger.info("[" + bn + "}");
     }
+    logger.info("------->" + beans.length);
+    runTest();
+  }
 
-    @RpcReference(microserviceName = "pojoprovider", schemaId = "demo4mt")
-    public HelloWorld helloworld;
+  private static void runTest() {
+    buildTest1();
+    buildTest2();
+  }
 
-    static final byte buffer[] = new byte[1024];
+  /**
+   * test classLoader
+   */
+  private static void buildTest1() {
+    IntStream.range(0, 100).parallel().forEach(s -> {
+      if ("main".equals(Thread.currentThread().getName())) {
+        return;
+      }
+      Thread.currentThread().setContextClassLoader(null);
+      TestMgr.check(null, helloworld.testContextClsLoader(3));
+    });
+  }
 
-    static {
-        Arrays.fill(buffer, (byte) 1);
+  private static void buildTest2() {
+    String microserviceName = "pojoprovider";
+    codeFirstPojoClient.testCodeFirstAll(microserviceName);
+  }
+
+  public static void testSayHi() {
+    while (true) {
+      try {
+        Thread.sleep(2000);
+        String result = helloworld.sayHello(" m00416667");
+        System.out.println("-----------" + result + "-------------");
+      } catch (Exception e) {
+        System.out.println("------------exception-----------" + e.getMessage());
+      }
     }
-
-    public static void main(String[] args) throws Exception {
-        String property1 = System.getProperty("user.dir");
-        LOGGER.warn("user.dir------------>" + property1);
-
-        Log4jUtils.init();
-        BeanUtils.init();
-        ApplicationContext ctx = BeanUtils.getContext();
-        String[] beanNamesForAnnotation = ctx.getBeanDefinitionNames();
-        LOGGER.warn("beanNamesForAnnotation length--------------->" + beanNamesForAnnotation.length);
-        for (String bn : beanNamesForAnnotation) {
-            LOGGER.warn("[" + bn + "]");
-        }
-        //        runTest();
-//        runLBTest();
-        //        TestMgr.summary();
-    }
-
-    private static void runLBTest() {
-        String microserviceName = "pojoprovider";
-        codeFirstPojoClient.testLBCase(microserviceName);
-    }
-
-    private void runTest() {
-        test1();
-        test2();
-
-    }
-
-    private void test2() {
-        String microserviceName = "pojoprovider";
-        codeFirstPojoClient.testCodeFirstAll(microserviceName);
-    }
-
-    /**
-     * Test contextClassLoader
-     */
-    private void test1() {
-        IntStream.range(0, 100).forEach(s -> {
-            if (Thread.currentThread().getName().equals("main")) {
-                return;
-            }
-            Thread.currentThread().setContextClassLoader(null);
-            LOGGER.info("------>" + Thread.currentThread().getName());
-            TestMgr.check(null, helloworld.testCtClsLoader(3));
-        });
-    }
+  }
 }

@@ -1,10 +1,10 @@
-package com.huawei.demo4mt.aiopkg;
+package com.huawei.demo4mt.AioPkg;
 
 import java.nio.ByteBuffer;
 import java.nio.channels.AsynchronousSocketChannel;
 import java.nio.channels.CompletionHandler;
 
-import com.huawei.demo4mt.niopkg.Calculator;
+import com.huawei.demo4mt.NioPakage.Calculator;
 
 /**
  * 一句话功能简述
@@ -13,7 +13,7 @@ import com.huawei.demo4mt.niopkg.Calculator;
  * @version [版本号, ]
  * @see  [相关类/方法]
  * @since [产品/模块版本]
- * Package Name:com.huawei.demo4mt.aiopkg
+ * Package Name:com.huawei.demo4mt.AioPkg
  */
 public class ReadHandler implements CompletionHandler<Integer, ByteBuffer> {
 

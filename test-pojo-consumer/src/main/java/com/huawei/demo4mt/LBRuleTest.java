@@ -63,14 +63,14 @@
 //        for (int i = 0; i < 300; i++) {
 //            personList.add(person);
 //        }
-//        System.out.println(helloworldIntf.testList(personList));
+//        System.out.println(helloworld.testList(personList));
 //    }
 //
 //    public static void testSayHelloAgain() {
 //        for (int i = 0; i < 50; i++) {
 //            try {
 //                System.out.println("\n**********START**********");
-//                System.out.println(helloworldIntf.SayHelloAgain(1));
+//                System.out.println(helloworld.SayHelloAgain(1));
 //            } catch (Exception e) {
 //                System.out.println("\nclal err" + e.getMessage());
 //            }

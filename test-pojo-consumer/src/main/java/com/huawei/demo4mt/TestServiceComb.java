@@ -1,4 +1,4 @@
-//package com.huawei.helloworldIntf;
+//package com.huawei.helloworld;
 //
 //import io.swagger.annotations.ApiParam;
 //

@@ -33,7 +33,7 @@ import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
 
-import com.huawei.demo4mt.controllerIntf.Controller;
+import com.huawei.demo4mt.controller.Controller;
 import com.huawei.demo4mt.entity.Person;
 
 /**
@@ -60,7 +60,7 @@ public class SpringmvcClient {
 
     public static void run() throws Exception {
         restTemplate = RestTemplateBuilder.create();
-        controller = BeanUtils.getBean("controllerIntf");
+        controller = BeanUtils.getBean("controller");
 
         // sprmigrate dark launch concurrency
         CountDownLatch countDownLatch = new CountDownLatch(4);
@@ -112,23 +112,23 @@ public class SpringmvcClient {
         String prefix = "cse://" + microserviceName;
 
         TestMgr.check("hi world [world]",
-                template.getForObject(prefix + "/controllerIntf/sayhi?name=world",
+                template.getForObject(prefix + "/controller/sayhi?name=world",
                         String.class));
 
         TestMgr.check("hi world1 [world1]",
-                template.getForObject(prefix + "/controllerIntf/sayhi?name={name}",
+                template.getForObject(prefix + "/controller/sayhi?name={name}",
                         String.class,
                         "world1"));
 
         Map<String, String> params = new HashMap<>();
         params.put("name", "world2");
         TestMgr.check("hi world2 [world2]",
-                template.getForObject(prefix + "/controllerIntf/sayhi?name={name}",
+                template.getForObject(prefix + "/controller/sayhi?name={name}",
                         String.class,
                         params));
 
         TestMgr.check("hello world",
-                template.postForObject(prefix + "/controllerIntf/sayhello/{name}",
+                template.postForObject(prefix + "/controller/sayhello/{name}",
                         null,
                         String.class,
                         "world"));
@@ -137,7 +137,7 @@ public class SpringmvcClient {
         headers.add("name", "world");
         @SuppressWarnings("rawtypes")
         HttpEntity entity = new HttpEntity<>(null, headers);
-        ResponseEntity<String> response = template.exchange(prefix + "/controllerIntf/sayhei",
+        ResponseEntity<String> response = template.exchange(prefix + "/controller/sayhei",
                 HttpMethod.GET,
                 entity,
                 String.class);
@@ -146,7 +146,7 @@ public class SpringmvcClient {
         Person user = new Person();
         user.setName("world");
         TestMgr.check("ha world",
-                template.postForObject(prefix + "/controllerIntf/saysomething?prefix={prefix}",
+                template.postForObject(prefix + "/controller/saysomething?prefix={prefix}",
                         user,
                         String.class,
                         "ha"));

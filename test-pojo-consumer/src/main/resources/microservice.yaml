@@ -1,52 +1,18 @@
-APPLICATION_ID: ljbpojotest
+APPLICATION_ID: pojoApp
 service_description:
   name: pojoconsumer
-  version: 0.0.2
+  version: 0.0.1
 cse:
   service:
     registry:
-#      address: https://192.255.177.146:30100
-#      address: https://128.118.35.240:30100
       address: http://127.0.0.1:30100
       instance:
         watch: false
-
-#  config:
-#    client:
-#      serverUri: https://192.255.177.146:30103
-#      refreshMode: 1
-#      refresh_interval: 5000
-#  monitor:
-#    client:
-#      serverUri: https://192.255.177.146:30109
-#      enabled: true
+  rest:
+    address: 0.0.0.0:17181
+  highway:
+    address: 0.0.0.0:17182
   handler:
     chain:
       Consumer:
         default: loadbalance
-  rest:
-    address: 0.0.0.0:17381
-    client:
-      connection:
-        idleTimeoutInSeconds: 1
-  #  highway:
-  #    address: 0.0.0.0:17382
-  loadbalance:
-    #    isolation:
-    #      enabled: false
-    #      enableRequestThreshold: 3
-    #      errorThresholdPercentage: 20
-    #      singleTestTime: 10000
-    retryEnabled: true
-#    retryOnNext: 1
-    retryOnSame: 1
-#  flowcontrol:
-#    Provider:
-#      qps:
-#        global:
-#          limit: 750
-#  credentials:
-#    accessKey: WDR6DZORKXRR4UIXSRXC
-#    secretKey: 31HKLkpSsYQfKRrTGAOiHm0FuE8mV7TdmbBAPV2b
-#    akskCustomCipher: default
-#    project: kube-system

@@ -1,4 +1,4 @@
-package com.huawei.demo4mt.helloworldIntf;
+package com.huawei.demo4mt.helloworld;
 
 import javax.servlet.http.Part;
 import java.io.IOException;

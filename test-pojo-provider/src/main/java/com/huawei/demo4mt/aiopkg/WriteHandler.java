@@ -1,4 +1,4 @@
-package com.huawei.demo4mt.aiopkg;
+package com.huawei.demo4mt.AioPkg;
 
 import java.io.IOException;
 import java.nio.ByteBuffer;
@@ -13,7 +13,7 @@ import java.util.concurrent.CountDownLatch;
  * @version [版本号, ]
  * @see  [相关类/方法]
  * @since [产品/模块版本]
- * Package Name:com.huawei.demo4mt.aiopkg
+ * Package Name:com.huawei.demo4mt.AioPkg
  */
 public class WriteHandler implements CompletionHandler<Integer, ByteBuffer> {
     private AsynchronousSocketChannel clientChannel;

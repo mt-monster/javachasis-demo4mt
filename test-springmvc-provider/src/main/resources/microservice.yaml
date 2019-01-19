@@ -6,20 +6,20 @@ service_description:
 cse:
   service:
     registry:
-      address: https://100.101.126.83:30100
-      autodiscovery: false
+      address: http://127.0.0.1:30100
+      autodiscovery: true
       instance:
         watch: false
-#  config:
-#    client:
-#      serverUri: https://100.101.126.83:30103
-#      refreshMode: 1
-#      refresh_interval: 5000
+  config:
+    client:
+      serverUri: http://127.0.0.1:30113
+      refreshMode: 1
+      refresh_interval: 5000
 #  monitor:
 #    client:
-#      serverUri: https://100.101.126.83:30109
+#      serverUri: http://127.0.0.1:30109
   rest:
-    address: 0.0.0.0:1091
+    address: 0.0.0.0:8080
   highway:
     address: 0.0.0.0:7070
 
@@ -28,16 +28,16 @@ cse:
 #      samplingRate: 1
 #      datasendmode: 1
 #      dataformat: json
-  credentials:
-    accessKey: LU4RRCSXXSA7WVFUWOFP
-    secretKey: PNcr34YZyjMlaXDgdovOV6mdNUIJMus0JgtFRgNe
-    project: cse-project
-    akskCustomCipher: default
-########SSL options
+#  credentials:
+#    accessKey: 765J2TR8KW3GOKKKWITA
+#    secretKey: x6NYmbYOlm3METc0KUGscCGoJn9gjwZB3NhyI5FS
+#    project: default
+#    akskCustomCipher: default
+#########SSL options
 #ssl.protocols: TLSv1.2
 #ssl.authPeer: true
 #ssl.checkCN.host: true
-#
+
 #########certificates config
 #ssl.trustStore: trust.jks
 #ssl.trustStoreType: JKS

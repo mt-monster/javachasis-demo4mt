@@ -21,7 +21,7 @@ import org.apache.servicecomb.foundation.common.utils.Log4jUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.huawei.demo4mt.controllerIntf.Controller;
+import com.huawei.demo4mt.controller.Controller;
 
 public class MyClient {
     private static final Logger LOGGER = LoggerFactory.getLogger(MyClient.class);
@@ -35,7 +35,7 @@ public class MyClient {
     }
 
     private static void run() {
-        controller = BeanUtils.getBean("controllerIntf");
+        controller = BeanUtils.getBean("controller");
         int index = 2;
         int result = 0;
         while (true) {

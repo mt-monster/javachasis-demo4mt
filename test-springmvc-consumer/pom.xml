@@ -11,7 +11,7 @@
     <dependency>
       <groupId>com.huawei</groupId>
       <artifactId>test-common</artifactId>
-      <version>0.0.1-SNAPSHOT</version>
+      <!--<version>0.0.1-SNAPSHOT</version>-->
     </dependency>
     <dependency>
       <groupId>org.apache.servicecomb</groupId>
@@ -20,6 +20,11 @@
     <dependency>
       <groupId>org.apache.servicecomb</groupId>
       <artifactId>provider-pojo</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.huawei</groupId>
+      <artifactId>test-common</artifactId>
+      <version>0.0.1-SNAPSHOT</version>
     </dependency>
   </dependencies>
 

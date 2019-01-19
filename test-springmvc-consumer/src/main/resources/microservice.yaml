@@ -5,25 +5,13 @@ service_description:
 cse:
   service:
     registry:
-      address: https://100.101.126.83:30100
-      autodiscovery: false
+      address: http://127.0.0.1:30100
       instance:
         watch: false
-  config:
-    client:
-      serverUri: https://100.101.126.83:30103
-      refreshMode: 1
-      refresh_interval: 5000
-  monitor:
-    client:
-      serverUri: https://100.101.126.83:30109
   rest:
     address: 0.0.0.0:8081
-  credentials:
-    accessKey: LU4RRCSXXSA7WVFUWOFP
-    secretKey: PNcr34YZyjMlaXDgdovOV6mdNUIJMus0JgtFRgNe
-    project: cse-project
-    akskCustomCipher: default
+servicecomb.metrics.publisher.defaultLog.enabled: false
+servicecomb.metrics.window_time: 5000
 #  highway:
 #    address: 0.0.0.0:7071
 #  metrics:

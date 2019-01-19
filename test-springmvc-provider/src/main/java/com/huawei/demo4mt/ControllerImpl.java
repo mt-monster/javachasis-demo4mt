@@ -27,14 +27,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.huawei.demo4mt.controllerIntf.Controller;
+import com.huawei.demo4mt.controller.Controller;
 import com.huawei.demo4mt.entity.Person;
 
-@RestSchema(schemaId = "controllerIntf")
-@RequestMapping(path = "/controllerIntf", produces = MediaType.APPLICATION_JSON)
+@RestSchema(schemaId = "controller")
+@RequestMapping(path = "/controller", produces = MediaType.APPLICATION_JSON)
 public class ControllerImpl implements Controller {
     @GetMapping(path = "/add")
-    public int add(@RequestParam("a") int a, @RequestParam("b") int b) {
+    public int add(@Min(1) @RequestParam("a") int a, @Max(5) @RequestParam("b") int b) {
         return a + b;
     }
 

@@ -20,5 +20,5 @@ package com.huawei.demo4mt;
 import org.apache.servicecomb.core.Const;
 
 public interface DemoConst {
-  String[] transports = new String[] {"rest","highway",Const.ANY_TRANSPORT};
+  String[] TRANSPORTS = new String[] {"rest", Const.ANY_TRANSPORT};
 }

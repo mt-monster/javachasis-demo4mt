@@ -15,11 +15,35 @@
  * limitations under the License.
  */
 
-package com.huawei.demo4mt.smartcare;
+package com.huawei.demo4mt;
 
-public interface SmartCare {
+import java.util.Date;
+import java.util.List;
+import java.util.Map;
 
-  Response addApplication(Application application);
+import com.huawei.demo4mt.entity.Person;
+import com.huawei.demo4mt.entity.User;
 
-  Response delApplication(String appName);
+public interface CodeFirstPojoIntf {
+  Map<String, User> testUserMap(Map<String, User> userMap);
+
+  List<User> testUserArray(List<User> users);
+
+  String[] testStrings(String[] input);
+
+  byte[] testBytes(byte[] input);
+
+  int reduce(int a, int b);
+
+  Date addDate(Date date, long second);
+
+  Person sayHello(Person user);
+
+  String saySomething(String prefix, Person user);
+
+  String sayHi(String name);
+
+  boolean isTrue();
+
+  String addString(List<String> s);
 }
