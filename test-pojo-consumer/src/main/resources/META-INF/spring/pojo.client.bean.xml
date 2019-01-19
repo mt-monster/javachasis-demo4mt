@@ -21,6 +21,6 @@
 
   <context:component-scan base-package="com.huawei.demo4mt"/>
 
-  <bean class="com.huawei.demo4mt.codeFirstPkg.CodeFirstPojoClient">
+  <bean class="com.huawei.demo4mt.codefirstPkg.CodeFirstPojoClient">
   </bean>
 </beans>

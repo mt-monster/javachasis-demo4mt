@@ -1,4 +1,4 @@
-package com.huawei.demo4mt.codeFirstPkg;
+package com.huawei.demo4mt.codefirstPkg;
 
 import java.util.concurrent.CompletableFuture;
 

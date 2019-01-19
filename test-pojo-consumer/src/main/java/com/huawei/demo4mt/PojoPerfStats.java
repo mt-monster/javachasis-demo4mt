@@ -7,7 +7,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.huawei.demo4mt.codeFirstPkg.CodeFirstPojoClientIntf;
+import com.huawei.demo4mt.codefirstPkg.CodeFirstPojoClientIntf;
 import com.huawei.demo4mt.entity.Person;
 import com.huawei.demo4mt.helloworldIntf.HelloWorld;
 
