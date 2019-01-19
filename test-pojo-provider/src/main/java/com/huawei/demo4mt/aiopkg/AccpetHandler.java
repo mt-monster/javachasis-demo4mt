@@ -16,8 +16,8 @@ import java.nio.channels.CompletionHandler;
 public class AccpetHandler implements CompletionHandler<AsynchronousSocketChannel, AsyncServerHandler> {
     @Override public void completed(AsynchronousSocketChannel socketChannel, AsyncServerHandler serverHandler) {
 
-        com.huawei.demo4mt.AioPkg.AioServer.clientcount++;
-        System.out.println("连接的客户端数： " + com.huawei.demo4mt.AioPkg.AioServer.clientcount);
+        AioServer.clientcount++;
+        System.out.println("连接的客户端数： " + AioServer.clientcount);
         serverHandler.serverSocketChannel.accept(serverHandler, this);
         ByteBuffer byteBuffer = ByteBuffer.allocate(1024);
         socketChannel.read(byteBuffer, byteBuffer, new ReadHandler(socketChannel));
