@@ -1,4 +1,4 @@
-package com.huawei.demo4mt.aiopkg;
+package com.huawei.demo4mt.AioPkg;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
@@ -32,7 +32,7 @@ public class AsyncServerHandler implements Runnable {
 
     @Override public void run() {
         latch = new CountDownLatch(1);
-        serverSocketChannel.accept(this,new com.huawei.demo4mt.AioPkg.AccpetHandler());
+        serverSocketChannel.accept(this,new AccpetHandler());
         try {
             latch.await();
         } catch (Exception e) {
