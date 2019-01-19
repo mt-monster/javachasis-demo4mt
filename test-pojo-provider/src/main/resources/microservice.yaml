@@ -1,0 +1,38 @@
+APPLICATION_ID: ljbpojotest
+service_description:
+  name: pojoprovider
+  version: 0.1.1
+cse:
+  service:
+    registry:
+#      address: https://192.255.177.146:30100
+#      address: https://128.118.35.240:30100
+      address: http://127.0.0.1:30100
+      instance:
+        watch: false
+#  config:
+#    client:
+#      serverUri: https://192.255.177.146:30103
+#      refreshMode: 1
+#      refresh_interval: 5000
+#  monitor:
+#    client:
+#      serverUri: https://192.255.177.146:30109
+#      enabled: true
+  rest:
+    address: 0.0.0.0:16181
+    server:
+      connection:
+        idleTimeoutInSeconds: 1
+#  highway:
+#    address: 0.0.0.0:16182
+#  credentials:
+#    accessKey: 3R3LHJJ1GAXNCUKUD6NI
+#    secretKey: rLM0VNdBUZFdaSwX0cGc6lvyIlcz1sdG3c2hEfWx
+#    project: cse-project
+#    akskCustomCipher: default
+  metrics:
+    window_time: 5000
+    publisher:
+      defaultLog:
+        enabled: false

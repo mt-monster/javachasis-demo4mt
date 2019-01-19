@@ -1,0 +1,59 @@
+#servicecomb:
+#  microserviceVersionFactory: org.apache.servicecomb.core.definition.PrivateMicroserviceVersionMetaFactory
+
+APPLICATION_ID: ljbspringmvctest
+service_description:
+  name: springmvcprovider
+  version: 0.0.3
+#  paths:
+#    - path: /test1/testpath
+#      property:
+#        checksession: false
+#    - path: /test2/testpath
+#      property:
+#        checksession: true
+#cse.uploads.directory: target
+cse:
+  service:
+    registry:
+      address: http://127.0.0.1:30100
+#      client:
+#        timeout:
+#          idle: 60
+#          watch: 60
+#      instance:
+#        healthCheck:
+#          interval: 3
+#        pull:
+#          interval: 10
+#        watch: false
+#      autodiscovery: true
+  rest:
+    address: 127.0.0.1:8071  
+  handler:
+    chain:
+      Provider:
+        default: loadbalance
+      Consumer:
+        default: loadbalance  #,bizkeeper-provider
+  tracing:
+    enabled: true
+    samplingRate: 0.5
+#  datacenter:
+#    name: myDC
+#    region: my-Region
+#    availableZone: my-Zone
+#########SSL options
+#ssl.protocols: TLSv1.2
+#ssl.authPeer: true
+#ssl.checkCN.host: true
+#
+##########certificates config
+#ssl.trustStore: trust.jks
+#ssl.trustStoreType: JKS
+#ssl.trustStoreValue: Changeme_123
+#ssl.keyStore: server.p12
+#ssl.keyStoreType: PKCS12
+#ssl.keyStoreValue: Changeme_123
+#ssl.crl: revoke.crl
+#ssl.sslCustomClass: org.apache.servicecomb.demo.DemoSSLCustom
