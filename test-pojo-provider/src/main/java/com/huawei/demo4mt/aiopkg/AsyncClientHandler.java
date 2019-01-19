@@ -1,4 +1,4 @@
-package com.huawei.demo4mt.AioPkg;
+package com.huawei.demo4mt.aiopkg;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
@@ -39,7 +39,7 @@ public class AsyncClientHandler implements Runnable, CompletionHandler<Void,Asyn
         writeBuffer.put(req);
         writeBuffer.flip();
         //异步写
-        clientChannel.write(writeBuffer, writeBuffer,new WriteHandler(clientChannel, latch));
+        clientChannel.write(writeBuffer, writeBuffer,new com.huawei.demo4mt.AioPkg.WriteHandler(clientChannel, latch));
     }
 
     @Override public void run() {
