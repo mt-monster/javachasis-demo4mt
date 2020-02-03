@@ -67,7 +67,7 @@ public class SpringmvcClient {
         for (int i = 0; i < 4; i++) {
             int index = i;
             new Thread("case" + index) {
-                public void run() {
+                @Override public void run() {
                     Object result = 10;
 
                     try {
@@ -98,9 +98,9 @@ public class SpringmvcClient {
 
     public static void runTest() throws Exception {
         String microserviceName = "springmvc";
-        for (String transport : DemoConst.transports) {
+        for (String transport : DemoConst.TRANSPORTS) {
             CseContext.getInstance().getConsumerProviderManager().setTransport(microserviceName, transport);
-            TestMgr.setMsg(microserviceName, transport);
+            TestMgr.setMSG(microserviceName, transport);
 
             testController(restTemplate, microserviceName);
 
@@ -114,6 +114,7 @@ public class SpringmvcClient {
         TestMgr.check("hi world [world]",
                 template.getForObject(prefix + "/controller/sayhi?name=world",
                         String.class));
+
 
         TestMgr.check("hi world1 [world1]",
                 template.getForObject(prefix + "/controller/sayhi?name={name}",

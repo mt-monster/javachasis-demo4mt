@@ -2,6 +2,7 @@ package com.huawei.demo4mt;
 
 import java.util.Date;
 
+import org.apache.servicecomb.swagger.invocation.Response;
 import org.springframework.http.ResponseEntity;
 
 import com.huawei.demo4mt.entity.Person;
@@ -16,6 +17,8 @@ import com.huawei.demo4mt.entity.Person;
  * Package Name:com.huawei.demo4mt
  */
 public interface CodeFirstSpringmvcIntf {
+
     ResponseEntity<Person> responseEntity(Date date);
 
+    Response cseResponse();
 }

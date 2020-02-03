@@ -20,7 +20,7 @@ import com.huawei.demo4mt.threadPkg.WhiteThread;
  */
 public class TestCowList {
     private void test() {
-        List<Integer> asList = Arrays.asList(new Integer[] {1, 2});
+        List<Integer> asList = Arrays.asList(1, 2);
         CopyOnWriteArrayList<Integer> integers = new CopyOnWriteArrayList<>(asList);
 
         ExecutorService executorService = Executors.newFixedThreadPool(10);

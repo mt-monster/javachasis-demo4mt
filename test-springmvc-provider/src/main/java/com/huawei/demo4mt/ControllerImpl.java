@@ -30,10 +30,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.huawei.demo4mt.controller.Controller;
 import com.huawei.demo4mt.entity.Person;
 
+import io.swagger.annotations.SwaggerDefinition;
+
 @RestSchema(schemaId = "controller")
 @RequestMapping(path = "/controller", produces = MediaType.APPLICATION_JSON)
 public class ControllerImpl implements Controller {
-    @GetMapping(path = "/add")
+    @Override @GetMapping(path = "/add")
     public int add(@Min(1) @RequestParam("a") int a, @Max(5) @RequestParam("b") int b) {
         return a + b;
     }
@@ -43,10 +45,6 @@ public class ControllerImpl implements Controller {
     }
 
     @Override public String sayHi(String name) {
-        return null;
-    }
-
-    @Override public String sayHei(String name) {
         return null;
     }
 

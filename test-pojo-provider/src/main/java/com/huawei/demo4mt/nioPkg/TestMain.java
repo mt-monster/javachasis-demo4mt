@@ -26,7 +26,7 @@ public class TestMain {
         }).start();
         Thread.sleep(100);
         // TODO: 2018/10/14 add oper_expression
-        char operators[] = {'+', '-', '*', '/' };
+        char[] operators = {'+', '-', '*', '/'};
         Random random = new Random(System.currentTimeMillis());
         new Thread(new Runnable() {
             @Override public void run() {
@@ -35,7 +35,7 @@ public class TestMain {
                             random.nextInt(10) + "" + operators[random.nextInt(4)] + (random.nextInt(10) + 1);
                     Client.send(expression);
                     try {
-                        Thread.currentThread().sleep(random.nextInt(1000));
+                        Thread.sleep(random.nextInt(1000));
                     } catch (Exception e) {
                         e.printStackTrace();
                     }

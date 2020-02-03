@@ -6,6 +6,7 @@ import java.nio.ByteBuffer;
 import java.nio.channels.SelectionKey;
 import java.nio.channels.Selector;
 import java.nio.channels.SocketChannel;
+import java.nio.charset.StandardCharsets;
 import java.util.Iterator;
 import java.util.Set;
 
@@ -71,7 +72,7 @@ public class ClientHandle implements Runnable {
                     byte[] bytes = new byte[buffer.remaining()];
                     //将缓冲区可读字节数组复制到新建的数组中
                     buffer.get(bytes);
-                    String result = new String(bytes, "UTF-8");
+                    String result = new String(bytes, StandardCharsets.UTF_8);
                     System.out.println("客户端收到消息：" + result);
                 }
                 //没有读取到字节 忽略
@@ -131,7 +132,6 @@ public class ClientHandle implements Runnable {
 
     private void donConnect() throws IOException {
         if (socketChannel.connect(new InetSocketAddress(host, port))) {
-            ;
         } else {
             socketChannel.register(selector, SelectionKey.OP_CONNECT);
         }

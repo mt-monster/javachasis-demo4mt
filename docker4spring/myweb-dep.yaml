@@ -1,0 +1,38 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: myweb
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: myweb
+  strategy:
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: myweb
+    spec:
+      containers:
+        - name: myweb
+          image: kubeguide/tomcat-app:v1
+          volumeMounts:
+            - name: time-zone
+              mountPath: /etc/localtime
+            - name: tomcat-logs
+              mountPath: /usr/local/tomcat/logs
+          ports:
+            - containerPort: 8080
+          env:
+            - name: MYSQL_SERVICE_HOST
+              value: '10.254.40.43'               #此处为mysql服务的Cluster IP
+            - name: MYSQL_SERVICE_PORT
+              value: '3306'
+      volumes:
+        - name: time-zone
+          hostPath:
+            path: /etc/localtime
+        - name: tomcat-logs
+          hostPath:
+            path: /data/tomcat/logs

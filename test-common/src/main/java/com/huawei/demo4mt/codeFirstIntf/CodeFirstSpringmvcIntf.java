@@ -14,5 +14,5 @@ import org.springframework.http.ResponseEntity;
  * Package Name:com.huawei.demo4mt
  */
 public interface CodeFirstSpringmvcIntf {
-    public ResponseEntity<String> responseEntity (String strBody,Date date);
+    ResponseEntity<String> responseEntity(String strBody, Date date);
 }

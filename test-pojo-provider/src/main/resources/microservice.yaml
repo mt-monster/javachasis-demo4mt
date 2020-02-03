@@ -17,4 +17,4 @@ cse:
 #    accessKey: UVGH5JDYDP0LUWTIH12T
 #    secretKey: khhlXrWxdcsKDfB2nY1NwpIPac38OWO6CBiqtxyg
 #    project: cn-north-1
-#    akskCustomCipher: default
+#    akskCustomCipher: com

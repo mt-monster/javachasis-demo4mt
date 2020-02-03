@@ -18,24 +18,26 @@ package com.huawei.demo4mt;
 
 import org.apache.servicecomb.foundation.common.utils.BeanUtils;
 import org.apache.servicecomb.foundation.common.utils.Log4jUtils;
+import org.apache.servicecomb.provider.pojo.RpcReference;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Component;
 
 import com.huawei.demo4mt.controller.Controller;
 
+@Component
 public class MyClient {
     private static final Logger LOGGER = LoggerFactory.getLogger(MyClient.class);
 
+    @RpcReference(microserviceName = "springmvc", schemaId = "controller")
     private static Controller controller;
 
     public static void main(String[] args) {
         init();
-
         run();
     }
 
     private static void run() {
-        controller = BeanUtils.getBean("controller");
         int index = 2;
         int result = 0;
         while (true) {

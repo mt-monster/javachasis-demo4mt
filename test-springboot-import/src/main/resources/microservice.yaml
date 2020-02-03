@@ -33,7 +33,7 @@ cse:
     accessKey: LU4RRCSXXSA7WVFUWOFP
     secretKey: PNcr34YZyjMlaXDgdovOV6mdNUIJMus0JgtFRgNe
     project: cse-project
-    akskCustomCipher: default
+    akskCustomCipher: com
 ########SSL options
 #ssl.protocols: TLSv1.2
 #ssl.authPeer: true

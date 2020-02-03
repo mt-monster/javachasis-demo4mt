@@ -3,21 +3,22 @@ APPLICATION_ID: springmvctest
 service_description:
   name: ${service.name}
   version: 0.0.3
+  environment: dev,prod,test
 cse:
-  service:
+  service:  #SC 地址 (Service-center)
     registry:
-      address: http://127.0.0.1:30100
+      address: http://127.0.0.1:30100,http://xxx,http://xxx
       autodiscovery: true
       instance:
         watch: false
-  config:
+  config:   #CC 地址 (Config-center)
     client:
       serverUri: http://127.0.0.1:30113
       refreshMode: 1
       refresh_interval: 5000
-#  monitor:
-#    client:
-#      serverUri: http://127.0.0.1:30109
+  monitor:  #MC 地址 (Monitor-center)
+    client:
+      serverUri: http://127.0.0.1:30109
   rest:
     address: 0.0.0.0:8080
   highway:
@@ -31,15 +32,15 @@ cse:
 #  credentials:
 #    accessKey: 765J2TR8KW3GOKKKWITA
 #    secretKey: x6NYmbYOlm3METc0KUGscCGoJn9gjwZB3NhyI5FS
-#    project: default
-#    akskCustomCipher: default
+#    project: com
+#    akskCustomCipher: com
 #########SSL options
 #ssl.protocols: TLSv1.2
 #ssl.authPeer: true
 #ssl.checkCN.host: true
 
-#########certificates config
-#ssl.trustStore: trust.jks
+########certificates config
+#ssl.trustStore: trust.jks #zzz
 #ssl.trustStoreType: JKS
 #ssl.trustStoreValue: Changeme_123
 #ssl.keyStore: server.p12

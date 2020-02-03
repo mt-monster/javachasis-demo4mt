@@ -168,7 +168,6 @@ public class XmlFileUtil {
                     if (name.equals(preNode.item(i).getNodeName())) {
                         throw new Exception("存在同名地点");
                     }
-                    ;
                 }
                 root.appendChild(node);
             } else {
@@ -179,7 +178,6 @@ public class XmlFileUtil {
                     if (name.equals(preNode.item(i).getNodeName())) {
                         throw new Exception("存在同名地点");
                     }
-                    ;
                 }
                 nodeParent.appendChild(node);
             }
@@ -222,7 +220,6 @@ public class XmlFileUtil {
                 if (name.equals(preNode.item(i).getNodeName())) {
                     throw new Exception("存在同名地点");
                 }
-                ;
             }
             xmlDoc.renameNode(node, null, name);
             node.setAttribute("经度", jd);
@@ -240,7 +237,6 @@ public class XmlFileUtil {
         } catch (Exception e) {
             e.printStackTrace();
             msg = e.getMessage();
-            ;
         }
         return msg;
     }
@@ -380,7 +376,6 @@ public class XmlFileUtil {
         } catch (Exception e) {
             e.printStackTrace();
             msg = e.getMessage();
-            ;
         }
         Map<String, Object> map = new HashMap<String, Object>();
         map.put("msg", msg);
@@ -423,7 +418,6 @@ public class XmlFileUtil {
         } catch (Exception e) {
             e.printStackTrace();
             msg = e.getMessage();
-            ;
         }
         return msg;
     }

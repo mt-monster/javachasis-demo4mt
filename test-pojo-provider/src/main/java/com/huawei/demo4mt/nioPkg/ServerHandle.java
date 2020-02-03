@@ -7,6 +7,7 @@ import java.nio.channels.SelectionKey;
 import java.nio.channels.Selector;
 import java.nio.channels.ServerSocketChannel;
 import java.nio.channels.SocketChannel;
+import java.nio.charset.StandardCharsets;
 import java.util.Iterator;
 import java.util.Set;
 
@@ -104,7 +105,7 @@ public class ServerHandle implements Runnable {
                     byteBuffer.flip();
                     byte[] bytes = new byte[byteBuffer.remaining()];
                     byteBuffer.get(bytes);
-                    String expression = new String(bytes, "UTF-8");
+                    String expression = new String(bytes, StandardCharsets.UTF_8);
                     System.out.println("receive data is ..." + expression);
                     String result;
                     try {
